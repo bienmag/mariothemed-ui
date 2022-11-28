@@ -1,8 +1,26 @@
 .button {
-  color: violet;
+  border-radius: 52px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 30px;
 }
 
-.button-small {
-  font-size: 300px;
-  padding: 230px;
+.button-xs {
+  padding: 0 10px;
+}
+
+.button-sm {
+  padding: 0 20px;
+}
+.button-md {
+  padding: 0 30px;
+}
+
+.button-lg {
+  padding: 0 40px;
+  background-color: blue;
+}
+
+.button-solid {
+  border-radius: 30px;
 }

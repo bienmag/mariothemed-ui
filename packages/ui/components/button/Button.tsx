@@ -3,12 +3,14 @@ import "./Button.css";
 import React from "react";
 
 export interface ButtonProps {
-  // children: React.ReactComponentElement<any> | React.ReactComponentElement<any>[]
+  // children:
+  // | React.ReactComponentElement<any>
+  // | React.ReactComponentElement<any>[];
   children: React.ReactElement | React.ReactElement[];
   color: string;
-  size?: boolean;
-  // variant: string;
-  className?: string;
+  size?: string;
+  variant?: string;
+  className?: string | string[];
   // isDisabled?: boolean;
 }
 
@@ -16,27 +18,43 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   children,
   color,
   size,
-  // variant,
+  variant,
   // isDisabled,
   ...props
 }) => {
   const rootButton = ["button"];
 
-  if (size) {
-    rootButton.push("button-small");
+  if (size === "xs") {
+    rootButton.push("button-xs");
   }
-  console.log("these are the props", props.className);
+  if (size === "sm") {
+    rootButton.push("button-sm");
+  }
+  if (size === "md") {
+    rootButton.push("button-md");
+  }
+  if (size === "lg") {
+    rootButton.push("button-lg");
+  }
+
+  if (variant === "solid") {
+    rootButton.push("button-solid");
+  }
 
   return (
     <button
       {...props}
-      className={`border-2 px-4 py-2 rounded-md ${props.className}`}
+      className={`
+      ${rootButton.join(" ")}
+
+     }`}
       style={{ color }}
     >
-      {size}
       {children}
     </button>
   );
 };
 
 export default MyButton;
+
+// border-2 px-4 py-2 rounded-md
