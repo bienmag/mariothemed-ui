@@ -7,7 +7,7 @@ export interface ButtonProps {
   // | React.ReactComponentElement<any>
   // | React.ReactComponentElement<any>[];
   children: React.ReactElement | React.ReactElement[];
-  color: string;
+  color?: string;
   size?: string;
   variant?: string;
   className?: string | string[];
@@ -39,6 +39,18 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
 
   if (variant === "solid") {
     rootButton.push("button-solid");
+  }
+
+  if (variant === "outline") {
+    rootButton.push("button-outline");
+  }
+
+  if (variant === "ghost") {
+    rootButton.push("button-ghost");
+  }
+
+  if (variant === "link") {
+    rootButton.push("button-link");
   }
 
   return (
