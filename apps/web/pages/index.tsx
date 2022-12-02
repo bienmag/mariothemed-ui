@@ -28,7 +28,7 @@ export default function Web() {
 
       <MyInput size="md"></MyInput>
 
-      <MyInput size="lg"></MyInput>
+      <MyInput size="lg" variant="outline"></MyInput>
     </div>
   );
 }

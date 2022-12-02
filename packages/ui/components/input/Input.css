@@ -1,5 +1,5 @@
 .input {
-  @apply px-3 py-2 text-base rounded-xl text-black bg-stone-100 border-solid border border-stone-300 w-80;
+  @apply px-3 py-2 text-base rounded-lg text-black bg-stone-100 border-solid border border-stone-200 w-80;
 }
 
 .input:focus {
@@ -7,17 +7,25 @@
 }
 
 .input-xs {
-  @apply px-2 py-1 text-sm rounded-lg;
+  @apply px-1 py-0 text-sm rounded-md;
 }
 
 .input-sm {
-  @apply px-3 py-2 text-base rounded-xl;
+  @apply px-2 py-1 text-base rounded-lg;
 }
 
 .input-md {
-  @apply px-4 py-3 text-lg rounded-2xl;
+  @apply px-3 py-2 text-base rounded-lg;
 }
 
 .input-lg {
-  @apply px-5 py-4 text-xl rounded-3xl;
+  @apply px-4 py-3 text-xl rounded-lg;
+}
+
+.input-outline {
+  @apply bg-stone-200;
+}
+
+.input-outline:focus {
+  @apply bg-stone-100;
 }

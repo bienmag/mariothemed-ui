@@ -2,12 +2,14 @@ import "./Input.css";
 
 export interface InputProps {
   children: React.ReactElement | React.ReactElement[];
+  variant?: string;
   size?: string;
   className?: string | string[];
   // isDisabled?: boolean;
 }
 const MyInput: React.FunctionComponent<InputProps> = ({
   children,
+  variant,
   size,
   ...props
 }) => {
@@ -26,6 +28,10 @@ const MyInput: React.FunctionComponent<InputProps> = ({
   }
   if (size === "lg") {
     rootInput.push("input-lg");
+  }
+
+  if (variant === "outline") {
+    rootInput.push("input-outline");
   }
 
   return (
