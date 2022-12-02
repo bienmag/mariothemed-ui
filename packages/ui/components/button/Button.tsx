@@ -53,14 +53,17 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
     rootButton.push("button-link");
   }
 
+  // if (colorScheme === "blue") {
+  //   rootButton.push("button-blue");
+  // }
+
   return (
     <button
       {...props}
       className={`
       ${rootButton.join(" ")}
-
+    style = {{color}}
      }`}
-      style={{ color }}
     >
       {children}
     </button>
@@ -68,5 +71,3 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
 };
 
 export default MyButton;
-
-// border-2 px-4 py-2 rounded-md

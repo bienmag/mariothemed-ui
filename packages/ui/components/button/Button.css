@@ -1,75 +1,91 @@
 .button {
-  border-radius: 10px;
-  border: 1px solid rgb(210, 202, 202);
-  background-color: rgb(122, 71, 71);
-  color: white;
-  padding: 8px 28px;
-  font-size: 20px;
+  /* border-radius: 10px; */
+  /* border: 1px solid rgb(210, 202, 202); */
+  /* background-color: rgb(122, 71, 71); */
+  /* color: white; */
+  @apply px-7 py-3 text-base rounded-xl text-white bg-orange-800 border-solid border border-stone-300;
 }
 
 .button:hover {
-  background-color: rgb(98, 60, 59);
+  /* background-color: rgb(98, 60, 59); */
+  @apply bg-orange-900;
 }
 
 .button-xs {
-  padding: 2px 14px;
-  font-size: small;
+  @apply px-4 py-1 text-xs;
+  /* padding: 2px 14px;
+  font-size: small; */
 }
 
 .button-sm {
-  padding: 4px 16px;
-  font-size: medium;
+  @apply px-6 py-2 text-sm;
+  /* padding: 4px 16px;
+  font-size: medium; */
 }
 
 .button-md {
-  padding: 6px 24px;
-  font-size: larger;
+  @apply px-7 py-3 text-base;
+  /* padding: 6px 24px;
+  font-size: larger; */
 }
 
 .button-lg {
-  padding: 8px 30px;
-  font-size: x-large;
+  @apply px-8 py-4 text-lg;
+  /* padding: 8px 30px;
+  font-size: x-large; */
 }
 
 .button-solid {
-  border-radius: 10px;
-  border: 1px solid rgb(210, 202, 202);
+  /* border: 1px solid rgb(210, 202, 202);
   background-color: rgb(122, 71, 71);
-  color: white;
-  padding: 8px 28px;
-  font-size: 20px;
+  color: white; */
+  @apply rounded-xl text-white bg-orange-800 border-solid border border-stone-300;
 }
 
 .button-solid:hover {
-  background-color: rgb(98, 60, 59);
+  @apply bg-orange-900;
 }
 
 .button-outline {
-  background-color: white;
-  color: rgb(122, 71, 71);
-  border: 1px solid rgb(122, 71, 71);
+  @apply bg-white text-orange-800 border-solid border border-orange-800;
+  /* background-color: white; */
+  /* color: rgb(122, 71, 71); */
+  /* border: 1px solid rgb(122, 71, 71); */
 }
 .button-outline:hover {
-  background-color: rgba(122, 71, 71, 0.359);
+  /* background-color: rgba(122, 71, 71, 0.359); */
+  @apply bg-stone-300;
 }
 
 .button-ghost {
-  border: none;
+  @apply border-none bg-white text-orange-800;
+  /* border: none;
   background-color: white;
-  color: rgb(122, 71, 71);
+  color: rgb(122, 71, 71); */
 }
 
 .button-ghost:hover {
-  background-color: rgba(122, 71, 71, 0.359);
+  @apply bg-stone-300;
+  /* background-color: rgba(122, 71, 71, 0.359); */
 }
 
 .button-link {
-  border: none;
+  @apply border-none bg-white text-orange-800;
+  /* border: none;
   background-color: white;
   color: rgb(122, 71, 71);
+*/
 }
 
 .button-link:hover {
-  background-color: white;
-  text-decoration: underline;
+  @apply bg-white underline;
+  /* background-color: white;
+  text-decoration: underline; */
 }
+
+/* .button-blue {
+  @apply bg-sky-600 text-white border-solid border border-sky-600;
+}
+.button-blue:hover {
+  @apply bg-sky-700;
+} */

@@ -1,4 +1,4 @@
-import { MyButton } from "ui";
+import { MyButton, MyInput } from "ui";
 
 export default function Web() {
   return (
@@ -8,18 +8,27 @@ export default function Web() {
       <MyButton>
         <span> Button</span>
       </MyButton>
-      <MyButton size={"xs"} variant={"outline"}>
+      <MyButton size="xs" variant="outline">
         <span> Button</span>
       </MyButton>
-      <MyButton size={"sm"} variant={"ghost"}>
+      <MyButton size="sm" variant="outline">
         <span> Button</span>
       </MyButton>
-      <MyButton size={"md"} variant={"solid"}>
+      <MyButton size="md">
         <span> Button</span>
       </MyButton>
-      <MyButton size={"lg"} variant={"link"}>
+      <MyButton size="lg">
         <span> Button</span>
       </MyButton>
+      <MyInput></MyInput>
+
+      <MyInput size="xs"></MyInput>
+
+      <MyInput size="sm"></MyInput>
+
+      <MyInput size="md"></MyInput>
+
+      <MyInput size="lg"></MyInput>
     </div>
   );
 }
