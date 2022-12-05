@@ -1,7 +1,5 @@
 import "./Checkbox.css";
 
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 export interface CheckboxProps {
@@ -9,14 +7,13 @@ export interface CheckboxProps {
   size?: string;
   color?: string;
   className?: string;
-  // isDisabled?: boolean,
 }
 
 const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   // children,
   size,
   color,
-  // isDisabled,
+
   ...props
 }) => {
   const rootCheckbox = ["checkbox"];
@@ -35,15 +32,13 @@ const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   if (color === "green") {
     rootCheckbox.push("checkbox-green");
   }
+
   return (
-    <>
-      <input
-        {...props}
-        className={`${rootCheckbox.join(" ")}`}
-        type="checkbox"
-      ></input>
-      <FontAwesomeIcon icon={faCheck}> </FontAwesomeIcon>
-    </>
+    <input
+      {...props}
+      className={`${rootCheckbox.join(" ")}`}
+      type="checkbox"
+    ></input>
   );
 };
 
