@@ -1,4 +1,4 @@
-import { MyButton, MyInput } from "ui";
+import { MyButton, MyCheckbox, MyInput } from "ui";
 
 export default function Web() {
   return (
@@ -22,13 +22,20 @@ export default function Web() {
       </MyButton>
       <MyInput></MyInput>
 
-      <MyInput size="xs"></MyInput>
+      <MyInput size="xs" placeholder="extra small size"></MyInput>
 
-      <MyInput size="sm"></MyInput>
+      <MyInput size="sm" variant="unstyled" placeholder="small size"></MyInput>
 
-      <MyInput size="md"></MyInput>
+      <MyInput size="md" variant="filled" placeholder="medium size"></MyInput>
 
-      <MyInput size="lg" variant="outline"></MyInput>
+      <MyInput size="lg" variant="flushed" placeholder="large size"></MyInput>
+      <MyCheckbox></MyCheckbox>
+      <MyCheckbox size="xs"></MyCheckbox>
+      <MyCheckbox size="md"></MyCheckbox>
+      <MyCheckbox size="lg"></MyCheckbox>
+      <MyCheckbox size="xs" color="green"></MyCheckbox>
+      <MyCheckbox size="md" color="green"></MyCheckbox>
+      <MyCheckbox size="lg" color="green"></MyCheckbox>
     </div>
   );
 }

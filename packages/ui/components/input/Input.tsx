@@ -1,16 +1,19 @@
 import "./Input.css";
 
+import React from "react";
+
 export interface InputProps {
-  children: React.ReactElement | React.ReactElement[];
+  // children: React.ReactElement | React.ReactElement[];
   variant?: string;
   size?: string;
   className?: string | string[];
+  placeholder?: string;
   // isDisabled?: boolean;
 }
 const MyInput: React.FunctionComponent<InputProps> = ({
-  children,
   variant,
   size,
+  placeholder,
   ...props
 }) => {
   const rootInput = ["input"];
@@ -34,11 +37,23 @@ const MyInput: React.FunctionComponent<InputProps> = ({
     rootInput.push("input-outline");
   }
 
+  if (variant === "filled") {
+    rootInput.push("input-filled");
+  }
+
+  if (variant === "flushed") {
+    rootInput.push("input-flushed");
+  }
+
+  if (variant === "unstyled") {
+    rootInput.push("input-unstyled");
+  }
+
   return (
     <input
       {...props}
       type="text"
-      placeholder="type your text here"
+      placeholder={placeholder}
       className={`
   ${rootInput.join(" ")}`}
     ></input>

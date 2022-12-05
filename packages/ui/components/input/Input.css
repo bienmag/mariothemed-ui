@@ -1,5 +1,5 @@
 .input {
-  @apply px-3 py-2 text-base rounded-lg text-black bg-stone-100 border-solid border border-stone-200 w-80;
+  @apply px-3 py-2 text-base rounded-lg text-black border-solid border border-stone-200 w-80;
 }
 
 .input:focus {
@@ -23,9 +23,21 @@
 }
 
 .input-outline {
+  @apply border-solid border border-stone-200 w-80;
+}
+
+.input-filled {
   @apply bg-stone-200;
 }
 
-.input-outline:focus {
+.input-filled:focus {
   @apply bg-stone-100;
+}
+
+.input-flushed {
+  @apply px-1 rounded-none border-l-0 border-r-0 border-t-0 border-stone-200;
+}
+
+.input-unstyled {
+  @apply px-1 rounded-none border-0;
 }

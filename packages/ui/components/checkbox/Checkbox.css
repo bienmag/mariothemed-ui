@@ -1,5 +1,33 @@
 .checkbox {
-  /* @apply border-orange-400; */
-  background-color: red;
-  border-color: red;
+  @apply appearance-none relative w-6 h-6 rounded border-2 border-gray-300  cursor-pointer  
+checked:bg-[url("https://w7.pngwing.com/pngs/266/277/png-transparent-check-mark-checkbox-computer-icons-symbol-tick-angle-hand-sign-thumbnail.png")]  checked:bg-center checked:bg-no-repeat  checked:border-orange-800
+   checked:bg-contain checked:border-2  focus:outline-none;
+}
+
+/* .checkbox:checked::after {
+  @apply absolute top-0 left-0 w-6 h-6 rounded border-2 border-gray-300 bg-white cursor-pointer checked:bg-blue-500   checked:border-transparent  focus:outline-none;
+} */
+
+.checkbox-xs {
+  @apply appearance-none relative w-3 h-3 rounded border-2 border-gray-300  cursor-pointer  
+  checked:bg-[url("https://w7.pngwing.com/pngs/266/277/png-transparent-check-mark-checkbox-computer-icons-symbol-tick-angle-hand-sign-thumbnail.png")]  
+  checked:bg-contain checked:border-transparent  focus:outline-none checked:border-orange-800;
+}
+
+.checkbox-md {
+  @apply appearance-none relative w-4 h-4 rounded border-2 border-gray-300 cursor-pointer  
+  checked:bg-[url("https://w7.pngwing.com/pngs/266/277/png-transparent-check-mark-checkbox-computer-icons-symbol-tick-angle-hand-sign-thumbnail.png")]  
+  checked:bg-contain checked:border-transparent  focus:outline-none checked:border-orange-800;
+}
+
+.checkbox-lg {
+  @apply appearance-none relative w-5 h-5 rounded border-2 border-gray-300 cursor-pointer  
+  checked:bg-[url("https://w7.pngwing.com/pngs/266/277/png-transparent-check-mark-checkbox-computer-icons-symbol-tick-angle-hand-sign-thumbnail.png")]  
+  checked:bg-contain checked:border-transparent  focus:outline-none checked:border-orange-800;
+}
+
+.checkbox-green {
+  @apply appearance-none relative rounded border-2 border-gray-300  cursor-pointer  
+  checked:bg-[url("https://w7.pngwing.com/pngs/266/277/png-transparent-check-mark-checkbox-computer-icons-symbol-tick-angle-hand-sign-thumbnail.png")]  
+  checked:bg-contain checked:border-transparent  focus:outline-none checked:border-green-700;
 }
