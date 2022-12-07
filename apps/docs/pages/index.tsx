@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { MyButton } from "ui";
+import { MyButton } from "tailwind-simba-ui";
 
 export default function Docs() {
   return (

@@ -1,4 +1,4 @@
-import { MyButton, MyCheckbox, MyInput } from "ui";
+import { MyButton, MyCheckbox, MyInput, MyTextarea } from "tailwind-simba-ui";
 
 export default function Web() {
   return (
@@ -36,6 +36,12 @@ export default function Web() {
       <MyCheckbox size="xs" color="green"></MyCheckbox>
       <MyCheckbox size="md" color="green"></MyCheckbox>
       <MyCheckbox size="lg" color="green"></MyCheckbox>
+
+      <MyTextarea
+        // resize="vertical"
+        // disabled
+        placeholder="please enter your text here"
+      ></MyTextarea>
     </div>
   );
 }
