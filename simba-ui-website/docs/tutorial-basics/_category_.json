@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "Components",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Tailwind Simba UI provides prebuild components to help you build your projects faster. Here is an overview of the component categories:"
   }
 }
