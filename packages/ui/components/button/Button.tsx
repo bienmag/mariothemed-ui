@@ -6,7 +6,7 @@ export interface ButtonProps {
   // children:
   // | React.ReactComponentElement<any>
   // | React.ReactComponentElement<any>[];
-  children: React.ReactElement | React.ReactElement[];
+  children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: string;
   variant?: string;
@@ -16,7 +16,7 @@ export interface ButtonProps {
 
 const MyButton: React.FunctionComponent<ButtonProps> = ({
   children,
-  color,
+  // color,
   size,
   variant,
   // isDisabled,

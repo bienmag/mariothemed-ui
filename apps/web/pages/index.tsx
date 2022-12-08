@@ -5,11 +5,9 @@ export default function Web() {
     <div>
       {/* <h1 className="text-5xl mx-5 text-indigo-700">Web</h1> */}
 
-      <MyButton>
-        <span> Button</span>
-      </MyButton>
+      <MyButton>Button</MyButton>
       <MyButton size="xs" variant="outline">
-        <span> Button</span>
+        Hello
       </MyButton>
       <MyButton size="sm" variant="outline">
         <span> Button</span>
