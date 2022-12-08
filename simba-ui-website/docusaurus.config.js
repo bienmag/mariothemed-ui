@@ -6,18 +6,19 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Create accessible Next JS apps with speed",
+  tagline:
+    "Tailwind Simba UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/simba-logo.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "bienmag", // Usually your GitHub org/user name.
+  projectName: "Tailwind-Simba-UI", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -57,10 +58,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "My Site",
+        title: "Tailwind Simba UI",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Tailwind Simba UI Logo",
+          src: "img/simba-logo.png",
         },
         items: [
           {
@@ -71,7 +72,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/bienmag/simba-ui",
             label: "GitHub",
             position: "right",
           },
