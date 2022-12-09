@@ -34,6 +34,6 @@ module.exports = withTM({
 });
 ```
 
-Contribute#
+## Contribute
 
 Whether you're a beginner or advanced Tailwind Simba UI user, joining our community is the best way to connect with like-minded people who build great products with the library.

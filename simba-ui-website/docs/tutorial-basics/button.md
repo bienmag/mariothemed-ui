@@ -6,19 +6,27 @@ sidebar_position: 1
 
 Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
 
-:::tip My tip
+<!-- :::tip My tip
 
     Use this awesome feature option
 
-:::
+::: -->
 
-:::danger Take care
+<!-- :::danger Take care
 
     This action is dangerous
 
-:::
+::: -->
 
 ### Import
+
+:::tip run in the terminal
+
+```
+  import {MyButton} from 'tailwind-simba-ui'
+```
+
+:::
 
 ```
 import {MyButton} from 'tailwind-simba-ui'
