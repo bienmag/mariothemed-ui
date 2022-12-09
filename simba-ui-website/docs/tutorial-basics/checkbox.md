@@ -4,54 +4,68 @@ sidebar_position: 2
 
 # Checkbox
 
-Documents are **groups of pages** connected through:
+Checkbox component is used in forms when a user needs to select multiple values from several options.
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+<!-- :::tip My tip
 
-## Create your first Doc
+    Use this awesome feature option
 
-Create a Markdown file at `docs/hello.md`:
+:::
 
-```md title="docs/hello.md"
-# Hello
+:::danger Take care
 
-This is my **first Docusaurus document**!
+    This action is dangerous
+
+::: -->
+
+### Import
+
+:::tip run in the terminal
+
+```
+import {MyCheckbox} from 'tailwind-simba-ui'
 ```
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+:::
 
-## Configure the Sidebar
+### Usage
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+<!-- insert button example here -->
 
-Add metadata to customize the sidebar label and position:
-
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: "Hi!"
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
+```
+<MyCheckbox><MyCheckbox>
 ```
 
-It is also possible to create your sidebar explicitly in `sidebars.js`:
+### Checkbox Sizes
 
-```js title="sidebars.js"
-module.exports = {
-  tutorialSidebar: [
-    "intro",
-    // highlight-next-line
-    "hello",
-    {
-      type: "category",
-      label: "Tutorial",
-      items: ["tutorial-basics/create-a-document"],
-    },
-  ],
-};
+Use the size prop to change the size of the button. You can set the value to xs, md, or lg.
+
+<!-- insert button example here -->
+
+```
+<div>
+  <MyButton size='xs'>
+    Button
+  </MyButton>
+  <MyButton size='sm'>
+    Button
+  </MyButton>
+  <MyButton size='md'>
+    Button
+  </MyButton>
+  <MyButton size='lg'>
+    Button
+  </MyButton>
+</div>
+```
+
+### Checkbox with custom color
+
+You can override the color scheme of the Checkbox to green....and (add more colors to the package)
+
+```
+<div>
+ <MyButton color='green'></MyButton>
+
+</div>
 ```

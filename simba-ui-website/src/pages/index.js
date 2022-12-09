@@ -6,6 +6,7 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
+import { MyButton } from "tailwind-simba-ui";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();

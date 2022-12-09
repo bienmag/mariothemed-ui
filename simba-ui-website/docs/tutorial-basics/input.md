@@ -4,9 +4,28 @@ sidebar_position: 3
 
 # Input
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+Input component is a component that is used to get user input in a text field.
 
-## Create your first Post
+### Import
+
+:::tip run in the terminal
+
+```
+import {MyInput} from 'tailwind-simba-ui'
+```
+
+:::
+
+### Usage
+
+Here's a basic usage example of the Input component:
+
+<!-- insert example -->
+
+````
+<MyInput></MyInput>
+
+
 
 Create a file at `blog/2021-02-28-greetings.md`:
 
@@ -29,6 +48,6 @@ tags: [greetings]
 Congratulations, you have made your first post!
 
 Feel free to play around and edit this post as much you like.
-```
+````
 
 A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
