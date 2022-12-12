@@ -1,112 +1,358 @@
 /* components/button/Button.css */
 .button {
-  @apply px-7 py-3 text-base rounded-xl text-white bg-orange-800 border-solid border border-stone-300;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(214 211 209 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 52 18 / var(--tw-bg-opacity));
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .button:hover {
-  @apply bg-orange-900;
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 45 18 / var(--tw-bg-opacity));
 }
 .button-xs {
-  @apply px-4 py-1 text-xs;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .button-sm {
-  @apply px-6 py-2 text-sm;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .button-md {
-  @apply px-7 py-3 text-base;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .button-lg {
-  @apply px-8 py-4 text-lg;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .button-solid {
-  @apply rounded-xl text-white bg-orange-800 border-solid border border-stone-300;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(214 211 209 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 52 18 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .button-solid:hover {
-  @apply bg-orange-900;
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 45 18 / var(--tw-bg-opacity));
 }
 .button-outline {
-  @apply bg-white text-orange-800 border-solid border border-orange-800;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(154 52 18 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(154 52 18 / var(--tw-text-opacity));
 }
 .button-outline:hover {
-  @apply bg-stone-300;
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
 }
 .button-ghost {
-  @apply border-none bg-white text-orange-800;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(154 52 18 / var(--tw-text-opacity));
 }
 .button-ghost:hover {
-  @apply bg-stone-300;
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
 }
 .button-link {
-  @apply border-none bg-white text-orange-800;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(154 52 18 / var(--tw-text-opacity));
 }
 .button-link:hover {
-  @apply bg-white underline;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  text-decoration-line: underline;
 }
 
 /* components/checkbox/Checkbox.css */
 .checkbox {
-  @apply appearance-none relative w-6 h-6 rounded border-2 border-gray-300 cursor-pointer checked:bg-[url(tick.svg)] checked:bg-center checked:bg-no-repeat checked:border-orange-800 checked:bg-contain checked:border-2 focus:outline-none;
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.checkbox:checked {
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(154 52 18 / var(--tw-border-opacity));
+  background-image: url(./tick-XMID52JB.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.checkbox:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .checkbox-xs {
-  @apply appearance-none relative w-3 h-3 rounded border-2 border-gray-300 cursor-pointer checked:bg-[url(tick.svg)] checked:bg-contain checked:border-transparent focus:outline-none checked:border-orange-800;
+  position: relative;
+  height: 0.75rem;
+  width: 0.75rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.checkbox-xs:checked {
+  border-color: transparent;
+  --tw-border-opacity: 1;
+  border-color: rgb(154 52 18 / var(--tw-border-opacity));
+  background-image: url(./tick-XMID52JB.svg);
+  background-size: contain;
+}
+.checkbox-xs:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .checkbox-md {
-  @apply appearance-none relative w-4 h-4 rounded border-2 border-gray-300 cursor-pointer checked:bg-[url(tick.svg)] checked:bg-contain checked:border-transparent focus:outline-none checked:border-orange-800;
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.checkbox-md:checked {
+  border-color: transparent;
+  --tw-border-opacity: 1;
+  border-color: rgb(154 52 18 / var(--tw-border-opacity));
+  background-image: url(./tick-XMID52JB.svg);
+  background-size: contain;
+}
+.checkbox-md:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .checkbox-lg {
-  @apply appearance-none relative w-5 h-5 rounded border-2 border-gray-300 cursor-pointer checked:bg-[url(tick.svg)] checked:bg-contain checked:border-transparent focus:outline-none checked:border-orange-800;
+  position: relative;
+  height: 1.25rem;
+  width: 1.25rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.checkbox-lg:checked {
+  border-color: transparent;
+  --tw-border-opacity: 1;
+  border-color: rgb(154 52 18 / var(--tw-border-opacity));
+  background-image: url(./tick-XMID52JB.svg);
+  background-size: contain;
+}
+.checkbox-lg:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .checkbox-green {
-  @apply appearance-none relative rounded border-2 border-gray-300 cursor-pointer checked:bg-[url(tick.svg)] checked:bg-contain checked:border-transparent focus:outline-none checked:border-green-700;
+  position: relative;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+.checkbox-green:checked {
+  border-color: transparent;
+  --tw-border-opacity: 1;
+  border-color: rgb(21 128 61 / var(--tw-border-opacity));
+  background-image: url(./tick-XMID52JB.svg);
+  background-size: contain;
+}
+.checkbox-green:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 /* components/input/Input.css */
 .input {
-  @apply px-3 py-2 text-base rounded-lg text-black border-solid border border-stone-200 w-80;
+  width: 20rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .input:focus {
-  @apply outline-none border-stone-500;
+  --tw-border-opacity: 1;
+  border-color: rgb(120 113 108 / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .input-xs {
-  @apply px-1 py-0 text-sm rounded-md;
+  border-radius: 0.375rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .input-sm {
-  @apply px-2 py-1 text-base rounded-lg;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .input-md {
-  @apply px-3 py-2 text-base rounded-lg;
+  border-radius: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .input-lg {
-  @apply px-4 py-3 text-xl rounded-lg;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .input-outline {
-  @apply border-solid border border-stone-200 w-80;
+  width: 20rem;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
 }
 .input-filled {
-  @apply bg-stone-200;
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 .input-filled:focus {
-  @apply bg-stone-100;
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
 }
 .input-flushed {
-  @apply px-1 rounded-none border-l-0 border-r-0 border-t-0 border-stone-200;
+  border-radius: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .input-unstyled {
-  @apply px-1 rounded-none border-0;
+  border-radius: 0px;
+  border-width: 0px;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 /* components/textarea/Textarea.css */
 .textarea {
-  @apply p-4 bg-stone-100 text-black h-16 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-900 resize-x;
+  height: 4rem;
+  resize: horizontal;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+  padding: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.textarea:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(124 45 18 / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 .textarea-none {
-  @apply resize-none;
+  resize: none;
 }
 .textarea-both {
-  @apply resize;
+  resize: both;
 }
 .textarea-horizontal {
-  @apply resize-y;
+  resize: vertical;
 }
 .textarea-disabled {
-  @apply bg-stone-200 text-stone-200 border-stone-200 cursor-not-allowed;
+  cursor: not-allowed;
+  --tw-border-opacity: 1;
+  border-color: rgb(231 229 228 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 229 228 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(231 229 228 / var(--tw-text-opacity));
 }
