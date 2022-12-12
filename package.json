@@ -11,7 +11,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish": "turbo run publish"
   },
   "devDependencies": {
     "husky": "^8.0.0",
@@ -35,6 +36,15 @@
       },
       "dev": {
         "cache": false
+      },
+      "publish": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".next/**"
+        ]
       }
     }
   },
