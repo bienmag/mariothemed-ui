@@ -1,5 +1,14 @@
 {
   "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "incremental": false,
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "@ui/*": ["./src/*"]
+    },
+    "target": "ES6"
+  },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
