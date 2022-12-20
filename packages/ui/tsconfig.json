@@ -8,7 +8,8 @@
       "@ui/*": ["./src/*"]
     },
     "target": "ES6",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]

@@ -1,16 +1,17 @@
 import "./Button.css";
 
+import { css, cx } from "@emotion/css";
 import React from "react";
+// import xw from "xwind";
+import tw from "tailwind.macro";
 
 export interface ButtonProps {
-  // children:
-  // | React.ReactComponentElement<any>
-  // | React.ReactComponentElement<any>[];
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: string;
   variant?: string;
-  className?: string | string[];
+  // className?: string | string[];
+  // css?: object;
   // isDisabled?: boolean;
 }
 
@@ -22,36 +23,40 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   // isDisabled,
   ...props
 }) => {
-  const rootButton = ["button"];
+  // const rootButton = ["button"];
 
-  if (size === "xs") {
-    rootButton.push("button-xs");
-  }
-  if (size === "sm") {
-    rootButton.push("button-sm");
-  }
-  if (size === "md") {
-    rootButton.push("button-md");
-  }
-  if (size === "lg") {
-    rootButton.push("button-lg");
-  }
+  const styles = css`
+    background: green;
+  `;
 
-  if (variant === "solid") {
-    rootButton.push("button-solid");
-  }
+  // if (size === "xs") {
+  //   rootButton.push("button-xs");
+  // }
+  // if (size === "sm") {
+  //   rootButton.push("button-sm");
+  // }
+  // if (size === "md") {
+  //   rootButton.push("button-md");
+  // }
+  // if (size === "lg") {
+  //   rootButton.push("button-lg");
+  // }
 
-  if (variant === "outline") {
-    rootButton.push("button-outline");
-  }
+  // if (variant === "solid") {
+  //   rootButton.push("button-solid");
+  // }
 
-  if (variant === "ghost") {
-    rootButton.push("button-ghost");
-  }
+  // if (variant === "outline") {
+  //   rootButton.push("button-outline");
+  // }
 
-  if (variant === "link") {
-    rootButton.push("button-link");
-  }
+  // if (variant === "ghost") {
+  //   rootButton.push("button-ghost");
+  // }
+
+  // if (variant === "link") {
+  //   rootButton.push("button-link");
+  // }
 
   // if (colorScheme === "blue") {
   //   rootButton.push("button-blue");
@@ -60,10 +65,12 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   return (
     <button
       {...props}
-      className={`
-      ${rootButton.join(" ")}
-    style = {{color}}
-     }`}
+      className={cx(styles)}
+
+      //   className={`
+      //   ${rootButton.join(" ")}
+      // style = {{color}}
+      //  }`}
     >
       {children}
     </button>
