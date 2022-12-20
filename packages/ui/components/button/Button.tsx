@@ -2,8 +2,8 @@ import "./Button.css";
 
 import { css, cx } from "@emotion/css";
 import React from "react";
-// import xw from "xwind";
 import tw from "tailwind.macro";
+import xw from "xwind";
 
 export interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
@@ -26,7 +26,7 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   // const rootButton = ["button"];
 
   const styles = css`
-    background: green;
+    ${xw`bg-blue-500 text-white font-bold py-2 px-4 rounded`}
   `;
 
   // if (size === "xs") {
