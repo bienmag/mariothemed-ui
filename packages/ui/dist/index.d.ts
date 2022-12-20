@@ -5,7 +5,6 @@ interface ButtonProps {
   color?: string;
   size?: string;
   variant?: string;
-  className?: string | string[];
 }
 declare const MyButton: React$1.FunctionComponent<ButtonProps>;
 
