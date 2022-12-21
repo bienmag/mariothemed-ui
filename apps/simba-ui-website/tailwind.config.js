@@ -4,6 +4,9 @@ module.exports = {
     "./docs/**/*.{html,js,md,tsx}",
     "./static/**/*.{html,js,md,tsx}",
   ],
+  xwind: {
+    mode: "objectstyles",
+  },
   theme: {
     extend: {
       color: {

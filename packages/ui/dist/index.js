@@ -42,17 +42,13 @@ __export(ui_exports, {
 module.exports = __toCommonJS(ui_exports);
 
 // components/button/Button.tsx
-var import_css = require("@emotion/css");
-var import_xwind = __toESM(require("xwind"));
+var import_base_min = require("tailwindcss/dist/base.min.css");
+var import_twin = __toESM(require("twin.macro"));
 var import_jsx_runtime = require("@emotion/react/jsx-runtime");
+var MyHeading = import_twin.default.h1`text-blue-500 text-2xl`;
 var MyButton = ({ children, size, variant, ...props }) => {
-  const styles = import_css.css`
-    ${import_xwind.default`bg-blue-500 text-white font-bold py-2 px-4 rounded`}
-  `;
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-    ...props,
-    className: (0, import_css.cx)(styles),
-    children,
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MyHeading, {
+    children: "hellloooo",
   });
 };
 var Button_default = MyButton;

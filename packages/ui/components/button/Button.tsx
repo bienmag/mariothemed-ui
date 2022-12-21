@@ -1,10 +1,8 @@
 import "./Button.css";
+import "tailwindcss/dist/base.min.css";
 
-import { css, cx } from "@emotion/css";
 import React from "react";
-import tw from "tailwind.macro";
-import xw from "xwind";
-
+import tw from "twin.macro";
 export interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
@@ -15,6 +13,8 @@ export interface ButtonProps {
   // isDisabled?: boolean;
 }
 
+const MyHeading = tw.h1`text-blue-500 text-2xl`;
+
 const MyButton: React.FunctionComponent<ButtonProps> = ({
   children,
   // color,
@@ -24,10 +24,6 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   ...props
 }) => {
   // const rootButton = ["button"];
-
-  const styles = css`
-    ${xw`bg-blue-500 text-white font-bold py-2 px-4 rounded`}
-  `;
 
   // if (size === "xs") {
   //   rootButton.push("button-xs");
@@ -63,17 +59,17 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   // }
 
   return (
-    <button
-      {...props}
-      className={cx(styles)}
+    <MyHeading>hellloooo</MyHeading>
+    // <button
+    //   {...props}
 
-      //   className={`
-      //   ${rootButton.join(" ")}
-      // style = {{color}}
-      //  }`}
-    >
-      {children}
-    </button>
+    //   className={`
+    //   ${rootButton.join(" ")}
+    // style = {{color}}
+    //  }`}
+    // >
+    // {/* {children}
+    // </button > */}
   );
 };
 

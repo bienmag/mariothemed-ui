@@ -1,16 +1,10 @@
 // components/button/Button.tsx
-import { css, cx } from "@emotion/css";
-import xw from "xwind";
+import "tailwindcss/dist/base.min.css";
+import tw from "twin.macro";
 import { jsx } from "@emotion/react/jsx-runtime";
+var MyHeading = tw.h1`text-blue-500 text-2xl`;
 var MyButton = ({ children, size, variant, ...props }) => {
-  const styles = css`
-    ${xw`bg-blue-500 text-white font-bold py-2 px-4 rounded`}
-  `;
-  return /* @__PURE__ */ jsx("button", {
-    ...props,
-    className: cx(styles),
-    children,
-  });
+  return /* @__PURE__ */ jsx(MyHeading, { children: "hellloooo" });
 };
 var Button_default = MyButton;
 
