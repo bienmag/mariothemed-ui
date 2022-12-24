@@ -36,7 +36,13 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <MyButton>Button</MyButton>
+        <MyButton size="sm">Small</MyButton>
+        <MyButton size="md">Std</MyButton>
+        <MyButton size="lg">Large</MyButton>
+        <MyButton variant="outline">Outline</MyButton>
+        <MyButton variant="solid">Solid</MyButton>
+        <MyButton variant="ghost">Ghost</MyButton>
+        <MyButton variant="link">Link</MyButton>
       </main>
     </Layout>
   );

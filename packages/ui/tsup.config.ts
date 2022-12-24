@@ -1,3 +1,4 @@
+import babel from "esbuild-plugin-babel";
 import { defineConfig } from "tsup";
 
 export default defineConfig({
@@ -11,4 +12,5 @@ export default defineConfig({
   },
   entryPoints: ["./index.ts"],
   format: ["cjs", "esm"],
+  esbuildPlugins: [babel()],
 });
