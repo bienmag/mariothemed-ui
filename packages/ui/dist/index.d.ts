@@ -1,34 +1,12 @@
-import React$1 from "react";
+import React from "react";
 
+declare type ButtonSize = "xs" | "sm" | "md" | "lg";
 interface ButtonProps {
-  children: string | React$1.ReactElement | React$1.ReactElement[];
+  children: string | React.ReactElement | React.ReactElement[];
   color?: string;
-  size?: string;
-  variant?: string;
+  size?: ButtonSize;
+  variant?: "outline" | "solid" | "ghost" | "link";
 }
-declare const MyButton: React$1.FunctionComponent<ButtonProps>;
+declare const MyButton: React.FunctionComponent<ButtonProps>;
 
-interface CheckboxProps {
-  size?: string;
-  color?: string;
-  className?: string;
-}
-declare const MyCheckbox: React$1.FunctionComponent<CheckboxProps>;
-
-interface InputProps {
-  variant?: string;
-  size?: string;
-  className?: string | string[];
-  placeholder?: string;
-}
-declare const MyInput: React$1.FunctionComponent<InputProps>;
-
-interface TextareaProps {
-  placeholder?: string;
-  resize?: string;
-  color?: string;
-  disabled?: boolean;
-}
-declare const MyTextarea: React.FunctionComponent<TextareaProps>;
-
-export { MyButton, MyCheckbox, MyInput, MyTextarea };
+export { MyButton };

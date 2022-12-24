@@ -18,7 +18,9 @@
     "husky": "^8.0.0",
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
-    "turbo": "latest"
+    "turbo": "latest",
+    "@babel/core": "^7.12.10",
+    "@emotion/babel-preset-css-prop": "^11.0.0"
   },
   "turbo": {
     "pipeline": {
