@@ -6,6 +6,7 @@ interface ButtonProps {
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link";
+  className?: string;
 }
 declare const MyButton: React.FunctionComponent<ButtonProps>;
 
