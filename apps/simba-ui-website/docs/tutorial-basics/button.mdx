@@ -2,6 +2,9 @@
 sidebar_position: 1
 ---
 
+import { MyButton } from "tailwind-simba-ui";
+import styles from "./pages.module.css";
+
 # Button
 
 Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
@@ -34,9 +37,20 @@ import {MyButton} from 'tailwind-simba-ui'
 
 ### Button Sizes
 
+export const ButtonSizes = ({ size }) => (
+  <div>
+    <MyButton size="xs">Button</MyButton>
+    <MyButton size="sm">Button</MyButton>
+    <MyButton size="md">Button</MyButton>
+    <MyButton size="lg">Button</MyButton>
+  </div>
+);
+
 Use the size prop to change the size of the button. You can set the value to xs, sm, md, or lg.
 
 <!-- insert button example here -->
+
+<ButtonSizes></ButtonSizes>{" "}
 
 ```
 <div>

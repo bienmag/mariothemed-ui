@@ -10,9 +10,7 @@ export interface ButtonProps {
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link";
-  // className?: string | string[];
-  // css?: object;
-  // isDisabled?: boolean;
+  className?: string;
 }
 
 const MyButton: React.FunctionComponent<ButtonProps> = ({
@@ -20,26 +18,11 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   // color,
   size,
   variant,
+  className,
   // isDisabled,
   ...props
 }) => {
   const styleOptions = [];
-
-  // .button-xs {
-  //   @apply px-4 py-1 text-xs;
-  // }
-
-  // .button-sm {
-  //   @apply px-6 py-2 text-sm;
-  // }
-
-  // .button-md {
-  //   @apply px-7 py-3 text-base;
-  // }
-
-  // .button-lg {
-  //   @apply px-8 py-4 text-lg;
-  // }
 
   const sizeMap = {
     xs: tw`px-4 py-1 text-xs`,
@@ -51,10 +34,10 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   styleOptions.push(sizeMap[size]);
 
   const variantMap = {
-    outline: tw`border border-blue-500 text-blue-500`,
-    solid: tw`bg-blue-500 text-white`,
-    ghost: tw`bg-transparent text-blue-500`,
-    link: tw`text-blue-500`,
+    outline: tw` bg-white text-yellow-800 border-solid border border-yellow-800 hover:bg-gray-100`,
+    solid: tw`rounded-xl text-white bg-yellow-800 border-solid border border-gray-300 hover:bg-yellow-900`,
+    ghost: tw`border-none bg-white text-yellow-800 hover:bg-gray-100`,
+    link: tw`border-none bg-white text-yellow-800 hover:bg-white hover:underline`,
   };
 
   styleOptions.push(variantMap[variant]);
@@ -63,11 +46,7 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   //   styleOptions.push("button-blue");
   // }
 
-  const baseStyle = tw`bg-blue-500 text-white font-bold py-2 px-4 rounded`;
-
-  // const buttonClass = css`
-  //   ${tw`bg-blue-500 text-white font-bold py-2 px-4 rounded`}
-  // `;
+  const baseStyle = tw`px-7 py-3 text-base rounded-xl text-white bg-yellow-800 border-solid border border-gray-400 hover:bg-yellow-900 `;
 
   const Button = styled.button`
     ${baseStyle}
