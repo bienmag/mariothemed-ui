@@ -38,11 +38,19 @@ import {MyButton} from 'tailwind-simba-ui'
 ### Button Sizes
 
 export const ButtonSizes = ({ size }) => (
-  <div>
-    <MyButton size="xs">Button</MyButton>
-    <MyButton size="sm">Button</MyButton>
-    <MyButton size="md">Button</MyButton>
-    <MyButton size="lg">Button</MyButton>
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyButton size="xs">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton size="sm">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton size="md">Button</MyButton>
+    </div>
+    <div>
+      <MyButton size="lg">Button</MyButton>
+    </div>
   </div>
 );
 
