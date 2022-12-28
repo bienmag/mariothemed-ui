@@ -2479,7 +2479,7 @@ module.exports = __toCommonJS(ui_exports);
 var import_styled = __toESM(require("@emotion/styled"));
 var import_react = __toESM(require_react());
 var import_react2 = require("@emotion/react");
-var MyButton = ({ children, size, variant, ...props }) => {
+var MyButton = ({ children, size, variant, className, ...props }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {

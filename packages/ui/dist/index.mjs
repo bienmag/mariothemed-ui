@@ -2466,7 +2466,7 @@ var require_react = __commonJS({
 var import_react = __toESM(require_react());
 import styled from "@emotion/styled";
 import { jsx as __cssprop } from "@emotion/react";
-var MyButton = ({ children, size, variant, ...props }) => {
+var MyButton = ({ children, size, variant, className, ...props }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
