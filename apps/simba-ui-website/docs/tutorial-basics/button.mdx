@@ -4,30 +4,18 @@ sidebar_position: 1
 
 import { MyButton } from "tailwind-simba-ui";
 import styles from "./pages.module.css";
-
-# Button
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
 
-<!-- :::tip My tip
+## Import
 
-    Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-    This action is dangerous
-
-::: -->
-
-### Import
-
-```
-import {MyButton} from 'tailwind-simba-ui'
+```js
+import { MyButton } from "tailwind-simba-ui";
 ```
 
-### Usage
+## Usage
 
 <!-- insert button example here -->
 
@@ -35,7 +23,7 @@ import {MyButton} from 'tailwind-simba-ui'
 <MyButton>Button<MyButton>
 ```
 
-### Button Sizes
+## Button Sizes
 
 export const ButtonSizes = ({ size }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
@@ -54,46 +42,49 @@ export const ButtonSizes = ({ size }) => (
   </div>
 );
 
-Use the size prop to change the size of the button. You can set the value to xs, sm, md, or lg.
+Use the size prop to change the size of the button. You can set the value to **xs**, **sm**, **md**, or **lg**.
 
 <!-- insert button example here -->
 
 <ButtonSizes></ButtonSizes>{" "}
 
-```
+```js
 <div>
-  <MyButton size='xs'>
-    Button
-  </MyButton>
-  <MyButton size='sm'>
-    Button
-  </MyButton>
-  <MyButton size='md'>
-    Button
-  </MyButton>
-  <MyButton size='lg'>
-    Button
-  </MyButton>
+  <MyButton size="xs">Button</MyButton>
+  <MyButton size="sm">Button</MyButton>
+  <MyButton size="md">Button</MyButton>
+  <MyButton size="lg">Button</MyButton>
 </div>
 ```
 
-### Button variants
+## Button variants
 
-Use the variant prop to change the visual style of the Button. You can set the value to solid, ghost, outline, or link.
+export const ButtonVariants = ({ variant }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyButton variant="solid">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton variant="outline">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton variant="ghost">Button</MyButton>
+    </div>
+    <div>
+      <MyButton variant="link">Button</MyButton>
+    </div>
+  </div>
+);
 
-```
+Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
+
+<ButtonVariants></ButtonVariants>
+
+```js
 <div>
-  <MyButton variant='solid'>
-    Button
-  </MyButton>
-  <MyButton variant='outline'>
-    Button
-  </MyButton>
-  <MyButton variant='ghost'>
-    Button
-  </MyButton>
-  <MyButton variant='link'>
-    Button
-  </MyButton>
+  <MyButton variant="solid">Button</MyButton>
+  <MyButton variant="outline">Button</MyButton>
+  <MyButton variant="ghost">Button</MyButton>
+  <MyButton variant="link">Button</MyButton>
 </div>
 ```

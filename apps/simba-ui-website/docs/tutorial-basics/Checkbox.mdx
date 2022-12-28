@@ -20,23 +20,36 @@ Checkbox component is used in forms when a user needs to select multiple values 
 
 ### Import
 
-:::tip run in the terminal
-
+```js
+import { MyCheckbox } from "tailwind-simba-ui";
 ```
-import {MyCheckbox} from 'tailwind-simba-ui'
-```
-
-:::
 
 ### Usage
 
 <!-- insert button example here -->
 
-```
+```js
 <MyCheckbox><MyCheckbox>
 ```
 
 ### Checkbox Sizes
+
+export const CheckboxSizes = ({ size }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyCheckbox size="xs">Button</MyCheckbox>
+    </div>
+    <div className="pr-2">
+      <MyCheckbox size="sm">Button</MyCheckbox>
+    </div>
+    <div className="pr-2">
+      <MyCheckbox size="md">Button</MyCheckbox>
+    </div>
+    <div>
+      <MyCheckbox size="lg">Button</MyCheckbox>
+    </div>
+  </div>
+);
 
 Use the size prop to change the size of the button. You can set the value to xs, md, or lg.
 
