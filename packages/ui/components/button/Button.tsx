@@ -1,5 +1,3 @@
-import "./Button.css";
-
 import styled from "@emotion/styled";
 import React from "react";
 import tw from "twin.macro";

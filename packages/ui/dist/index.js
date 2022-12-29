@@ -2626,7 +2626,7 @@ var MyCheckbox = ({ size, color, ...props }) => {
       ":checked": {
         borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg)')",
+        backgroundImage: "url(../tick.svg) ')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2647,7 +2647,7 @@ var MyCheckbox = ({ size, color, ...props }) => {
       ":checked": {
         borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg)')",
+        backgroundImage: "url(../tick.svg) ')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2668,7 +2668,7 @@ var MyCheckbox = ({ size, color, ...props }) => {
       ":checked": {
         borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg)')",
+        backgroundImage: "url(../tick.svg) ')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2692,7 +2692,7 @@ var MyCheckbox = ({ size, color, ...props }) => {
       borderWidth: "2px",
       "--tw-border-opacity": "1",
       borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
-      backgroundImage: "url(../tick.svg)')",
+      backgroundImage: "url(../tick.svg) ')",
       backgroundSize: "contain",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

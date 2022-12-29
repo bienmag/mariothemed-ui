@@ -3,9 +3,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {
-      backgroundImage: {
-        tick: "url(../tick.svg)')",
-      },
+      backgroundImage: (theme) => ({
+        tick: "url(../tick.svg) ')",
+      }),
     },
   },
   plugins: [],
