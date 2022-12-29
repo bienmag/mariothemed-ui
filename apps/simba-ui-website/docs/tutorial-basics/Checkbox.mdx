@@ -2,21 +2,11 @@
 sidebar_position: 2
 ---
 
+import { MyCheckbox } from "tailwind-simba-ui";
+
 # Checkbox
 
 Checkbox component is used in forms when a user needs to select multiple values from several options.
-
-<!-- :::tip My tip
-
-    Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-    This action is dangerous
-
-::: -->
 
 ### Import
 
@@ -37,38 +27,27 @@ import { MyCheckbox } from "tailwind-simba-ui";
 export const CheckboxSizes = ({ size }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyCheckbox size="xs">Button</MyCheckbox>
+      <MyCheckbox size="xs"></MyCheckbox>
     </div>
     <div className="pr-2">
-      <MyCheckbox size="sm">Button</MyCheckbox>
-    </div>
-    <div className="pr-2">
-      <MyCheckbox size="md">Button</MyCheckbox>
+      <MyCheckbox size="md"></MyCheckbox>
     </div>
     <div>
-      <MyCheckbox size="lg">Button</MyCheckbox>
+      <MyCheckbox size="lg"></MyCheckbox>
     </div>
   </div>
 );
 
-Use the size prop to change the size of the button. You can set the value to xs, md, or lg.
+Use the size prop to change the size of the button. You can set the value to **xs**, **md**, or **lg**.
 
-<!-- insert button example here -->
+<CheckboxSizes></CheckboxSizes>
 
-```
+```js
 <div>
-  <MyButton size='xs'>
-    Button
-  </MyButton>
-  <MyButton size='sm'>
-    Button
-  </MyButton>
-  <MyButton size='md'>
-    Button
-  </MyButton>
-  <MyButton size='lg'>
-    Button
-  </MyButton>
+  <MyButton size="xs">Button</MyButton>
+  <MyButton size="sm">Button</MyButton>
+  <MyButton size="md">Button</MyButton>
+  <MyButton size="lg">Button</MyButton>
 </div>
 ```
 
@@ -76,9 +55,8 @@ Use the size prop to change the size of the button. You can set the value to xs,
 
 You can override the color scheme of the Checkbox to green....and (add more colors to the package)
 
-```
+```js
 <div>
- <MyButton color='green'></MyButton>
-
+  <MyButton color="green"></MyButton>
 </div>
 ```
