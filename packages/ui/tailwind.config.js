@@ -2,7 +2,11 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        tick: "url(../tick.svg)')",
+      },
+    },
   },
   plugins: [],
   xwind: {

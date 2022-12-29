@@ -10,4 +10,11 @@ interface ButtonProps {
 }
 declare const MyButton: React.FunctionComponent<ButtonProps>;
 
-export { MyButton };
+interface CheckboxProps {
+  size?: string;
+  color?: string;
+  className?: string;
+}
+declare const MyCheckbox: React.FunctionComponent<CheckboxProps>;
+
+export { MyButton, MyCheckbox };

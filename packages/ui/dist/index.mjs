@@ -2591,7 +2591,113 @@ var MyButton = ({ children, size, variant, className, ...props }) => {
   );
 };
 var Button_default = MyButton;
-export { Button_default as MyButton };
+
+// components/checkbox/Checkbox.tsx
+var import_react3 = __toESM(require_react());
+import styled2 from "@emotion/styled";
+import { jsx as __cssprop2 } from "@emotion/react";
+var MyCheckbox = ({ size, color, ...props }) => {
+  const styleOptions = [];
+  const sizeMap = {
+    xs: {
+      position: "relative",
+      height: "0.75rem",
+      width: "0.75rem",
+      cursor: "pointer",
+      appearance: "none",
+      borderRadius: "0.25rem",
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+      ":checked": {
+        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        "--tw-border-opacity": "1",
+        backgroundImage: "url(../tick.svg)')",
+        backgroundSize: "contain",
+      },
+      ":focus": {
+        outline: "2px solid transparent",
+        outlineOffset: "2px",
+      },
+    },
+    md: {
+      position: "relative",
+      height: "1rem",
+      width: "1rem",
+      cursor: "pointer",
+      appearance: "none",
+      borderRadius: "0.25rem",
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+      ":checked": {
+        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        "--tw-border-opacity": "1",
+        backgroundImage: "url(../tick.svg)')",
+        backgroundSize: "contain",
+      },
+      ":focus": {
+        outline: "2px solid transparent",
+        outlineOffset: "2px",
+      },
+    },
+    lg: {
+      position: "relative",
+      height: "1.25rem",
+      width: "1.25rem",
+      cursor: "pointer",
+      appearance: "none",
+      borderRadius: "0.25rem",
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+      ":checked": {
+        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        "--tw-border-opacity": "1",
+        backgroundImage: "url(../tick.svg)')",
+        backgroundSize: "contain",
+      },
+      ":focus": {
+        outline: "2px solid transparent",
+        outlineOffset: "2px",
+      },
+    },
+  };
+  styleOptions.push(sizeMap[size]);
+  const baseStyle = {
+    position: "relative",
+    height: "1.5rem",
+    width: "1.5rem",
+    cursor: "pointer",
+    appearance: "none",
+    borderRadius: "0.25rem",
+    borderWidth: "2px",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    ":checked": {
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+      backgroundImage: "url(../tick.svg)')",
+      backgroundSize: "contain",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    },
+    ":focus": {
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Checkbox = styled2.input`
+    ${baseStyle}
+  `;
+  return __cssprop2(Checkbox, {
+    css: styleOptions,
+    type: "checkbox",
+  });
+};
+var Checkbox_default = MyCheckbox;
+export { Button_default as MyButton, Checkbox_default as MyCheckbox };
 /*
 object-assign
 (c) Sindre Sorhus
