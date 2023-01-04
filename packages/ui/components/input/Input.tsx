@@ -1,6 +1,6 @@
-import "./Input.css";
-
+import styled from "@emotion/styled";
 import React from "react";
+import tw from "twin.macro";
 
 export interface InputProps {
   // children: React.ReactElement | React.ReactElement[];
@@ -16,47 +16,35 @@ const MyInput: React.FunctionComponent<InputProps> = ({
   placeholder,
   ...props
 }) => {
-  const rootInput = ["input"];
+  const styleOptions = [];
 
-  if (size === "xs") {
-    rootInput.push("input-xs");
-  }
+  const sizeMap = {
+    xs: tw`px-1 py-0 text-sm rounded-md`,
+    sm: tw`px-2 py-1 text-base rounded-lg`,
+    md: tw`px-3 py-2 text-base rounded-lg`,
+    lg: tw`px-4 py-3 text-xl rounded-lg`,
+  };
 
-  if (size === "sm") {
-    rootInput.push("input-sm");
-  }
+  styleOptions.push(sizeMap[size]);
 
-  if (size === "md") {
-    rootInput.push("input-md");
-  }
-  if (size === "lg") {
-    rootInput.push("input-lg");
-  }
+  const variantMap = {
+    outline: tw`border-solid border border-gray-200`,
+    filled: tw`bg-gray-200 focus:bg-gray-100`,
+    flushed: tw`px-1 rounded-none border-l-0 border-r-0 border-t-0 border-gray-200`,
+    unstyled: tw`px-1 rounded-none border-0`,
+  };
 
-  if (variant === "outline") {
-    rootInput.push("input-outline");
-  }
+  styleOptions.push(variantMap[variant]);
 
-  if (variant === "filled") {
-    rootInput.push("input-filled");
-  }
+  //controlled input!!!!!!!!!! - ADD
 
-  if (variant === "flushed") {
-    rootInput.push("input-flushed");
-  }
-
-  if (variant === "unstyled") {
-    rootInput.push("input-unstyled");
-  }
+  const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border-solid border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
+  const Input = styled.input`
+    ${baseStyle}
+  `;
 
   return (
-    <input
-      {...props}
-      type="text"
-      placeholder={placeholder}
-      className={`
-  ${rootInput.join(" ")}`}
-    ></input>
+    <Input type="text" placeholder={placeholder} css={styleOptions}></Input>
   );
 };
 

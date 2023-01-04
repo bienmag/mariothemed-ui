@@ -17,4 +17,12 @@ interface CheckboxProps {
 }
 declare const MyCheckbox: React.FunctionComponent<CheckboxProps>;
 
-export { MyButton, MyCheckbox };
+interface InputProps {
+  variant?: string;
+  size?: string;
+  className?: string | string[];
+  placeholder?: string;
+}
+declare const MyInput: React.FunctionComponent<InputProps>;
+
+export { MyButton, MyCheckbox, MyInput };
