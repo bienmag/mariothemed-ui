@@ -37,7 +37,7 @@ const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
 
   styleOptions.push(colorMap[color]);
 
-  const baseStyle = tw`appearance-none relative w-6 h-6 rounded border-2 border-gray-300 cursor-pointer 
+  const baseStyle = tw`appearance-none relative w-4 h-4 rounded border-2 border-gray-300 cursor-pointer 
   checked:bg-test  checked:bg-center checked:bg-no-repeat  checked:border-yellow-800
   checked:bg-contain checked:border-2  focus:outline-none`;
 

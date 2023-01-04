@@ -2473,6 +2473,7 @@ var ui_exports = {};
 __export(ui_exports, {
   MyButton: () => Button_default,
   MyCheckbox: () => Checkbox_default,
+  MyInput: () => Input_default,
 });
 module.exports = __toCommonJS(ui_exports);
 
@@ -2704,8 +2705,8 @@ var MyCheckbox = ({ size, color, ...props }) => {
   styleOptions.push(colorMap[color]);
   const baseStyle = {
     position: "relative",
-    height: "1.5rem",
-    width: "1.5rem",
+    height: "1rem",
+    width: "1rem",
     cursor: "pointer",
     appearance: "none",
     borderRadius: "0.25rem",
@@ -2736,11 +2737,123 @@ var MyCheckbox = ({ size, color, ...props }) => {
   });
 };
 var Checkbox_default = MyCheckbox;
+
+// components/input/Input.tsx
+var import_styled3 = __toESM(require("@emotion/styled"));
+var import_react5 = __toESM(require_react());
+var import_react6 = require("@emotion/react");
+var MyInput = ({ variant, size, placeholder, ...props }) => {
+  const styleOptions = [];
+  const sizeMap = {
+    xs: {
+      borderRadius: "0.375rem",
+      paddingLeft: "0.25rem",
+      paddingRight: "0.25rem",
+      paddingTop: "0px",
+      paddingBottom: "0px",
+      fontSize: "0.875rem",
+      lineHeight: "1.25rem",
+    },
+    sm: {
+      borderRadius: "0.5rem",
+      paddingLeft: "0.5rem",
+      paddingRight: "0.5rem",
+      paddingTop: "0.25rem",
+      paddingBottom: "0.25rem",
+      fontSize: "1rem",
+      lineHeight: "1.5rem",
+    },
+    md: {
+      borderRadius: "0.5rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
+      paddingTop: "0.5rem",
+      paddingBottom: "0.5rem",
+      fontSize: "1rem",
+      lineHeight: "1.5rem",
+    },
+    lg: {
+      borderRadius: "0.5rem",
+      paddingLeft: "1rem",
+      paddingRight: "1rem",
+      paddingTop: "0.75rem",
+      paddingBottom: "0.75rem",
+      fontSize: "1.25rem",
+      lineHeight: "1.75rem",
+    },
+  };
+  styleOptions.push(sizeMap[size]);
+  const variantMap = {
+    outline: {
+      borderWidth: "1px",
+      borderStyle: "solid",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+    },
+    filled: {
+      "--tw-bg-opacity": "1",
+      backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+      ":focus": {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+      },
+    },
+    flushed: {
+      borderRadius: "0px",
+      borderLeftWidth: "0px",
+      borderRightWidth: "0px",
+      borderTopWidth: "0px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+      paddingLeft: "0.25rem",
+      paddingRight: "0.25rem",
+    },
+    unstyled: {
+      borderRadius: "0px",
+      borderWidth: "0px",
+      paddingLeft: "0.25rem",
+      paddingRight: "0.25rem",
+    },
+  };
+  styleOptions.push(variantMap[variant]);
+  const baseStyle = {
+    width: "100%",
+    borderRadius: "0.5rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    paddingLeft: "0.75rem",
+    paddingRight: "0.75rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    fontSize: "1rem",
+    lineHeight: "1.5rem",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 0 0 / var(--tw-text-opacity))",
+    ":focus": {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Input = import_styled3.default.input`
+    ${baseStyle}
+  `;
+  return (0, import_react6.jsx)(Input, {
+    type: "text",
+    placeholder,
+    css: styleOptions,
+  });
+};
+var Input_default = MyInput;
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
     MyButton,
     MyCheckbox,
+    MyInput,
   });
 /*
 object-assign
