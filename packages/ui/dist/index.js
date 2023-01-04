@@ -2624,9 +2624,10 @@ var MyCheckbox = ({ size, color, ...props }) => {
       "--tw-border-opacity": "1",
       borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
       ":checked": {
-        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg) ')",
+        backgroundImage:
+          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2645,9 +2646,10 @@ var MyCheckbox = ({ size, color, ...props }) => {
       "--tw-border-opacity": "1",
       borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
       ":checked": {
-        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg) ')",
+        backgroundImage:
+          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2666,9 +2668,10 @@ var MyCheckbox = ({ size, color, ...props }) => {
       "--tw-border-opacity": "1",
       borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
       ":checked": {
-        borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
+        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
         "--tw-border-opacity": "1",
-        backgroundImage: "url(../tick.svg) ')",
+        backgroundImage:
+          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
         backgroundSize: "contain",
       },
       ":focus": {
@@ -2678,6 +2681,27 @@ var MyCheckbox = ({ size, color, ...props }) => {
     },
   };
   styleOptions.push(sizeMap[size]);
+  const colorMap = {
+    green: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(22 163 74 / var(--tw-border-opacity))",
+      },
+    },
+    blue: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(30 64 175 / var(--tw-border-opacity))",
+      },
+    },
+    yellow: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(253 224 71 / var(--tw-border-opacity))",
+      },
+    },
+  };
+  styleOptions.push(colorMap[color]);
   const baseStyle = {
     position: "relative",
     height: "1.5rem",
@@ -2691,8 +2715,9 @@ var MyCheckbox = ({ size, color, ...props }) => {
     ":checked": {
       borderWidth: "2px",
       "--tw-border-opacity": "1",
-      borderColor: "rgb(153 27 27 / var(--tw-border-opacity))",
-      backgroundImage: "url(../tick.svg) ')",
+      borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
+      backgroundImage:
+        "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
       backgroundSize: "contain",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

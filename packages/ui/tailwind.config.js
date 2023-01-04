@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        tick: "url(../tick.svg) ')",
+        test: "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
+        tick: "url('./tick.svg')",
       }),
     },
   },
