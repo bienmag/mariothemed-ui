@@ -25,4 +25,12 @@ interface InputProps {
 }
 declare const MyInput: React.FunctionComponent<InputProps>;
 
-export { MyButton, MyCheckbox, MyInput };
+interface TextareaProps {
+  placeholder?: string;
+  resize?: string;
+  color?: string;
+  disabled?: boolean;
+}
+declare const MyTextarea: React.FunctionComponent<TextareaProps>;
+
+export { MyButton, MyCheckbox, MyInput, MyTextarea };

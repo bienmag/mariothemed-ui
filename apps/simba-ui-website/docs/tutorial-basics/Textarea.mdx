@@ -1,0 +1,46 @@
+---
+sidebar_position: 4
+---
+
+import { MyTextarea } from "tailwind-simba-ui";
+import styles from "./pages.module.css";
+
+The Textarea component allows you to easily create multi-line text inputs.
+
+## Import
+
+```js
+import { MyTextarea } from "tailwind-simba-ui";
+```
+
+## Usage
+
+export const BasicUsage = () => (
+  <div className="border-2 rounded-xl mb-4">
+    <div className="m-2">
+      <MyTextarea placeholder="Here is a sample placeholder" />
+    </div>
+  </div>
+);
+
+<BasicUsage></BasicUsage>
+
+```js
+<MyTextarea placeholder="Here is a sample placeholder" />
+```
+
+## Resize behavior
+
+export const TextareaResize = ({ resize }) => (
+  <div className="border-2 rounded-xl mb-4">
+    <div className="m-2">
+      <MyTextarea resize="horizontal" placeholder="Horizontal" />
+      <MyTextarea horizontal="both" placeholder="Both" />
+      <MyTextarea horizontal="both" placeholder="None" />
+    </div>
+  </div>
+);
+
+You can add resize prop to change the Textarea resize behavior. **Horizontal**, **both** or **none**.
+
+<TextareaResize></TextareaResize>

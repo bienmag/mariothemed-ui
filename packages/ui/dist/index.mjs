@@ -2833,10 +2833,79 @@ var MyInput = ({ variant, size, placeholder, ...props }) => {
   });
 };
 var Input_default = MyInput;
+
+// components/textarea/Textarea.tsx
+var import_react7 = __toESM(require_react());
+import styled4 from "@emotion/styled";
+import { jsx as __cssprop4 } from "@emotion/react";
+function _extends() {
+  _extends = Object.assign
+    ? Object.assign.bind()
+    : function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      };
+  return _extends.apply(this, arguments);
+}
+var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
+  const styleOptions = [];
+  const resizeMap = {
+    none: {
+      resize: "none",
+    },
+    both: {
+      resize: "both",
+    },
+    horizontal: {
+      resize: "horizontal",
+    },
+  };
+  styleOptions.push(resizeMap[resize]);
+  const baseStyle = {
+    height: "4rem",
+    maxWidth: "min-content",
+    resize: "vertical",
+    borderRadius: "0.5rem",
+    borderWidth: "2px",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+    padding: "1rem",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 0 0 / var(--tw-text-opacity))",
+    ":focus": {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(127 29 29 / var(--tw-border-opacity))",
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Textarea = styled4.textarea`
+    ${baseStyle}
+  `;
+  return __cssprop4(
+    Textarea,
+    _extends({}, props, {
+      placeholder,
+      disabled,
+      css: styleOptions,
+    })
+  );
+};
+var Textarea_default = MyTextarea;
 export {
   Button_default as MyButton,
   Checkbox_default as MyCheckbox,
   Input_default as MyInput,
+  Textarea_default as MyTextarea,
 };
 /*
 object-assign

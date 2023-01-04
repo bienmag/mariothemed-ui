@@ -2474,6 +2474,7 @@ __export(ui_exports, {
   MyButton: () => Button_default,
   MyCheckbox: () => Checkbox_default,
   MyInput: () => Input_default,
+  MyTextarea: () => Textarea_default,
 });
 module.exports = __toCommonJS(ui_exports);
 
@@ -2848,12 +2849,81 @@ var MyInput = ({ variant, size, placeholder, ...props }) => {
   });
 };
 var Input_default = MyInput;
+
+// components/textarea/Textarea.tsx
+var import_styled4 = __toESM(require("@emotion/styled"));
+var import_react7 = __toESM(require_react());
+var import_react8 = require("@emotion/react");
+function _extends() {
+  _extends = Object.assign
+    ? Object.assign.bind()
+    : function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      };
+  return _extends.apply(this, arguments);
+}
+var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
+  const styleOptions = [];
+  const resizeMap = {
+    none: {
+      resize: "none",
+    },
+    both: {
+      resize: "both",
+    },
+    horizontal: {
+      resize: "horizontal",
+    },
+  };
+  styleOptions.push(resizeMap[resize]);
+  const baseStyle = {
+    height: "4rem",
+    maxWidth: "min-content",
+    resize: "vertical",
+    borderRadius: "0.5rem",
+    borderWidth: "2px",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+    padding: "1rem",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 0 0 / var(--tw-text-opacity))",
+    ":focus": {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(127 29 29 / var(--tw-border-opacity))",
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Textarea = import_styled4.default.textarea`
+    ${baseStyle}
+  `;
+  return (0, import_react8.jsx)(
+    Textarea,
+    _extends({}, props, {
+      placeholder,
+      disabled,
+      css: styleOptions,
+    })
+  );
+};
+var Textarea_default = MyTextarea;
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
     MyButton,
     MyCheckbox,
     MyInput,
+    MyTextarea,
   });
 /*
 object-assign
