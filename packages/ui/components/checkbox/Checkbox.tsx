@@ -20,20 +20,25 @@ const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   const styleOptions = [];
 
   const sizeMap = {
-    xs: tw`appearance-none relative w-3 h-3 rounded border-2 border-gray-300 cursor-pointer checked:bg-tick checked:bg-contain checked:border-transparent checked:border-red-800 focus:outline-none`,
+    xs: tw`appearance-none relative w-3 h-3 rounded border-2 border-gray-300 cursor-pointer checked:bg-test checked:bg-contain checked:border-transparent checked:border-yellow-800 focus:outline-none`,
     md: tw`appearance-none relative w-4 h-4 rounded border-2 border-gray-300 cursor-pointer  
-    checked:bg-tick checked:bg-contain checked:border-transparent  focus:outline-none checked:border-red-800`,
+    checked:bg-test checked:bg-contain checked:border-transparent  focus:outline-none checked:border-yellow-800`,
     lg: tw`appearance-none relative w-5 h-5 rounded border-2 border-gray-300 cursor-pointer  
-    checked:bg-tick checked:bg-contain checked:border-transparent  focus:outline-none checked:border-red-800`,
+    checked:bg-test checked:bg-contain checked:border-transparent  focus:outline-none checked:border-yellow-800`,
   };
 
   styleOptions.push(sizeMap[size]);
 
-  // if (color === "green") {
-  //   rootCheckbox.push("checkbox-green");
-  // }
+  const colorMap = {
+    green: tw`checked:border-green-600`,
+    blue: tw`checked:border-blue-800`,
+    yellow: tw`checked:border-yellow-300`,
+  };
 
-  const baseStyle = tw`appearance-none relative w-6 h-6 rounded border-2 border-gray-300 cursor-pointer checked:bg-tick checked:bg-center checked:bg-no-repeat  checked:border-red-800
+  styleOptions.push(colorMap[color]);
+
+  const baseStyle = tw`appearance-none relative w-6 h-6 rounded border-2 border-gray-300 cursor-pointer 
+  checked:bg-test  checked:bg-center checked:bg-no-repeat  checked:border-yellow-800
   checked:bg-contain checked:border-2  focus:outline-none`;
 
   const Checkbox = styled.input`

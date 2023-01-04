@@ -34,7 +34,7 @@ export const CheckboxSizes = ({ size }) => (
       <MyCheckbox size="md"></MyCheckbox>
     </div>
     <div>
-      <MyCheckbox></MyCheckbox>
+      <MyCheckbox size="lg"></MyCheckbox>
     </div>
   </div>
 );
@@ -54,11 +54,28 @@ Use the size prop to change the size of the button. You can set the value to **x
 
 ### Checkbox with custom color
 
-You can override the color scheme of the Checkbimport styles from "./pages.module.css";
-ox to green....and (add more colors to the package)
+export const CheckboxColors = ({ color }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyCheckbox color="green"></MyCheckbox>
+    </div>
+    <div className="pr-2">
+      <MyCheckbox color="blue"></MyCheckbox>
+    </div>
+    <div>
+      <MyCheckbox color="yellow"></MyCheckbox>
+    </div>
+  </div>
+);
+
+You can override the color scheme of the Checkbox to other color key: green, blue or yellow.
+
+<CheckboxColors></CheckboxColors>
 
 ```js
 <div>
   <MyButton color="green"></MyButton>
+  <MyButton color="blue"></MyButton>
+  <MyButton color="yellow"></MyButton>
 </div>
 ```
