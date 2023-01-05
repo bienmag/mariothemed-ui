@@ -4,6 +4,8 @@ sidebar_position: 4
 
 import { MyTextarea } from "tailwind-simba-ui";
 import styles from "./pages.module.css";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 The Textarea component allows you to easily create multi-line text inputs.
 
@@ -34,9 +36,20 @@ export const BasicUsage = () => (
 export const TextareaResize = ({ resize }) => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
-      <MyTextarea resize="horizontal" placeholder="Horizontal" />
-      <MyTextarea horizontal="both" placeholder="Both" />
-      <MyTextarea horizontal="both" placeholder="None" />
+      <Tabs>
+        <TabItem value="vertical" label="Vertical">
+          <MyTextarea resize="vertical" placeholder="Vertical" />
+        </TabItem>
+        <TabItem value="horizontal" label="Horizontal">
+          <MyTextarea resize="horizontal" placeholder="Horizontal" />
+        </TabItem>
+        <TabItem value="both" label="Both">
+          <MyTextarea resize="both" placeholder="Both" />
+        </TabItem>
+        <TabItem value="none" label="None">
+          <MyTextarea resize="none" placeholder="None" />
+        </TabItem>
+      </Tabs>
     </div>
   </div>
 );
@@ -44,3 +57,19 @@ export const TextareaResize = ({ resize }) => (
 You can add resize prop to change the Textarea resize behavior. **Horizontal**, **both** or **none**.
 
 <TextareaResize></TextareaResize>
+
+## Disabled textarea
+
+export const Disabled = () => (
+  <div className="border-2 rounded-xl mb-4">
+    <div className="m-2">
+      <MyTextarea disabled placeholder="Here is a sample placeholder" />
+    </div>
+  </div>
+);
+
+<Disabled></Disabled>
+
+```js
+<MyTextarea disabled placeholder="Here is a sample placeholder" />
+```

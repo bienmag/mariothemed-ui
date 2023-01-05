@@ -2866,12 +2866,25 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
     horizontal: {
       resize: "horizontal",
     },
+    vertical: {
+      resize: "vertical",
+    },
   };
   styleOptions.push(resizeMap[resize]);
+  disabled: ({
+    cursor: "not-allowed",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(229 231 235 / var(--tw-text-opacity))",
+  });
   const baseStyle = {
     height: "4rem",
-    maxWidth: "min-content",
-    resize: "vertical",
+    width: "100%",
+    minWidth: "min-content",
+    maxWidth: "100%",
     borderRadius: "0.5rem",
     borderWidth: "2px",
     "--tw-border-opacity": "1",
