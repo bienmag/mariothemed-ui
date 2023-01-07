@@ -2871,15 +2871,6 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
     },
   };
   styleOptions.push(resizeMap[resize]);
-  disabled: ({
-    cursor: "not-allowed",
-    "--tw-border-opacity": "1",
-    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-    "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
-    "--tw-text-opacity": "1",
-    color: "rgb(229 231 235 / var(--tw-text-opacity))",
-  });
   const baseStyle = {
     height: "4rem",
     width: "100%",

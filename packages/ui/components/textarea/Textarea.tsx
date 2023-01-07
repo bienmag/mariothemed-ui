@@ -26,7 +26,7 @@ const MyTextarea: React.FunctionComponent<TextareaProps> = ({
 
   styleOptions.push(resizeMap[resize]);
 
-  disabled: tw`bg-gray-200 text-gray-200 border-gray-200 cursor-not-allowed`;
+  // disabled: tw`bg-gray-200 text-gray-200 border-gray-200 cursor-not-allowed`;
 
   // styleOptions.push(disabled);
 
