@@ -14,6 +14,7 @@ interface CheckboxProps {
   size?: string;
   color?: string;
   className?: string;
+  disabled: any;
 }
 declare const MyCheckbox: React.FunctionComponent<CheckboxProps>;
 

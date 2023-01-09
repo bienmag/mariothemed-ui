@@ -2612,7 +2612,7 @@ var Button_default = MyButton;
 var import_styled2 = __toESM(require("@emotion/styled"));
 var import_react3 = __toESM(require_react());
 var import_react4 = require("@emotion/react");
-var MyCheckbox = ({ size, color, ...props }) => {
+var MyCheckbox = ({ size, color, disabled, ...props }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -2735,6 +2735,7 @@ var MyCheckbox = ({ size, color, ...props }) => {
   return (0, import_react4.jsx)(Checkbox, {
     css: styleOptions,
     type: "checkbox",
+    disabled,
   });
 };
 var Checkbox_default = MyCheckbox;

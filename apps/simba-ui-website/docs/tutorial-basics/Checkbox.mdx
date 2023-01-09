@@ -77,3 +77,15 @@ You can override the color scheme of the Checkbox to other color key: green, blu
   <MyButton color="yellow"></MyButton>
 </div>
 ```
+
+### Disabled Checkbox
+
+export const DisabledCheckbox = () => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pl-2">
+      <MyCheckbox disabled checked></MyCheckbox>
+    </div>
+  </div>
+);
+
+<DisabledCheckbox></DisabledCheckbox>

@@ -17,6 +17,8 @@ const MyTextarea: React.FunctionComponent<TextareaProps> = ({
 }) => {
   const styleOptions = [];
 
+  // check vertical resize - появляется скролл если эриа меньше размера букв!
+
   const resizeMap = {
     none: tw`resize-none`,
     both: tw`resize`,

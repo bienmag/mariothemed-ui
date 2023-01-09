@@ -9,12 +9,14 @@ export interface CheckboxProps {
   size?: string;
   color?: string;
   className?: string;
+  disabled;
 }
 
 const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   // children,
   size,
   color,
+  disabled,
   ...props
 }) => {
   const styleOptions = [];
@@ -41,11 +43,15 @@ const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   checked:bg-test  checked:bg-center checked:bg-no-repeat  checked:border-yellow-800
   checked:bg-contain checked:border-2  focus:outline-none`;
 
+  // default checked!
+
   const Checkbox = styled.input`
     ${baseStyle}
   `;
 
-  return <Checkbox css={styleOptions} type="checkbox"></Checkbox>;
+  return (
+    <Checkbox css={styleOptions} type="checkbox" disabled={disabled}></Checkbox>
+  );
 };
 
 export default MyCheckbox;
