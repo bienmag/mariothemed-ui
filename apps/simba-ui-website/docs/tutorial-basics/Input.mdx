@@ -4,6 +4,7 @@ sidebar_position: 3
 
 import { MyInput } from "tailwind-simba-ui";
 import styles from "./pages.module.css";
+import { useState } from "react";
 
 # Input
 
@@ -96,3 +97,23 @@ The input component comes in 4 variants: **outline**, **filled**, **flushed**, o
   <MyInput variant="unstyled" placeholder="Unstyled" />
 </div>
 ```
+
+## Controlled input
+
+export const ControlledInput = function Controlled() {
+  const [myText, setMyText] = useState("");
+  function handleChange(e) {
+    setMyText(e.target.value);
+    console.log("value", myText);
+  }
+  return (
+    <div className="flex flex-col border-2 rounded-xl mb-4">
+      <div className="m-2">
+        <span className="bg-red-200 text-white"> Value = {myText}</span>
+        <MyInput value onChange={handleChange}></MyInput>
+      </div>
+    </div>
+  );
+};
+
+<ControlledInput></ControlledInput>

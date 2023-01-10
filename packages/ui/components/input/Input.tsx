@@ -8,12 +8,14 @@ export interface InputProps {
   size?: string;
   className?: string | string[];
   placeholder?: string;
+  value?: string;
   // isDisabled?: boolean;
 }
 const MyInput: React.FunctionComponent<InputProps> = ({
   variant,
   size,
   placeholder,
+  value,
   ...props
 }) => {
   const styleOptions = [];
@@ -44,7 +46,12 @@ const MyInput: React.FunctionComponent<InputProps> = ({
   `;
 
   return (
-    <Input type="text" placeholder={placeholder} css={styleOptions}></Input>
+    <Input
+      type="text"
+      placeholder={placeholder}
+      css={styleOptions}
+      value={value}
+    ></Input>
   );
 };
 

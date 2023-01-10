@@ -2728,7 +2728,7 @@ var Checkbox_default = MyCheckbox;
 var import_react5 = __toESM(require_react());
 import styled3 from "@emotion/styled";
 import { jsx as __cssprop3 } from "@emotion/react";
-var MyInput = ({ variant, size, placeholder, ...props }) => {
+var MyInput = ({ variant, size, placeholder, value, ...props }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -2831,6 +2831,7 @@ var MyInput = ({ variant, size, placeholder, ...props }) => {
     type: "text",
     placeholder,
     css: styleOptions,
+    value,
   });
 };
 var Input_default = MyInput;
