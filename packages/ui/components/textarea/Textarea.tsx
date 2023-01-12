@@ -30,9 +30,11 @@ const MyTextarea: React.FunctionComponent<TextareaProps> = ({
 
   disabled: tw`bg-gray-200 text-gray-200 border-gray-200 cursor-not-allowed`;
 
-  // styleOptions.push(disabled);
+  // styleOptions.push(disabled); ???
 
   //add controlled textarea
+
+  //invalid textarea
 
   const baseStyle = tw`p-4 bg-gray-100 text-black w-full h-16
   border-2 border-gray-300 rounded-lg focus:outline-none focus:border-red-900 max-w-full min-w-min`;

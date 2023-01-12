@@ -40,6 +40,10 @@ const MyInput: React.FunctionComponent<InputProps> = ({
 
   //controlled input!!!!!!!!!! - ADD
 
+  //invalid input
+
+  //disapled input
+
   const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border-solid border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
   const Input = styled.input`
     ${baseStyle}
