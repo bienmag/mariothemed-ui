@@ -2474,6 +2474,7 @@ __export(ui_exports, {
   MyButton: () => Button_default,
   MyCheckbox: () => Checkbox_default,
   MyInput: () => Input_default,
+  MyRadio: () => Radio_default,
   MyTextarea: () => Textarea_default,
 });
 module.exports = __toCommonJS(ui_exports);
@@ -2932,12 +2933,55 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
   );
 };
 var Textarea_default = MyTextarea;
+
+// components/radio/Radio.tsx
+var import_styled5 = __toESM(require("@emotion/styled"));
+var import_react9 = __toESM(require_react());
+var import_react10 = require("@emotion/react");
+var MyRadio = ({ variant, size, ...props }) => {
+  const styleOptions = [];
+  const baseStyle = {
+    width: "100%",
+    borderRadius: "0.5rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    paddingLeft: "0.75rem",
+    paddingRight: "0.75rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    fontSize: "1rem",
+    lineHeight: "1.5rem",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 0 0 / var(--tw-text-opacity))",
+    ":focus": {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Radio = import_styled5.default.input`
+    ${baseStyle}
+  `;
+  return (0, import_react10.jsx)(
+    Radio,
+    {
+      css: styleOptions,
+      type: "checkbox",
+    },
+    " "
+  );
+};
+var Radio_default = MyRadio;
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
     MyButton,
     MyCheckbox,
     MyInput,
+    MyRadio,
     MyTextarea,
   });
 /*

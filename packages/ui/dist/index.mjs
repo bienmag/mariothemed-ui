@@ -2916,10 +2916,53 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
   );
 };
 var Textarea_default = MyTextarea;
+
+// components/radio/Radio.tsx
+var import_react9 = __toESM(require_react());
+import styled5 from "@emotion/styled";
+import { jsx as __cssprop5 } from "@emotion/react";
+var MyRadio = ({ variant, size, ...props }) => {
+  const styleOptions = [];
+  const baseStyle = {
+    width: "100%",
+    borderRadius: "0.5rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+    paddingLeft: "0.75rem",
+    paddingRight: "0.75rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    fontSize: "1rem",
+    lineHeight: "1.5rem",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 0 0 / var(--tw-text-opacity))",
+    ":focus": {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
+  };
+  const Radio = styled5.input`
+    ${baseStyle}
+  `;
+  return __cssprop5(
+    Radio,
+    {
+      css: styleOptions,
+      type: "checkbox",
+    },
+    " "
+  );
+};
+var Radio_default = MyRadio;
 export {
   Button_default as MyButton,
   Checkbox_default as MyCheckbox,
   Input_default as MyInput,
+  Radio_default as MyRadio,
   Textarea_default as MyTextarea,
 };
 /*

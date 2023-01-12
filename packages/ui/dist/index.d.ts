@@ -35,4 +35,11 @@ interface TextareaProps {
 }
 declare const MyTextarea: React.FunctionComponent<TextareaProps>;
 
-export { MyButton, MyCheckbox, MyInput, MyTextarea };
+interface RadioProps {
+  variant?: string;
+  size?: string;
+  className?: string | string[];
+}
+declare const MyRadio: React.FunctionComponent<RadioProps>;
+
+export { MyButton, MyCheckbox, MyInput, MyRadio, MyTextarea };
