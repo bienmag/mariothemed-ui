@@ -6,3 +6,5 @@ import MyInput from "./input/Input";
 export { MyInput };
 import MyTextarea from "./textarea/Textarea";
 export { MyTextarea };
+import MyRadio from "./radio/Radio";
+export { MyRadio };
