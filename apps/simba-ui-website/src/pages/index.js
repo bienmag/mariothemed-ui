@@ -16,10 +16,16 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg mt-5"
+            className="button button--secondary bg-gray-300 button--lg mt-5"
             to="/docs/intro"
           >
             Get Started 🚀
+          </Link>
+          <Link
+            className="button button--secondary button--lg mt-5 ml-5"
+            to="https://github.com/bienmag/simba-ui"
+          >
+            GitHub ⭐️
           </Link>
         </div>
       </div>
