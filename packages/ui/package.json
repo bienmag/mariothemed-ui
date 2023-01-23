@@ -1,13 +1,14 @@
 {
   "name": "tailwind-simba-ui",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "publish": "npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

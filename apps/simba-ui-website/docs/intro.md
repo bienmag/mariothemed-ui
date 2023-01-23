@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import Tabs from "@theme/Tabs";
+
 # Welcome to Simba UI!
 
 ## Installation
@@ -12,27 +14,13 @@ To use **Tailwind Simba UI** in your project, run one of the following commands 
 npm i tailwind-simba-ui
 ```
 
+or
+
 ```bash
-yarn ? {check if it's working}
+yarn add tailwind-simba-ui
 ```
 
-You should be working in a Next JS project with Tailwind installed. {check if it's true}
-
-For Next JS to be able to transpile the module:
-
-```
-npm i next-transpile-modules
-```
-
-And add the following to your next.config.js
-
-```
-const withTM = require("next-transpile-modules")(["tailwind-simba-ui"]);
-
-module.exports = withTM({
-  reactStrictMode: true,
-});
-```
+Now you can use Tailwind Simba UI in your favorite framework with Tailwind installed.
 
 ## Contribute
 
