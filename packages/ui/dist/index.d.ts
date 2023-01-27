@@ -24,6 +24,8 @@ interface InputProps {
   className?: string | string[];
   placeholder?: string;
   value?: string;
+  onChange?: string;
+  myText?: string;
 }
 declare const MyInput: React.FunctionComponent<InputProps>;
 

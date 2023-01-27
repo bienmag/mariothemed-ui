@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 
 export interface InputProps {
@@ -9,13 +9,15 @@ export interface InputProps {
   className?: string | string[];
   placeholder?: string;
   value?: string;
+  onChange?: string;
+  myText?: string;
+
   // isDisabled?: boolean;
 }
 const MyInput: React.FunctionComponent<InputProps> = ({
   variant,
   size,
   placeholder,
-  value,
   ...props
 }) => {
   const styleOptions = [];
@@ -49,12 +51,19 @@ const MyInput: React.FunctionComponent<InputProps> = ({
     ${baseStyle}
   `;
 
+  const [myText, setMyText] = useState();
+
+  function HandleChange(e) {
+    setMyText(e.target.value);
+  }
+
   return (
     <Input
       type="text"
       placeholder={placeholder}
       css={styleOptions}
-      value={value}
+      onChange={HandleChange}
+      value={myText}
     ></Input>
   );
 };

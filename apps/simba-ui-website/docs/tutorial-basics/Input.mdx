@@ -100,17 +100,14 @@ The input component comes in 4 variants: **outline**, **filled**, **flushed**, o
 
 ## Controlled input
 
-export const ControlledInput = function Controlled() {
-  const [myText, setMyText] = useState("");
-  function handleChange(e) {
-    setMyText(e.target.value);
-    console.log("value", myText);
-  }
+export const ControlledInput = function Controlled({ onChange, myText }) {
+  console.log(myText);
   return (
     <div className="flex flex-col border-2 rounded-xl mb-4">
       <div className="m-2">
-        <span className="bg-red-200 text-white"> Value = {myText}</span>
-        <MyInput value onChange={handleChange}></MyInput>
+        <span className="bg-red-200 text-white"></span>
+        <p>value = {myText}</p>
+        <MyInput onChange={(e) => onChange(e.target.value)}></MyInput>
       </div>
     </div>
   );
