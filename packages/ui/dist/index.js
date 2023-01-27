@@ -1750,7 +1750,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context, unstable_observedBits);
         }
-        function useState(initialState) {
+        function useState2(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -2449,7 +2449,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo;
         exports.useReducer = useReducer;
         exports.useRef = useRef;
-        exports.useState = useState;
+        exports.useState = useState2;
         exports.version = ReactVersion;
       })();
     }
@@ -2745,7 +2745,7 @@ var Checkbox_default = MyCheckbox;
 var import_styled3 = __toESM(require("@emotion/styled"));
 var import_react5 = __toESM(require_react());
 var import_react6 = require("@emotion/react");
-var MyInput = ({ variant, size, placeholder, value, ...props }) => {
+var MyInput = ({ variant, size, placeholder, ...props }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -2844,11 +2844,16 @@ var MyInput = ({ variant, size, placeholder, value, ...props }) => {
   const Input = import_styled3.default.input`
     ${baseStyle}
   `;
+  const [myText, setMyText] = (0, import_react5.useState)();
+  function HandleChange(e) {
+    setMyText(e.target.value);
+  }
   return (0, import_react6.jsx)(Input, {
     type: "text",
     placeholder,
     css: styleOptions,
-    value,
+    onChange: HandleChange,
+    value: myText,
   });
 };
 var Input_default = MyInput;
