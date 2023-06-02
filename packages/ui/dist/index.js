@@ -2806,7 +2806,7 @@ var MyButton = ({ children, size, variant, className, ...props }) => {
     "--tw-border-opacity": "1",
     borderColor: "rgb(156 163 175 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(251 208 0 / var(--tw-bg-opacity))",
+    backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
     paddingLeft: "1.75rem",
     paddingRight: "1.75rem",
     paddingTop: "0.75rem",
