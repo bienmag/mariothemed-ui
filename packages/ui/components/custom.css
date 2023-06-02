@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "SuperMario";
+  src: url("./fonts/SuperMario256.ttf") format("truetype");
+}
+
+:root {
+  --ifm-font-family-monospace: "SuperMario";
+  --ifm-font-family-base: "SuperMario";
+}

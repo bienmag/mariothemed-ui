@@ -33,9 +33,9 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
 
   const variantMap = {
     outline: tw` bg-white text-yellow-800 border-solid border border-yellow-800 hover:bg-gray-100`,
-    solid: tw`rounded-xl text-white bg-yellow-800 border-solid border border-gray-300 hover:bg-yellow-900`,
-    ghost: tw`border-none bg-white text-yellow-800 hover:bg-gray-100`,
-    link: tw`border-none bg-white text-yellow-800 hover:bg-white hover:underline`,
+    solid: tw` rounded-xl text-white bg-yellow-800 border-solid border border-gray-300 hover:bg-yellow-900`,
+    ghost: tw`  border-none bg-white text-yellow-800 hover:bg-gray-100`,
+    link: tw` border-none bg-white text-yellow-800 hover:bg-white hover:underline`,
   };
 
   styleOptions.push(variantMap[variant]);
@@ -44,13 +44,19 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   //   styleOptions.push("button-blue");
   // }
 
-  const baseStyle = tw`px-7 py-3 text-base rounded-xl text-white bg-yellow-800 border-solid border border-gray-400 hover:bg-yellow-900 `;
+  const baseStyle = tw` px-7 py-3 text-base rounded-xl text-white bg-myellow border-solid border border-gray-400 hover:bg-yellow-900 `;
 
   const Button = styled.button`
     ${baseStyle}
   `;
 
-  return <Button css={styleOptions}>{children}</Button>;
+  return (
+    <>
+      <Button className="font-mario" css={styleOptions}>
+        {children}
+      </Button>
+    </>
+  );
 };
 
 export default MyButton;
