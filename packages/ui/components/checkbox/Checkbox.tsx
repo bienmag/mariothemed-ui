@@ -17,7 +17,7 @@ const MyCheckbox: React.FunctionComponent<CheckboxProps> = ({
   size,
   color,
   disabled,
-  ...props
+  // ...props
 }) => {
   const styleOptions = [];
 

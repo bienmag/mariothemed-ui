@@ -6,6 +6,8 @@ module.exports = {
       backgroundImage: () => ({
         test: "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
         tick: "url('./tick.svg')",
+        mario:
+          "url('https://img.freepik.com/premium-vector/vector-illustration-cut-champignons-are-table-linear-vector-illustration-coloring_502803-191.jpg?w=1060')",
       }),
       fontFamily: {
         mario: ["SuperMario", "sans-serif"],

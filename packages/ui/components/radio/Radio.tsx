@@ -3,27 +3,73 @@ import React from "react";
 import tw from "twin.macro";
 
 export interface RadioProps {
-  variant?: string;
-  size?: string;
+  variant?: "default" | "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
   className?: string | string[];
+  checked?: boolean;
+  onChange?: (value: any) => void;
+  value?: string;
 }
 
-const MyRadio: React.FunctionComponent<RadioProps> = ({
-  variant,
-  size,
-  ...props
-}) => {
-  const styleOptions = [];
+const Radio = styled.input`
+  ${tw`hidden`}
+`;
 
-  const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border-solid border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
-  const Radio = styled.input`
-    ${baseStyle}
-  `;
+const Label = styled.label`
+  ${tw`flex items-center space-x-2 cursor-pointer`}
+`;
+
+const Indicator = styled.span`
+  ${({ variant, isChecked }) => {
+    if (isChecked) {
+      if (variant === "primary") {
+        return tw`w-4 h-4 rounded-full bg-blue-500`;
+      }
+      if (variant === "secondary") {
+        return tw`w-4 h-4 rounded-full bg-red-500`;
+      }
+      return tw`w-4 h-4 rounded-full bg-gray-500`;
+    }
+    return tw`w-4 h-4 rounded-full border border-gray-500`;
+  }}
+`;
+
+const Text = styled.span`
+  ${({ size }) => {
+    if (size === "sm") {
+      return tw`text-sm`;
+    }
+    if (size === "lg") {
+      return tw`text-lg`;
+    }
+    return tw`text-base`;
+  }}
+`;
+
+const MyRadio: React.FunctionComponent<RadioProps> = ({
+  variant = "default",
+  size = "md",
+  className,
+  checked = false,
+  onChange,
+  value,
+}) => {
+  const handleInputChange = () => {
+    if (onChange) {
+      onChange(value || "");
+    }
+  };
 
   return (
-    <Radio css={styleOptions} type="checkbox">
-      {" "}
-    </Radio>
+    <Label className={className}>
+      <Radio
+        type="radio"
+        defaultChecked={checked}
+        onChange={handleInputChange}
+      />
+      <Indicator variant={variant} isChecked={checked} />
+      <Text size={size}>Option</Text>
+    </Label>
   );
 };
 

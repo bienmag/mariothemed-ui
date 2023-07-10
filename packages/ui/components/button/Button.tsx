@@ -1,3 +1,4 @@
+// import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import tw from "twin.macro";
@@ -7,7 +8,7 @@ export interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: ButtonSize;
-  variant?: "outline" | "solid" | "ghost" | "link";
+  variant?: "outline" | "solid" | "ghost" | "link" | "logo";
   className?: string;
 }
 
@@ -16,9 +17,9 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   // color,
   size,
   variant,
-  className,
+  // className,
   // isDisabled,
-  ...props
+  // ...props
 }) => {
   const styleOptions = [];
 
@@ -30,12 +31,14 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   };
 
   styleOptions.push(sizeMap[size]);
+  // const RedButton = tw` text-white hover:bg-red-600 hover:text-white hover:underline`;
 
   const variantMap = {
     outline: tw` bg-white text-yellow-800 border-solid border border-yellow-800 hover:bg-gray-100`,
     solid: tw` rounded-xl text-white bg-yellow-800 border-solid border border-gray-300 hover:bg-yellow-900`,
     ghost: tw`  border-none bg-white text-yellow-800 hover:bg-gray-100`,
     link: tw` border-none bg-white text-yellow-800 hover:bg-white hover:underline`,
+    logo: tw`hover:bg-mario`,
   };
 
   styleOptions.push(variantMap[variant]);
