@@ -2708,7 +2708,15 @@ var import_react = require("@emotion/react");
 var import_styled = __toESM(require("@emotion/styled"));
 var import_react2 = __toESM(require_react());
 var import_react3 = require("@emotion/react");
-var MyButton = ({ children, color, size, variant }) => {
+var MyButton = ({
+  children,
+  color,
+  size,
+  variant,
+  icon,
+  iconPosition = "left",
+  className,
+}) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -3017,6 +3025,7 @@ var MyButton = ({ children, color, size, variant }) => {
     paddingRight: "1.75rem",
     paddingTop: "0.75rem",
     paddingBottom: "0.75rem",
+    fontFamily: "SuperMario, sans-serif",
     fontSize: "1rem",
     lineHeight: "1.5rem",
     "--tw-text-opacity": "1",
@@ -3030,12 +3039,30 @@ var MyButton = ({ children, color, size, variant }) => {
     ${baseStyle2}
     ${styleOptions}
   `;
+  const IconWrapper = import_styled.default.span`
+  ${{
+    marginLeft: "0.5rem",
+    marginRight: "0.5rem",
+  }};
+`;
   return (0, import_react3.jsx)(
     Button,
     {
-      className: "font-mario",
+      className,
     },
-    children
+    (0, import_react3.jsx)(
+      "div",
+      {
+        className: "flex items-center",
+      },
+      icon &&
+        iconPosition === "left" &&
+        (0, import_react3.jsx)(IconWrapper, null, icon),
+      children,
+      icon &&
+        iconPosition === "right" &&
+        (0, import_react3.jsx)(IconWrapper, null, icon)
+    )
   );
 };
 var Button_default = MyButton;

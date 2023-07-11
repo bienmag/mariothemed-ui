@@ -1,13 +1,17 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { ReactElement } from "react";
 import tw, { css } from "twin.macro";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg";
+type IconPosition = "left" | "right";
+
 export interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
+  icon?: ReactElement;
+  iconPosition?: IconPosition;
   className?: string;
 }
 
@@ -16,6 +20,9 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   color,
   size,
   variant,
+  icon,
+  iconPosition = "left",
+  className,
 }) => {
   const styleOptions = [];
 
@@ -83,14 +90,26 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
 
   styleOptions.push(getVariantStyle(variant, color));
 
-  const baseStyle = tw`px-7 py-3 text-base rounded-md text-gray-600 bg-gray-200 border-solid border border-gray-200 hover:bg-gray-300`;
+  const baseStyle = tw`font-mario px-7 py-3 text-base rounded-md text-gray-600 bg-gray-200 border-solid border border-gray-200 hover:bg-gray-300`;
 
   const Button = styled.button`
     ${baseStyle}
     ${styleOptions}
   `;
 
-  return <Button className="font-mario">{children}</Button>;
+  const IconWrapper = styled.span`
+    ${tw`mx-2`};
+  `;
+
+  return (
+    <Button className={className}>
+      <div className="flex items-center">
+        {icon && iconPosition === "left" && <IconWrapper>{icon}</IconWrapper>}
+        {children}
+        {icon && iconPosition === "right" && <IconWrapper>{icon}</IconWrapper>}
+      </div>
+    </Button>
+  );
 };
 
 export default MyButton;
