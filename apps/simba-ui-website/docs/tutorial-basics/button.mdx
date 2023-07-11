@@ -3,11 +3,9 @@ sidebar_position: 1
 ---
 
 import { MyButton } from "tailwind-simba-ui";
-import styles from "./pages.module.css";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-
-Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+import Logo from "/img/mario.png";
 
 ## Import
 
@@ -20,7 +18,7 @@ import { MyButton } from "tailwind-simba-ui";
 export const BasicUsage = () => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
-      <MyButton>Button</MyButton>
+      <MyButton color="yellow">Button</MyButton>
     </div>
   </div>
 );
@@ -28,7 +26,7 @@ export const BasicUsage = () => (
 <BasicUsage></BasicUsage>
 
 ```js
-<MyButton>Button<MyButton>
+<MyButton color="yellow">Button</MyButton>
 ```
 
 ## Button Sizes
@@ -36,32 +34,46 @@ export const BasicUsage = () => (
 export const ButtonSizes = ({ size }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton size="xs">Button</MyButton>
+      <MyButton color="yellow" size="xs">
+        Button
+      </MyButton>
     </div>
     <div className="pr-2">
-      <MyButton size="sm">Button</MyButton>
+      <MyButton color="yellow" size="sm">
+        Button
+      </MyButton>
     </div>
     <div className="pr-2">
-      <MyButton size="md">Button</MyButton>
+      <MyButton color="yellow" size="md">
+        Button
+      </MyButton>
     </div>
     <div>
-      <MyButton size="lg">Button</MyButton>
+      <MyButton color="yellow" size="lg">
+        Button
+      </MyButton>
     </div>
   </div>
 );
 
 Use the size prop to change the size of the button. You can set the value to **xs**, **sm**, **md**, or **lg**.
 
-<!-- insert button example here -->
-
 <ButtonSizes></ButtonSizes>{" "}
 
 ```js
 <div>
-  <MyButton size="xs">Button</MyButton>
-  <MyButton size="sm">Button</MyButton>
-  <MyButton size="md">Button</MyButton>
-  <MyButton size="lg">Button</MyButton>
+  <MyButton color="yellow" size="xs">
+    Button
+  </MyButton>
+  <MyButton color="yellow" size="sm">
+    Button
+  </MyButton>
+  <MyButton color="yellow" size="md">
+    Button
+  </MyButton>
+  <MyButton color="yellow" size="lg">
+    Button
+  </MyButton>
 </div>
 ```
 
@@ -70,16 +82,24 @@ Use the size prop to change the size of the button. You can set the value to **x
 export const ButtonVariants = ({ variant }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton variant="solid">Button</MyButton>
+      <MyButton color="yellow" variant="solid">
+        Button
+      </MyButton>
     </div>
     <div className="pr-2">
-      <MyButton variant="outline">Button</MyButton>
+      <MyButton color="yellow" variant="outline">
+        Button
+      </MyButton>
     </div>
     <div className="pr-2">
-      <MyButton variant="ghost">Button</MyButton>
+      <MyButton color="yellow" variant="ghost">
+        Button
+      </MyButton>
     </div>
     <div>
-      <MyButton variant="link">Button</MyButton>
+      <MyButton color="yellow" variant="link">
+        Button
+      </MyButton>
     </div>
   </div>
 );
@@ -90,9 +110,73 @@ Use the variant prop to change the visual style of the Button. You can set the v
 
 ```js
 <div>
-  <MyButton variant="solid">Button</MyButton>
-  <MyButton variant="outline">Button</MyButton>
-  <MyButton variant="ghost">Button</MyButton>
-  <MyButton variant="link">Button</MyButton>
+  <MyButton color="yellow" variant="solid">
+    Button
+  </MyButton>
+  <MyButton color="yellow" variant="outline">
+    Button
+  </MyButton>
+  <MyButton color="yellow" variant="ghost">
+    Button
+  </MyButton>
+  <MyButton color="yellow" variant="link">
+    Button
+  </MyButton>
+</div>
+```
+
+## Button color
+
+export const ButtonColors = ({ color }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyButton color="yellow">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton color="red">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton color="blue">Button</MyButton>
+    </div>
+    <div>
+      <MyButton color="green">Button</MyButton>
+    </div>
+  </div>
+);
+
+Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
+
+<ButtonColors></ButtonColors>
+
+```js
+<div>
+  <MyButton color="yellow">Button</MyButton>
+  <MyButton color="red">Button</MyButton>
+  <MyButton color="blue">Button</MyButton>
+  <MyButton color="green">Button</MyButton>
+</div>
+```
+
+## Button with icon
+
+export const ButtonWithIcon = ({ leftIcon, rightIcon }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyButton color="yellow">Button</MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton color="red">Button</MyButton>
+    </div>
+  </div>
+);
+
+Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
+
+<ButtonWithIcon></ButtonWithIcon>
+
+```js
+<div>
+  <MyButton color="yellow">Button</MyButton>
+  <MyButton color="red">Button</MyButton>
 </div>
 ```

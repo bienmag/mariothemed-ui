@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // this is needed to style the website in mario theme but is not needed to render my components
       fontFamily: {
         mario: ["SuperMario", "sans-serif"],
       },
