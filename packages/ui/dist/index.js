@@ -2713,8 +2713,8 @@ var MyButton = ({
   color,
   size,
   variant,
-  icon,
-  iconPosition = "left",
+  rightIcon,
+  leftIcon,
   className,
 }) => {
   const styleOptions = [];
@@ -3040,11 +3040,11 @@ var MyButton = ({
     ${styleOptions}
   `;
   const IconWrapper = import_styled.default.span`
-  ${{
-    marginLeft: "0.5rem",
-    marginRight: "0.5rem",
-  }};
-`;
+    ${{
+      marginLeft: "0.5rem",
+      marginRight: "0.5rem",
+    }}; 
+  `;
   return (0, import_react3.jsx)(
     Button,
     {
@@ -3055,13 +3055,9 @@ var MyButton = ({
       {
         className: "flex items-center",
       },
-      icon &&
-        iconPosition === "left" &&
-        (0, import_react3.jsx)(IconWrapper, null, icon),
+      leftIcon && (0, import_react3.jsx)(IconWrapper, null, leftIcon),
       children,
-      icon &&
-        iconPosition === "right" &&
-        (0, import_react3.jsx)(IconWrapper, null, icon)
+      rightIcon && (0, import_react3.jsx)(IconWrapper, null, rightIcon)
     )
   );
 };

@@ -1,14 +1,13 @@
 import React, { ReactElement } from "react";
 
 declare type ButtonSize = "xs" | "sm" | "md" | "lg";
-declare type IconPosition = "left" | "right";
 interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
-  icon?: ReactElement;
-  iconPosition?: IconPosition;
+  rightIcon?: ReactElement;
+  leftIcon?: ReactElement;
   className?: string;
 }
 declare const MyButton: React.FunctionComponent<ButtonProps>;

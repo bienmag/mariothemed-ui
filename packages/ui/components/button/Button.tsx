@@ -3,15 +3,14 @@ import React, { ReactElement } from "react";
 import tw, { css } from "twin.macro";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg";
-type IconPosition = "left" | "right";
 
 export interface ButtonProps {
   children: string | React.ReactElement | React.ReactElement[];
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
-  icon?: ReactElement;
-  iconPosition?: IconPosition;
+  rightIcon?: ReactElement;
+  leftIcon?: ReactElement;
   className?: string;
 }
 
@@ -20,8 +19,8 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   color,
   size,
   variant,
-  icon,
-  iconPosition = "left",
+  rightIcon,
+  leftIcon,
   className,
 }) => {
   const styleOptions = [];
@@ -104,9 +103,9 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   return (
     <Button className={className}>
       <div className="flex items-center">
-        {icon && iconPosition === "left" && <IconWrapper>{icon}</IconWrapper>}
+        {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
         {children}
-        {icon && iconPosition === "right" && <IconWrapper>{icon}</IconWrapper>}
+        {rightIcon && <IconWrapper>{rightIcon}</IconWrapper>}
       </div>
     </Button>
   );

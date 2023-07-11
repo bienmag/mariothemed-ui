@@ -2693,8 +2693,8 @@ var MyButton = ({
   color,
   size,
   variant,
-  icon,
-  iconPosition = "left",
+  rightIcon,
+  leftIcon,
   className,
 }) => {
   const styleOptions = [];
@@ -3035,9 +3035,9 @@ var MyButton = ({
       {
         className: "flex items-center",
       },
-      icon && iconPosition === "left" && __cssprop(IconWrapper, null, icon),
+      leftIcon && __cssprop(IconWrapper, null, leftIcon),
       children,
-      icon && iconPosition === "right" && __cssprop(IconWrapper, null, icon)
+      rightIcon && __cssprop(IconWrapper, null, rightIcon)
     )
   );
 };

@@ -5,19 +5,19 @@ export default function Docs() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <p className="font-mario"> WELCOME TO BUTTONS</p>
-      <MyButton color="yellow" variant="outline" icon={<FaBeer />}>
+      <MyButton color="yellow" variant="outline" leftIcon={<FaBeer />}>
         Click me
       </MyButton>
-      <MyButton icon={<FaBeer />} size="xs" color="yellow">
+      <MyButton rightIcon={<FaBeer />} size="xs" color="yellow">
         Click me
       </MyButton>
-      <MyButton icon={<FaBeer />} size="sm" color="yellow">
+      <MyButton rightIcon={<FaBeer />} size="sm" color="yellow">
         Click me
       </MyButton>
-      <MyButton icon={<FaBeer />} size="md" color="yellow">
+      <MyButton rightIcon={<FaBeer />} size="md" color="yellow">
         Click me
       </MyButton>
-      <MyButton icon={<FaBeer />} size="lg" iconPosition="right" color="yellow">
+      <MyButton rightIcon={<FaBeer />} size="lg" color="yellow">
         Click me
       </MyButton>
 
