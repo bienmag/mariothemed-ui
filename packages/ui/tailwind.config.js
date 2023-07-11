@@ -12,7 +12,22 @@ module.exports = {
       fontFamily: {
         mario: ["SuperMario", "sans-serif"],
       },
-      colors: {
+      backgroundColor: {
+        myellow: "#FCCF00",
+        mblue: "#009BD9",
+        mred: "#E62310",
+        mgreen: "#44AF35",
+        myellowhover: "#D7B207",
+        mgreenhover: "#288C1A",
+        mbluehover: "#126180",
+      },
+      textColor: {
+        myellow: "#FCCF00",
+        mblue: "#009BD9",
+        mred: "#E62310",
+        mgreen: "#44AF35",
+      },
+      borderColor: {
         myellow: "#FCCF00",
         mblue: "#009BD9",
         mred: "#E62310",

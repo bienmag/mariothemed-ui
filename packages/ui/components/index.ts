@@ -8,5 +8,3 @@ import MyTextarea from "./textarea/Textarea";
 export { MyTextarea };
 import MyRadio from "./radio/Radio";
 export { MyRadio };
-import { ButtonLogo } from "./button/ButtonLogo/ButtonLogo";
-export { ButtonLogo };

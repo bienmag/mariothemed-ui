@@ -2695,7 +2695,6 @@ var require_react = __commonJS({
 // index.ts
 var ui_exports = {};
 __export(ui_exports, {
-  ButtonLogo: () => ButtonLogo,
   MyButton: () => Button_default,
   MyCheckbox: () => Checkbox_default,
   MyInput: () => Input_default,
@@ -2705,10 +2704,11 @@ __export(ui_exports, {
 module.exports = __toCommonJS(ui_exports);
 
 // components/button/Button.tsx
+var import_react = require("@emotion/react");
 var import_styled = __toESM(require("@emotion/styled"));
-var import_react = __toESM(require_react());
-var import_react2 = require("@emotion/react");
-var MyButton = ({ children, size, variant }) => {
+var import_react2 = __toESM(require_react());
+var import_react3 = require("@emotion/react");
+var MyButton = ({ children, color, size, variant }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -2745,75 +2745,274 @@ var MyButton = ({ children, size, variant }) => {
     },
   };
   styleOptions.push(sizeMap[size]);
+  const colorMap = {
+    yellow: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(215 178 7 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    green: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(40 140 26 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    blue: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(18 97 128 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    red: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(185 28 28 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+  };
   const variantMap = {
-    outline: {
-      borderWidth: "1px",
-      borderStyle: "solid",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
-      "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
-      ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
-      },
-    },
-    solid: {
-      borderRadius: "0.75rem",
-      borderWidth: "1px",
-      borderStyle: "solid",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(133 77 14 / var(--tw-bg-opacity))",
-      "--tw-text-opacity": "1",
-      color: "rgb(255 255 255 / var(--tw-text-opacity))",
-      ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(113 63 18 / var(--tw-bg-opacity))",
-      },
-    },
+    solid: import_react.css`
+      ${{
+        borderRadius: "0.75rem",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+        paddingLeft: "1.75rem",
+        paddingRight: "1.75rem",
+        paddingTop: "0.75rem",
+        paddingBottom: "0.75rem",
+        fontSize: "1rem",
+        lineHeight: "1.5rem",
+        "--tw-text-opacity": "1",
+        color: "rgb(75 85 99 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
+        },
+      }}
+      ${({ color: color2 }) => {
+        var _a;
+        return color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.solid);
+      }}
+    `,
+    outline: import_react.css`
+      ${{
+        borderWidth: "1px",
+        borderStyle: "solid",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(75 85 99 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+        },
+      }}
+      ${({ color: color2 }) => {
+        var _a;
+        return (
+          color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.outline)
+        );
+      }}
+    `,
     ghost: {
       borderStyle: "none",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+      backgroundColor: "transparent",
       "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
+      color: "rgb(75 85 99 / var(--tw-text-opacity))",
       ":hover": {
         "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+        backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
       },
     },
     link: {
       borderStyle: "none",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+      backgroundColor: "transparent",
       "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
+      color: "rgb(156 163 175 / var(--tw-text-opacity))",
       ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+        backgroundColor: "transparent",
         textDecorationLine: "underline",
       },
     },
-    logo: {
-      ":hover": {
-        backgroundImage:
-          "url('https://img.freepik.com/premium-vector/vector-illustration-cut-champignons-are-table-linear-vector-illustration-coloring_502803-191.jpg?w=1060')",
-      },
-    },
   };
-  styleOptions.push(variantMap[variant]);
+  const getVariantStyle = (variant2, color2) => {
+    var _a, _b;
+    if (color2 && variant2) {
+      return (_a = colorMap[color2]) == null ? void 0 : _a[variant2];
+    }
+    if (color2) {
+      return (_b = colorMap[color2]) == null ? void 0 : _b["solid"];
+    }
+    if (variant2) {
+      return variantMap[variant2];
+    }
+    return null;
+  };
+  styleOptions.push(getVariantStyle(variant, color));
   const baseStyle2 = {
-    borderRadius: "0.75rem",
+    borderRadius: "0.375rem",
     borderWidth: "1px",
     borderStyle: "solid",
     "--tw-border-opacity": "1",
-    borderColor: "rgb(156 163 175 / var(--tw-border-opacity))",
+    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
     paddingLeft: "1.75rem",
     paddingRight: "1.75rem",
     paddingTop: "0.75rem",
@@ -2821,34 +3020,30 @@ var MyButton = ({ children, size, variant }) => {
     fontSize: "1rem",
     lineHeight: "1.5rem",
     "--tw-text-opacity": "1",
-    color: "rgb(255 255 255 / var(--tw-text-opacity))",
+    color: "rgb(75 85 99 / var(--tw-text-opacity))",
     ":hover": {
       "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(113 63 18 / var(--tw-bg-opacity))",
+      backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
     },
   };
   const Button = import_styled.default.button`
     ${baseStyle2}
+    ${styleOptions}
   `;
-  return (0, import_react2.jsx)(
-    import_react.default.Fragment,
-    null,
-    (0, import_react2.jsx)(
-      Button,
-      {
-        className: "font-mario",
-        css: styleOptions,
-      },
-      children
-    )
+  return (0, import_react3.jsx)(
+    Button,
+    {
+      className: "font-mario",
+    },
+    children
   );
 };
 var Button_default = MyButton;
 
 // components/checkbox/Checkbox.tsx
 var import_styled2 = __toESM(require("@emotion/styled"));
-var import_react3 = __toESM(require_react());
-var import_react4 = require("@emotion/react");
+var import_react4 = __toESM(require_react());
+var import_react5 = require("@emotion/react");
 var MyCheckbox = ({ size, color, disabled }) => {
   const styleOptions = [];
   const sizeMap = {
@@ -2969,7 +3164,7 @@ var MyCheckbox = ({ size, color, disabled }) => {
   const Checkbox = import_styled2.default.input`
     ${baseStyle2}
   `;
-  return (0, import_react4.jsx)(Checkbox, {
+  return (0, import_react5.jsx)(Checkbox, {
     css: styleOptions,
     type: "checkbox",
     disabled,
@@ -2979,8 +3174,8 @@ var Checkbox_default = MyCheckbox;
 
 // components/input/Input.tsx
 var import_styled3 = __toESM(require("@emotion/styled"));
-var import_react5 = __toESM(require_react());
-var import_react6 = require("@emotion/react");
+var import_react6 = __toESM(require_react());
+var import_react7 = require("@emotion/react");
 var baseStyle = {
   width: "100%",
   borderRadius: "0.5rem",
@@ -3080,7 +3275,7 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
     },
   };
   styleOptions.push(variantMap[variant]);
-  return (0, import_react6.jsx)(Input, {
+  return (0, import_react7.jsx)(Input, {
     type: "text",
     placeholder,
     css: styleOptions,
@@ -3092,8 +3287,8 @@ var Input_default = MyInput;
 
 // components/textarea/Textarea.tsx
 var import_styled4 = __toESM(require("@emotion/styled"));
-var import_react7 = __toESM(require_react());
-var import_react8 = require("@emotion/react");
+var import_react8 = __toESM(require_react());
+var import_react9 = require("@emotion/react");
 function _extends() {
   _extends = Object.assign
     ? Object.assign.bind()
@@ -3160,7 +3355,7 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
   const Textarea = import_styled4.default.textarea`
     ${baseStyle2}
   `;
-  return (0, import_react8.jsx)(
+  return (0, import_react9.jsx)(
     Textarea,
     _extends({}, props, {
       placeholder,
@@ -3173,8 +3368,8 @@ var Textarea_default = MyTextarea;
 
 // components/radio/Radio.tsx
 var import_styled5 = __toESM(require("@emotion/styled"));
-var import_react9 = __toESM(require_react());
-var import_react10 = require("@emotion/react");
+var import_react10 = __toESM(require_react());
+var import_react11 = require("@emotion/react");
 var Radio = import_styled5.default.input`
   ${{
     display: "none",
@@ -3255,7 +3450,7 @@ var MyRadio = ({
   variant = "default",
   size = "md",
   className,
-  checked = false,
+  isChecked = false,
   onChange,
   value,
 }) => {
@@ -3264,21 +3459,20 @@ var MyRadio = ({
       onChange(value || "");
     }
   };
-  return (0, import_react10.jsx)(
+  return (0, import_react11.jsx)(
     Label,
     {
       className,
     },
-    (0, import_react10.jsx)(Radio, {
+    (0, import_react11.jsx)(Radio, {
       type: "radio",
-      defaultChecked: checked,
       onChange: handleInputChange,
     }),
-    (0, import_react10.jsx)(Indicator, {
+    (0, import_react11.jsx)(Indicator, {
       variant,
-      isChecked: checked,
+      isChecked,
     }),
-    (0, import_react10.jsx)(
+    (0, import_react11.jsx)(
       Text,
       {
         size,
@@ -3288,25 +3482,9 @@ var MyRadio = ({
   );
 };
 var Radio_default = MyRadio;
-
-// components/button/ButtonLogo/ButtonLogo.tsx
-var import_react11 = require("@emotion/react");
-var ButtonLogo = () => {
-  return (0, import_react11.jsx)(
-    "button",
-    {
-      className: "bg-blue-600",
-    },
-    (0, import_react11.jsx)("div", {
-      className: "bg-blue-600",
-    }),
-    "hello"
-  );
-};
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
-    ButtonLogo,
     MyButton,
     MyCheckbox,
     MyInput,

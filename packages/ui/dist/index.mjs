@@ -2684,10 +2684,11 @@ var require_react = __commonJS({
 });
 
 // components/button/Button.tsx
-var import_react = __toESM(require_react());
+var import_react2 = __toESM(require_react());
+import { css as _css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { jsx as __cssprop } from "@emotion/react";
-var MyButton = ({ children, size, variant }) => {
+var MyButton = ({ children, color, size, variant }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
@@ -2724,75 +2725,274 @@ var MyButton = ({ children, size, variant }) => {
     },
   };
   styleOptions.push(sizeMap[size]);
+  const colorMap = {
+    yellow: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(215 178 7 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    green: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(40 140 26 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    blue: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(18 97 128 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+    red: {
+      solid: {
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(255 255 255 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(185 28 28 / var(--tw-bg-opacity))",
+        },
+      },
+      outline: {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        },
+      },
+      ghost: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "0.2",
+          backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+        },
+      },
+      link: {
+        borderStyle: "none",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+        ":hover": {
+          backgroundColor: "transparent",
+          textDecorationLine: "underline",
+        },
+      },
+    },
+  };
   const variantMap = {
-    outline: {
-      borderWidth: "1px",
-      borderStyle: "solid",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
-      "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
-      ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
-      },
-    },
-    solid: {
-      borderRadius: "0.75rem",
-      borderWidth: "1px",
-      borderStyle: "solid",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(133 77 14 / var(--tw-bg-opacity))",
-      "--tw-text-opacity": "1",
-      color: "rgb(255 255 255 / var(--tw-text-opacity))",
-      ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(113 63 18 / var(--tw-bg-opacity))",
-      },
-    },
+    solid: _css`
+      ${{
+        borderRadius: "0.75rem",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+        paddingLeft: "1.75rem",
+        paddingRight: "1.75rem",
+        paddingTop: "0.75rem",
+        paddingBottom: "0.75rem",
+        fontSize: "1rem",
+        lineHeight: "1.5rem",
+        "--tw-text-opacity": "1",
+        color: "rgb(75 85 99 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
+        },
+      }}
+      ${({ color: color2 }) => {
+        var _a;
+        return color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.solid);
+      }}
+    `,
+    outline: _css`
+      ${{
+        borderWidth: "1px",
+        borderStyle: "solid",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        "--tw-text-opacity": "1",
+        color: "rgb(75 85 99 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-bg-opacity": "1",
+          backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+        },
+      }}
+      ${({ color: color2 }) => {
+        var _a;
+        return (
+          color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.outline)
+        );
+      }}
+    `,
     ghost: {
       borderStyle: "none",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+      backgroundColor: "transparent",
       "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
+      color: "rgb(75 85 99 / var(--tw-text-opacity))",
       ":hover": {
         "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+        backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
       },
     },
     link: {
       borderStyle: "none",
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+      backgroundColor: "transparent",
       "--tw-text-opacity": "1",
-      color: "rgb(133 77 14 / var(--tw-text-opacity))",
+      color: "rgb(156 163 175 / var(--tw-text-opacity))",
       ":hover": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(255 255 255 / var(--tw-bg-opacity))",
+        backgroundColor: "transparent",
         textDecorationLine: "underline",
       },
     },
-    logo: {
-      ":hover": {
-        backgroundImage:
-          "url('https://img.freepik.com/premium-vector/vector-illustration-cut-champignons-are-table-linear-vector-illustration-coloring_502803-191.jpg?w=1060')",
-      },
-    },
   };
-  styleOptions.push(variantMap[variant]);
+  const getVariantStyle = (variant2, color2) => {
+    var _a, _b;
+    if (color2 && variant2) {
+      return (_a = colorMap[color2]) == null ? void 0 : _a[variant2];
+    }
+    if (color2) {
+      return (_b = colorMap[color2]) == null ? void 0 : _b["solid"];
+    }
+    if (variant2) {
+      return variantMap[variant2];
+    }
+    return null;
+  };
+  styleOptions.push(getVariantStyle(variant, color));
   const baseStyle2 = {
-    borderRadius: "0.75rem",
+    borderRadius: "0.375rem",
     borderWidth: "1px",
     borderStyle: "solid",
     "--tw-border-opacity": "1",
-    borderColor: "rgb(156 163 175 / var(--tw-border-opacity))",
+    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
     paddingLeft: "1.75rem",
     paddingRight: "1.75rem",
     paddingTop: "0.75rem",
@@ -2800,32 +3000,28 @@ var MyButton = ({ children, size, variant }) => {
     fontSize: "1rem",
     lineHeight: "1.5rem",
     "--tw-text-opacity": "1",
-    color: "rgb(255 255 255 / var(--tw-text-opacity))",
+    color: "rgb(75 85 99 / var(--tw-text-opacity))",
     ":hover": {
       "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(113 63 18 / var(--tw-bg-opacity))",
+      backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
     },
   };
   const Button = styled.button`
     ${baseStyle2}
+    ${styleOptions}
   `;
   return __cssprop(
-    import_react.default.Fragment,
-    null,
-    __cssprop(
-      Button,
-      {
-        className: "font-mario",
-        css: styleOptions,
-      },
-      children
-    )
+    Button,
+    {
+      className: "font-mario",
+    },
+    children
   );
 };
 var Button_default = MyButton;
 
 // components/checkbox/Checkbox.tsx
-var import_react3 = __toESM(require_react());
+var import_react4 = __toESM(require_react());
 import styled2 from "@emotion/styled";
 import { jsx as __cssprop2 } from "@emotion/react";
 var MyCheckbox = ({ size, color, disabled }) => {
@@ -2957,7 +3153,7 @@ var MyCheckbox = ({ size, color, disabled }) => {
 var Checkbox_default = MyCheckbox;
 
 // components/input/Input.tsx
-var import_react5 = __toESM(require_react());
+var import_react6 = __toESM(require_react());
 import styled3 from "@emotion/styled";
 import { jsx as __cssprop3 } from "@emotion/react";
 var baseStyle = {
@@ -3070,7 +3266,7 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
 var Input_default = MyInput;
 
 // components/textarea/Textarea.tsx
-var import_react7 = __toESM(require_react());
+var import_react8 = __toESM(require_react());
 import styled4 from "@emotion/styled";
 import { jsx as __cssprop4 } from "@emotion/react";
 function _extends() {
@@ -3151,7 +3347,7 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
 var Textarea_default = MyTextarea;
 
 // components/radio/Radio.tsx
-var import_react9 = __toESM(require_react());
+var import_react10 = __toESM(require_react());
 import styled5 from "@emotion/styled";
 import { jsx as __cssprop5 } from "@emotion/react";
 var Radio = styled5.input`
@@ -3234,7 +3430,7 @@ var MyRadio = ({
   variant = "default",
   size = "md",
   className,
-  checked = false,
+  isChecked = false,
   onChange,
   value,
 }) => {
@@ -3250,12 +3446,11 @@ var MyRadio = ({
     },
     __cssprop5(Radio, {
       type: "radio",
-      defaultChecked: checked,
       onChange: handleInputChange,
     }),
     __cssprop5(Indicator, {
       variant,
-      isChecked: checked,
+      isChecked,
     }),
     __cssprop5(
       Text,
@@ -3267,23 +3462,7 @@ var MyRadio = ({
   );
 };
 var Radio_default = MyRadio;
-
-// components/button/ButtonLogo/ButtonLogo.tsx
-import { jsx as __cssprop6 } from "@emotion/react";
-var ButtonLogo = () => {
-  return __cssprop6(
-    "button",
-    {
-      className: "bg-blue-600",
-    },
-    __cssprop6("div", {
-      className: "bg-blue-600",
-    }),
-    "hello"
-  );
-};
 export {
-  ButtonLogo,
   Button_default as MyButton,
   Checkbox_default as MyCheckbox,
   Input_default as MyInput,

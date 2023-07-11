@@ -1,7 +1,6 @@
-// import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
-import tw from "twin.macro";
+import tw, { css } from "twin.macro";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg";
 export interface ButtonProps {
@@ -14,12 +13,9 @@ export interface ButtonProps {
 
 const MyButton: React.FunctionComponent<ButtonProps> = ({
   children,
-  // color,
+  color,
   size,
   variant,
-  // className,
-  // isDisabled,
-  // ...props
 }) => {
   const styleOptions = [];
 
@@ -31,35 +27,70 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   };
 
   styleOptions.push(sizeMap[size]);
-  // const RedButton = tw` text-white hover:bg-red-600 hover:text-white hover:underline`;
 
-  const variantMap = {
-    outline: tw` bg-white text-yellow-800 border-solid border border-yellow-800 hover:bg-gray-100`,
-    solid: tw` rounded-xl text-white bg-yellow-800 border-solid border border-gray-300 hover:bg-yellow-900`,
-    ghost: tw`  border-none bg-white text-yellow-800 hover:bg-gray-100`,
-    link: tw` border-none bg-white text-yellow-800 hover:bg-white hover:underline`,
-    logo: tw`hover:bg-mario`,
+  const colorMap = {
+    yellow: {
+      solid: tw`bg-myellow hover:bg-myellowhover text-white`,
+      outline: tw`bg-transparent text-myellow border-2 border-myellow hover:bg-myellow hover:bg-opacity-20`,
+      ghost: tw`bg-transparent border-none text-myellow hover:bg-myellow hover:bg-opacity-20`,
+      link: tw`bg-transparent border-none text-myellow hover:bg-transparent hover:underline`,
+    },
+    green: {
+      solid: tw`bg-mgreen hover:bg-mgreenhover text-white`,
+      outline: tw`bg-transparent text-mgreen border-2 border-mgreen hover:bg-mgreen hover:bg-opacity-20`,
+      ghost: tw`bg-transparent border-none text-mgreen hover:bg-mgreen hover:bg-opacity-20`,
+      link: tw`bg-transparent border-none text-mgreen hover:bg-transparent hover:underline`,
+    },
+    blue: {
+      solid: tw`bg-mblue hover:bg-mbluehover text-white`,
+      outline: tw`bg-transparent text-mblue border-2 border-mblue hover:bg-mblue hover:bg-opacity-20`,
+      ghost: tw`bg-transparent border-none text-mblue hover:bg-mblue hover:bg-opacity-20`,
+      link: tw`bg-transparent border-none text-mblue hover:bg-transparent hover:underline`,
+    },
+    red: {
+      solid: tw`bg-mred hover:bg-red-700 text-white`,
+      outline: tw`bg-transparent text-mred border-2 border-mred hover:bg-mred hover:bg-opacity-20`,
+      ghost: tw`bg-transparent border-none text-mred hover:bg-mred hover:bg-opacity-20`,
+      link: tw`bg-transparent border-none text-mred hover:bg-transparent hover:underline`,
+    },
   };
 
-  styleOptions.push(variantMap[variant]);
+  const variantMap = {
+    solid: css`
+      ${tw`px-7 py-3 text-base rounded-xl text-gray-600 border-solid border border-gray-200 hover:bg-gray-300`}
+      ${({ color }) => color && colorMap[color]?.solid}
+    `,
+    outline: css`
+      ${tw`bg-transparent text-gray-600 border-solid border border-gray-300 hover:bg-gray-200`}
+      ${({ color }) => color && colorMap[color]?.outline}
+    `,
+    ghost: tw`border-none bg-transparent text-gray-600 hover:bg-gray-200`,
+    link: tw`border-none bg-transparent text-gray-400 hover:bg-transparent hover:underline`,
+  };
 
-  // if (colorScheme === "blue") {
-  //   styleOptions.push("button-blue");
-  // }
+  const getVariantStyle = (variant, color) => {
+    if (color && variant) {
+      return colorMap[color]?.[variant];
+    }
+    if (color) {
+      return colorMap[color]?.["solid"];
+    }
+    if (variant) {
+      return variantMap[variant];
+    }
+    return null;
+  };
 
-  const baseStyle = tw` px-7 py-3 text-base rounded-xl text-white bg-myellow border-solid border border-gray-400 hover:bg-yellow-900 `;
+  styleOptions.push(getVariantStyle(variant, color));
+
+  const baseStyle = tw`px-7 py-3 text-base rounded-md text-gray-600 bg-gray-200 border-solid border border-gray-200 hover:bg-gray-300`;
 
   const Button = styled.button`
     ${baseStyle}
+    ${styleOptions}
   `;
 
-  return (
-    <>
-      <Button className="font-mario" css={styleOptions}>
-        {children}
-      </Button>
-    </>
-  );
+  return <Button className="font-mario">{children}</Button>;
 };
 
 export default MyButton;

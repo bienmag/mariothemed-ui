@@ -5,10 +5,11 @@ import tw from "twin.macro";
 export interface RadioProps {
   variant?: "default" | "primary" | "secondary";
   size?: "sm" | "md" | "lg";
-  className?: string | string[];
-  checked?: boolean;
+  className?: string;
+  isChecked?: boolean;
   onChange?: (value: any) => void;
   value?: string;
+  defaultisChecked?: boolean;
 }
 
 const Radio = styled.input`
@@ -19,7 +20,7 @@ const Label = styled.label`
   ${tw`flex items-center space-x-2 cursor-pointer`}
 `;
 
-const Indicator = styled.span`
+const Indicator = styled.span<RadioProps>`
   ${({ variant, isChecked }) => {
     if (isChecked) {
       if (variant === "primary") {
@@ -34,7 +35,7 @@ const Indicator = styled.span`
   }}
 `;
 
-const Text = styled.span`
+const Text = styled.span<RadioProps>`
   ${({ size }) => {
     if (size === "sm") {
       return tw`text-sm`;
@@ -50,7 +51,7 @@ const MyRadio: React.FunctionComponent<RadioProps> = ({
   variant = "default",
   size = "md",
   className,
-  checked = false,
+  isChecked = false,
   onChange,
   value,
 }) => {
@@ -64,10 +65,10 @@ const MyRadio: React.FunctionComponent<RadioProps> = ({
     <Label className={className}>
       <Radio
         type="radio"
-        defaultChecked={checked}
+        // defaultisChecked={isChecked}
         onChange={handleInputChange}
       />
-      <Indicator variant={variant} isChecked={checked} />
+      <Indicator variant={variant} isChecked={isChecked} />
       <Text size={size}>Option</Text>
     </Label>
   );

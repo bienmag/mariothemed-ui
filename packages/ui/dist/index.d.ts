@@ -1,5 +1,4 @@
 import React from "react";
-import * as _emotion_react_jsx_runtime from "@emotion/react/jsx-runtime";
 
 declare type ButtonSize = "xs" | "sm" | "md" | "lg";
 interface ButtonProps {
@@ -42,9 +41,10 @@ interface RadioProps {
   size?: "sm" | "md" | "lg";
   className?: string;
   isChecked?: boolean;
+  onChange?: (value: any) => void;
+  value?: string;
+  defaultisChecked?: boolean;
 }
 declare const MyRadio: React.FunctionComponent<RadioProps>;
 
-declare const ButtonLogo: () => _emotion_react_jsx_runtime.JSX.Element;
-
-export { ButtonLogo, MyButton, MyCheckbox, MyInput, MyRadio, MyTextarea };
+export { MyButton, MyCheckbox, MyInput, MyRadio, MyTextarea };
