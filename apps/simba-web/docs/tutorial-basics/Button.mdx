@@ -2,23 +2,23 @@
 sidebar_position: 1
 ---
 
-import { MyButton } from "tailwind-simba-ui";
+import { Button } from "tailwind-simba-ui";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { CiMail } from "react-icons/ci";
 
-## Import
+## **Import**
 
 ```js
-import { MyButton } from "tailwind-simba-ui";
+import { Button } from "tailwind-simba-ui";
 ```
 
-## Usage
+## **Usage**
 
 export const BasicUsage = () => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
-      <MyButton color="yellow">Button</MyButton>
+      <Button color="yellow">Button</Button>
     </div>
   </div>
 );
@@ -26,32 +26,32 @@ export const BasicUsage = () => (
 <BasicUsage></BasicUsage>
 
 ```js
-<MyButton color="yellow">Button</MyButton>
+<Button color="yellow">Button</Button>
 ```
 
-## Button Sizes
+## **Button Sizes**
 
 export const ButtonSizes = ({ size }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton color="yellow" size="xs">
+      <Button color="yellow" size="xs">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div className="pr-2">
-      <MyButton color="yellow" size="sm">
+      <Button color="yellow" size="sm">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div className="pr-2">
-      <MyButton color="yellow" size="md">
+      <Button color="yellow" size="md">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div>
-      <MyButton color="yellow" size="lg">
+      <Button color="yellow" size="lg">
         Button
-      </MyButton>
+      </Button>
     </div>
   </div>
 );
@@ -62,44 +62,44 @@ Use the size prop to change the size of the button. You can set the value to **x
 
 ```js
 <div>
-  <MyButton color="yellow" size="xs">
+  <Button color="yellow" size="xs">
     Button
-  </MyButton>
-  <MyButton color="yellow" size="sm">
+  </Button>
+  <Button color="yellow" size="sm">
     Button
-  </MyButton>
-  <MyButton color="yellow" size="md">
+  </Button>
+  <Button color="yellow" size="md">
     Button
-  </MyButton>
-  <MyButton color="yellow" size="lg">
+  </Button>
+  <Button color="yellow" size="lg">
     Button
-  </MyButton>
+  </Button>
 </div>
 ```
 
-## Button variants
+## **Button variants**
 
 export const ButtonVariants = ({ variant }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton color="yellow" variant="solid">
+      <Button color="yellow" variant="solid">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div className="pr-2">
-      <MyButton color="yellow" variant="outline">
+      <Button color="yellow" variant="outline">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div className="pr-2">
-      <MyButton color="yellow" variant="ghost">
+      <Button color="yellow" variant="ghost">
         Button
-      </MyButton>
+      </Button>
     </div>
     <div>
-      <MyButton color="yellow" variant="link">
+      <Button color="yellow" variant="link">
         Button
-      </MyButton>
+      </Button>
     </div>
   </div>
 );
@@ -110,36 +110,36 @@ Use the variant prop to change the visual style of the Button. You can set the v
 
 ```js
 <div>
-  <MyButton color="yellow" variant="solid">
+  <Button color="yellow" variant="solid">
     Button
-  </MyButton>
-  <MyButton color="yellow" variant="outline">
+  </Button>
+  <Button color="yellow" variant="outline">
     Button
-  </MyButton>
-  <MyButton color="yellow" variant="ghost">
+  </Button>
+  <Button color="yellow" variant="ghost">
     Button
-  </MyButton>
-  <MyButton color="yellow" variant="link">
+  </Button>
+  <Button color="yellow" variant="link">
     Button
-  </MyButton>
+  </Button>
 </div>
 ```
 
-## Button color
+## **Button color**
 
 export const ButtonColors = ({ color }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton color="yellow">Button</MyButton>
+      <Button color="yellow">Button</Button>
     </div>
     <div className="pr-2">
-      <MyButton color="red">Button</MyButton>
+      <Button color="red">Button</Button>
     </div>
     <div className="pr-2">
-      <MyButton color="blue">Button</MyButton>
+      <Button color="blue">Button</Button>
     </div>
     <div>
-      <MyButton color="green">Button</MyButton>
+      <Button color="green">Button</Button>
     </div>
   </div>
 );
@@ -150,77 +150,81 @@ Use the color prop to change the visual style of the Button. You can set the val
 
 ```js
 <div>
-  <MyButton color="yellow">Button</MyButton>
-  <MyButton color="red">Button</MyButton>
-  <MyButton color="blue">Button</MyButton>
-  <MyButton color="green">Button</MyButton>
+  <Button color="yellow">Button</Button>
+  <Button color="red">Button</Button>
+  <Button color="blue">Button</Button>
+  <Button color="green">Button</Button>
 </div>
 ```
 
-## Button with icon
+## **Button with icon**
 
-???? PNG IS NOT WORKING HERE!!! SVG IS WORKING BUT IT MISSING THE STYLES FIX!!!!!!!!!!
+You can add an icon to your button. Use the **leftIcon** prop to place the image on the left of the button and **rightIcon** to place the image on the right of the button.
+:::info
+Please note that the icon should be a react element and not a string!
+:::
 
 export const ButtonWithIcon = ({ leftIcon, rightIcon }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton color="yellow" leftIcon={<CiMail />}>
+      <Button color="yellow" leftIcon={<CiMail />}>
         Button
-      </MyButton>
+      </Button>
     </div>
     <div className="pr-2">
-      <MyButton color="red" rightIcon={<CiMail />}>
+      <Button color="red" rightIcon={<CiMail />}>
         Button
-      </MyButton>
+      </Button>
     </div>
   </div>
 );
-
-You can add an icon to your button. Use the **leftIcon** prop to place the image on the left of the button and **rightIcon** to place the image on the right of the button.
-Please note that the icon should be a react element, not a string!
 
 <ButtonWithIcon></ButtonWithIcon>
 
 ```js
 <div>
-  <MyButton color="yellow" leftIcon={<Icon />}>
+  <Button color="yellow" leftIcon={<Icon />}>
     Button
-  </MyButton>
-  <MyButton color="red" rightIcon={<Icon />}>
+  </Button>
+  <Button color="red" rightIcon={<Icon />}>
     Button
-  </MyButton>
+  </Button>
 </div>
 ```
 
-## Customize your button
+## **Customize your button**
+
+:::danger
+CHECK THIS!
+:::
 
 You can customize your button with className
+OR
+override the styles provided with the ui library
+
+```
+<Button size="xs" height="120px"/> // will override the height set in "xs"
+```
 
 export const CustomButton = ({ leftIcon, rightIcon }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton
+      <Button
         className="w-40 h-20 flex justify-center items-center"
         size="xs"
         color="yellow"
       >
         Click me
-      </MyButton>{" "}
+      </Button>{" "}
     </div>
     <div className="pr-2">
-      <MyButton color="red">Button</MyButton>
+      <Button color="red">Button</Button>
     </div>
   </div>
 );
 
-Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
-
 <CustomButton></CustomButton>
 
-```js
-<div>
-  CHANGE THIS!!!!!!!!!!!!!
-  <MyButton color="yellow">Button</MyButton>
-  <MyButton color="red">Button</MyButton>
-</div>
+```
+<Button className="w-40 h-20 flex justify-center items-center" size="xs" color="yellow"/>
 ```

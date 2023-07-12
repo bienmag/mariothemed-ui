@@ -1,23 +1,28 @@
 import styled from "@emotion/styled";
-import React, { ReactElement } from "react";
+import React, {
+  ReactChild,
+  ReactChildren,
+  ReactElement,
+  ReactNode,
+} from "react";
 import tw, { css } from "twin.macro";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg";
 
 export interface ButtonProps {
-  children: React.ReactNode;
+  children?: string;
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
-  rightIcon?: ReactElement;
-  leftIcon?: ReactElement;
+  rightIcon?;
+  leftIcon?;
   className?: string;
   height?: string;
   width?: string;
   borderWidth?: string;
 }
 
-const MyButton: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   color,
   size,
@@ -133,4 +138,4 @@ const MyButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default MyButton;
+export default Button;

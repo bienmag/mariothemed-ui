@@ -2,37 +2,97 @@
 sidebar_position: 2
 ---
 
-import { MyCheckbox } from "tailwind-simba-ui";
+import { Checkbox } from "tailwind-simba-ui";
 import styles from "./pages.module.css";
-
-# Checkbox
 
 Checkbox component is used in forms when a user needs to select multiple values from several options.
 
-### Import
+### **Import**
 
 ```js
-import { MyCheckbox } from "tailwind-simba-ui";
+import { Checkbox } from "tailwind-simba-ui";
 ```
 
-### Usage
+### **Usage**
+
+export const CheckboxUsage = ({ defaultChecked }) => (
+  <div className="flex h-16 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <Checkbox color="yellow" defaultChecked></Checkbox>
+    </div>
+  </div>
+);
+
+<CheckboxUsage></CheckboxUsage>
 
 ```js
-<MyCheckbox></MyCheckbox>
+<Checkbox defaultChecked></Checkbox>
 ```
 
-### Checkbox Sizes
+### **Disabled Checkbox**
+
+export const DisabledCheckbox = () => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <Checkbox disabled color="yellow"></Checkbox>
+    </div>
+    <div>
+      <Checkbox disabled defaultChecked color="yellow"></Checkbox>
+    </div>
+  </div>
+);
+
+<DisabledCheckbox></DisabledCheckbox>
+
+```js
+<Checkbox disabled color="yellow"></Checkbox>
+<Checkbox disabled color="yellow" defaultChecked></Checkbox>
+```
+
+### **Checkbox with custom color**
+
+You can override the color scheme of the Checkbox to other color key: yellow, red, blue or green.
+
+export const CheckboxColors = ({ color }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <Checkbox color="yellow"></Checkbox>
+    </div>
+    <div className="pr-2">
+      <Checkbox color="red"></Checkbox>
+    </div>
+    <div className="pr-2">
+      <Checkbox color="blue"></Checkbox>
+    </div>
+    <div>
+      <Checkbox color="green"></Checkbox>
+    </div>
+  </div>
+);
+
+<CheckboxColors></CheckboxColors>
+
+```js
+<div>
+  <MyButton color="yellow"></MyButton>
+  <MyButton color="red"></MyButton>
+  <MyButton color="blue"></MyButton>
+  <MyButton color="green"></MyButton>
+</div>
+```
+
+### **Checkbox Sizes**
 
 export const CheckboxSizes = ({ size }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyCheckbox size="xs"></MyCheckbox>
+      <Checkbox color="yellow" size="xs"></Checkbox>
     </div>
     <div className="pr-2">
-      <MyCheckbox size="md"></MyCheckbox>
+      <Checkbox color="yellow" size="md"></Checkbox>
     </div>
     <div>
-      <MyCheckbox size="lg"></MyCheckbox>
+      <Checkbox color="yellow" size="lg"></Checkbox>
     </div>
   </div>
 );
@@ -43,49 +103,9 @@ Use the size prop to change the size of the button. You can set the value to **x
 
 ```js
 <div>
-  <MyCheckbox size="xs"></MyCheckbox>
-  <MyCheckbox size="sm"></MyCheckbox>
-  <MyCheckbox size="md"></MyCheckbox>
-  <MyCheckbox size="lg"></MyCheckbox>
+  <Checkbox color="yellow" size="xs"></Checkbox>
+  <Checkbox color="yellow" size="sm"></Checkbox>
+  <Checkbox color="yellow" size="md"></Checkbox>
+  <Checkbox color="yellow" size="lg"></Checkbox>
 </div>
 ```
-
-### Checkbox with custom color
-
-export const CheckboxColors = ({ color }) => (
-  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
-    <div className="pr-2 pl-2">
-      <MyCheckbox color="green"></MyCheckbox>
-    </div>
-    <div className="pr-2">
-      <MyCheckbox color="blue"></MyCheckbox>
-    </div>
-    <div>
-      <MyCheckbox color="yellow"></MyCheckbox>
-    </div>
-  </div>
-);
-
-You can override the color scheme of the Checkbox to other color key: green, blue or yellow.
-
-<CheckboxColors></CheckboxColors>
-
-```js
-<div>
-  <MyButton color="green"></MyButton>
-  <MyButton color="blue"></MyButton>
-  <MyButton color="yellow"></MyButton>
-</div>
-```
-
-### Disabled Checkbox
-
-export const DisabledCheckbox = () => (
-  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
-    <div className="pl-2">
-      <MyCheckbox disabled checked></MyCheckbox>
-    </div>
-  </div>
-);
-
-<DisabledCheckbox></DisabledCheckbox>

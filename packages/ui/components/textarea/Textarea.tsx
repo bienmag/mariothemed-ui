@@ -45,10 +45,10 @@ const MyTextarea: React.FunctionComponent<TextareaProps> = ({
 
   return (
     <Textarea
-      {...props}
-      placeholder={placeholder}
-      disabled={disabled}
-      css={styleOptions}
+    // {...props}
+    // placeholder={placeholder}
+    // disabled={disabled}
+    // css={styleOptions}
     ></Textarea>
   );
 };

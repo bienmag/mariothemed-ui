@@ -30,6 +30,10 @@ var __copyProps = (to, from, except, desc) => {
 var __toESM = (mod, isNodeMode, target) => (
   (target = mod != null ? __create(__getProtoOf(mod)) : {}),
   __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
     isNodeMode || !mod || !mod.__esModule
       ? __defProp(target, "default", { value: mod, enumerable: true })
       : target,
@@ -505,6 +509,10 @@ var require_react_development = __commonJS({
           return null;
         }
         var ReactCurrentDispatcher = {
+          /**
+           * @internal
+           * @type {ReactComponent}
+           */
           current: null,
         };
         var ReactCurrentBatchConfig = {
@@ -512,10 +520,15 @@ var require_react_development = __commonJS({
         };
         var ReactCurrentActQueue = {
           current: null,
+          // Used to reproduce behavior of `batchedUpdates` in legacy mode.
           isBatchingLegacy: false,
           didScheduleLegacyUpdate: false,
         };
         var ReactCurrentOwner = {
+          /**
+           * @internal
+           * @type {ReactComponent}
+           */
           current: null,
         };
         var ReactDebugCurrentFrame = {};
@@ -631,12 +644,47 @@ var require_react_development = __commonJS({
           }
         }
         var ReactNoopUpdateQueue = {
+          /**
+           * Checks whether or not this composite component is mounted.
+           * @param {ReactClass} publicInstance The instance we want to test.
+           * @return {boolean} True if mounted, false otherwise.
+           * @protected
+           * @final
+           */
           isMounted: function (publicInstance) {
             return false;
           },
+          /**
+           * Forces an update. This should only be invoked when it is known with
+           * certainty that we are **not** in a DOM transaction.
+           *
+           * You may want to call this when you know that some deeper aspect of the
+           * component's state has changed but `setState` was not called.
+           *
+           * This will not invoke `shouldComponentUpdate`, but it will invoke
+           * `componentWillUpdate` and `componentDidUpdate`.
+           *
+           * @param {ReactClass} publicInstance The instance that should rerender.
+           * @param {?function} callback Called after component is updated.
+           * @param {?string} callerName name of the calling function in the public API.
+           * @internal
+           */
           enqueueForceUpdate: function (publicInstance, callback, callerName) {
             warnNoop(publicInstance, "forceUpdate");
           },
+          /**
+           * Replaces all of the state. Always use this or `setState` to mutate state.
+           * You should treat `this.state` as immutable.
+           *
+           * There is no guarantee that `this.state` will be immediately updated, so
+           * accessing `this.state` after calling this method may return the old value.
+           *
+           * @param {ReactClass} publicInstance The instance that should rerender.
+           * @param {object} completeState Next state.
+           * @param {?function} callback Called after component is updated.
+           * @param {?string} callerName name of the calling function in the public API.
+           * @internal
+           */
           enqueueReplaceState: function (
             publicInstance,
             completeState,
@@ -645,6 +693,18 @@ var require_react_development = __commonJS({
           ) {
             warnNoop(publicInstance, "replaceState");
           },
+          /**
+           * Sets a subset of the state. This only exists because _pendingState is
+           * internal. This provides a merging strategy that is not available to deep
+           * properties which is confusing. TODO: Expose pendingState or don't use it
+           * during the merge.
+           *
+           * @param {ReactClass} publicInstance The instance that should rerender.
+           * @param {object} partialState Next partial state to be merged with state.
+           * @param {?function} callback Called after component is updated.
+           * @param {?string} Name of the calling function in the public API.
+           * @internal
+           */
           enqueueSetState: function (
             publicInstance,
             partialState,
@@ -953,11 +1013,14 @@ var require_react_development = __commonJS({
           props
         ) {
           var element = {
+            // This tag allows us to uniquely identify this as a React Element
             $$typeof: REACT_ELEMENT_TYPE,
+            // Built-in properties that belong on the element
             type,
             key,
             ref,
             props,
+            // Record the component responsible for creating this element.
             _owner: owner,
           };
           {
@@ -1239,10 +1302,14 @@ var require_react_development = __commonJS({
                 }
                 mappedChild = cloneAndReplaceKey(
                   mappedChild,
-                  escapedPrefix +
+                  // Keep both the (mapped) and old keys if they differ, just as
+                  // traverseAllChildren used to do for objects as children
+                  escapedPrefix + // $FlowFixMe Flow incorrectly thinks React.Portal doesn't have a key
                     (mappedChild.key &&
                     (!_child || _child.key !== mappedChild.key)
-                      ? escapeUserProvidedKey("" + mappedChild.key) + "/"
+                      ? // $FlowFixMe Flow incorrectly thinks existing element's key can be a number
+                        // eslint-disable-next-line react-internal/safe-string-coercion
+                        escapeUserProvidedKey("" + mappedChild.key) + "/"
                       : "") +
                     childKey
                 );
@@ -1356,11 +1423,20 @@ var require_react_development = __commonJS({
         function createContext(defaultValue) {
           var context = {
             $$typeof: REACT_CONTEXT_TYPE,
+            // As a workaround to support multiple concurrent renderers, we categorize
+            // some renderers as primary and others as secondary. We only expect
+            // there to be two concurrent renderers at most: React Native (primary) and
+            // Fabric (secondary); React DOM (primary) and React ART (secondary).
+            // Secondary renderers store their context values on separate fields.
             _currentValue: defaultValue,
             _currentValue2: defaultValue,
+            // Used to track how many concurrent renderers this context currently
+            // supports within in a single renderer. Such as parallel server rendering.
             _threadCount: 0,
+            // These are circular
             Provider: null,
             Consumer: null,
+            // Add these to use same hidden class in VM as ServerContext
             _defaultValue: null,
             _globalName: null,
           };
@@ -1510,6 +1586,7 @@ var require_react_development = __commonJS({
         }
         function lazy(ctor) {
           var payload = {
+            // We use these fields to store the result.
             _status: Uninitialized,
             _result: ctor,
           };
@@ -1636,7 +1713,10 @@ var require_react_development = __commonJS({
               type.$$typeof === REACT_MEMO_TYPE ||
               type.$$typeof === REACT_PROVIDER_TYPE ||
               type.$$typeof === REACT_CONTEXT_TYPE ||
-              type.$$typeof === REACT_FORWARD_REF_TYPE ||
+              type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+              // types supported by any Flight configuration anywhere since
+              // we don't know which Flight build this will end up being used
+              // with.
               type.$$typeof === REACT_MODULE_REFERENCE ||
               type.getModuleId !== void 0
             ) {
@@ -2251,7 +2331,8 @@ var require_react_development = __commonJS({
               propTypes = type.propTypes;
             } else if (
               typeof type === "object" &&
-              (type.$$typeof === REACT_FORWARD_REF_TYPE ||
+              (type.$$typeof === REACT_FORWARD_REF_TYPE || // Note: Memo only checks outer props here.
+                // Inner props are checked in the reconciler.
                 type.$$typeof === REACT_MEMO_TYPE)
             ) {
               propTypes = type.propTypes;
@@ -2695,8 +2776,8 @@ var require_react = __commonJS({
 // index.ts
 var ui_exports = {};
 __export(ui_exports, {
-  MyButton: () => Button_default,
-  MyCheckbox: () => Checkbox_default,
+  Button: () => Button_default,
+  Checkbox: () => Checkbox_default,
   MyInput: () => Input_default,
   MyRadio: () => Radio_default,
   MyTextarea: () => Textarea_default,
@@ -2708,7 +2789,7 @@ var import_react = require("@emotion/react");
 var import_styled = __toESM(require("@emotion/styled"));
 var import_react2 = __toESM(require_react());
 var import_react3 = require("@emotion/react");
-var MyButton = ({
+var Button = ({
   children,
   color,
   size,
@@ -2721,10 +2802,20 @@ var MyButton = ({
   borderWidth,
 }) => {
   const styleOptions = [];
-  const heightStyle = height ? import_react.css`height: ${height};` : null;
-  const widthStyle = width ? import_react.css`width: ${width};` : null;
+  const heightStyle = height
+    ? import_react.css`
+        height: ${height};
+      `
+    : null;
+  const widthStyle = width
+    ? import_react.css`
+        width: ${width};
+      `
+    : null;
   const borderWidthStyle = borderWidth
-    ? import_react.css`border-width: ${borderWidth};`
+    ? import_react.css`
+        border-width: ${borderWidth};
+      `
     : null;
   const sizeMap = {
     xs: {
@@ -3043,7 +3134,7 @@ var MyButton = ({
       backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
     },
   };
-  const Button = import_styled.default.button`
+  const Button2 = import_styled.default.button`
     ${baseStyle2}
     ${styleOptions}
   `;
@@ -3054,7 +3145,7 @@ var MyButton = ({
     }};
   `;
   return (0, import_react3.jsx)(
-    Button,
+    Button2,
     {
       className,
     },
@@ -3069,120 +3160,69 @@ var MyButton = ({
     )
   );
 };
-var Button_default = MyButton;
+var Button_default = Button;
 
 // components/checkbox/Checkbox.tsx
 var import_styled2 = __toESM(require("@emotion/styled"));
 var import_react4 = __toESM(require_react());
 var import_react5 = require("@emotion/react");
-var MyCheckbox = ({ size, color, disabled }) => {
+var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
   const styleOptions = [];
   const sizeMap = {
     xs: {
-      position: "relative",
-      height: "0.75rem",
-      width: "0.75rem",
-      cursor: "pointer",
-      appearance: "none",
-      borderRadius: "0.25rem",
-      borderWidth: "2px",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-      ":checked": {
-        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
-        "--tw-border-opacity": "1",
-        backgroundImage:
-          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
-        backgroundSize: "contain",
-      },
-      ":focus": {
-        outline: "2px solid transparent",
-        outlineOffset: "2px",
-      },
-    },
-    md: {
-      position: "relative",
       height: "1rem",
       width: "1rem",
-      cursor: "pointer",
-      appearance: "none",
-      borderRadius: "0.25rem",
-      borderWidth: "2px",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-      ":checked": {
-        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
-        "--tw-border-opacity": "1",
-        backgroundImage:
-          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
-        backgroundSize: "contain",
-      },
-      ":focus": {
-        outline: "2px solid transparent",
-        outlineOffset: "2px",
-      },
     },
-    lg: {
-      position: "relative",
+    md: {
       height: "1.25rem",
       width: "1.25rem",
-      cursor: "pointer",
-      appearance: "none",
-      borderRadius: "0.25rem",
-      borderWidth: "2px",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-      ":checked": {
-        borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
-        "--tw-border-opacity": "1",
-        backgroundImage:
-          "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
-        backgroundSize: "contain",
-      },
-      ":focus": {
-        outline: "2px solid transparent",
-        outlineOffset: "2px",
-      },
+    },
+    lg: {
+      height: "1.5rem",
+      width: "1.5rem",
     },
   };
   styleOptions.push(sizeMap[size]);
   const colorMap = {
-    green: {
+    yellow: {
       ":checked": {
         "--tw-border-opacity": "1",
-        borderColor: "rgb(22 163 74 / var(--tw-border-opacity))",
+        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+      },
+    },
+    red: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
       },
     },
     blue: {
       ":checked": {
         "--tw-border-opacity": "1",
-        borderColor: "rgb(30 64 175 / var(--tw-border-opacity))",
+        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
       },
     },
-    yellow: {
+    green: {
       ":checked": {
         "--tw-border-opacity": "1",
-        borderColor: "rgb(253 224 71 / var(--tw-border-opacity))",
+        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
       },
     },
   };
   styleOptions.push(colorMap[color]);
   const baseStyle2 = {
     position: "relative",
-    height: "1rem",
-    width: "1rem",
-    cursor: "pointer",
+    height: "1.5rem",
+    width: "1.5rem",
     appearance: "none",
     borderRadius: "0.25rem",
     borderWidth: "2px",
-    "--tw-border-opacity": "1",
-    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
     ":checked": {
       borderWidth: "2px",
       "--tw-border-opacity": "1",
-      borderColor: "rgb(133 77 14 / var(--tw-border-opacity))",
+      borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
       backgroundImage:
-        "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
+        "url('https://visualpharm.com/assets/350/Super%20Mario-595b40b85ba036ed117de511.svg')",
       backgroundSize: "contain",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -3192,16 +3232,29 @@ var MyCheckbox = ({ size, color, disabled }) => {
       outlineOffset: "2px",
     },
   };
-  const Checkbox = import_styled2.default.input`
+  const disabledStyle = {
+    cursor: "not-allowed",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(229 231 235 / var(--tw-text-opacity))",
+  };
+  if (disabled) {
+    styleOptions.push(disabledStyle);
+  }
+  const Checkbox2 = import_styled2.default.input`
     ${baseStyle2}
+    ${styleOptions}
   `;
-  return (0, import_react5.jsx)(Checkbox, {
-    css: styleOptions,
+  return (0, import_react5.jsx)(Checkbox2, {
     type: "checkbox",
     disabled,
+    defaultChecked,
   });
 };
-var Checkbox_default = MyCheckbox;
+var Checkbox_default = Checkbox;
 
 // components/input/Input.tsx
 var import_styled3 = __toESM(require("@emotion/styled"));
@@ -3320,22 +3373,6 @@ var Input_default = MyInput;
 var import_styled4 = __toESM(require("@emotion/styled"));
 var import_react8 = __toESM(require_react());
 var import_react9 = require("@emotion/react");
-function _extends() {
-  _extends = Object.assign
-    ? Object.assign.bind()
-    : function (target) {
-        for (var i = 1; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-        return target;
-      };
-  return _extends.apply(this, arguments);
-}
 var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
   const styleOptions = [];
   const resizeMap = {
@@ -3386,14 +3423,7 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
   const Textarea = import_styled4.default.textarea`
     ${baseStyle2}
   `;
-  return (0, import_react9.jsx)(
-    Textarea,
-    _extends({}, props, {
-      placeholder,
-      disabled,
-      css: styleOptions,
-    })
-  );
+  return (0, import_react9.jsx)(Textarea, null);
 };
 var Textarea_default = MyTextarea;
 
@@ -3516,27 +3546,33 @@ var Radio_default = MyRadio;
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
-    MyButton,
-    MyCheckbox,
+    Button,
+    Checkbox,
     MyInput,
     MyRadio,
     MyTextarea,
   });
-/**
- * @license React
- * react.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-/**
- * @license React
- * react.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+/*! Bundled license information:
+
+react/cjs/react.production.min.js:
+  (**
+   * @license React
+   * react.production.min.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+
+react/cjs/react.development.js:
+  (**
+   * @license React
+   * react.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *)
+*/

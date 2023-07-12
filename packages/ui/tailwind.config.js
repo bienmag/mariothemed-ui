@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        test: "url('https://img.freepik.com/free-icon/okay-mark-vector_318-10246.jpg?w=2000')",
+        mario:
+          "url('https://visualpharm.com/assets/350/Super%20Mario-595b40b85ba036ed117de511.svg')",
       },
       fontFamily: {
         mario: ["SuperMario", "sans-serif"],
