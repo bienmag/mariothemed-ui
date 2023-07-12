@@ -1,26 +1,27 @@
 import { MyButton } from "@/lib/simba-ui";
-import { FaBeer } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 
+import logo from "./mario.png";
 export default function Docs() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p className="font-mario"> WELCOME TO BUTTONS</p>
-      <MyButton color="yellow" variant="outline" leftIcon={<FaBeer />}>
+    <div className="font-mario flex min-h-screen flex-col items-center justify-between p-24">
+      <p> WELCOME TO MARIO BUTTONS</p>
+      <p> Here you can find all the buttons we have in the ui library</p>
+      <MyButton color="yellow" variant="outline" leftIcon={<CiMail />}>
         Click me
       </MyButton>
-      <MyButton rightIcon={<FaBeer />} size="xs" color="yellow">
+      <MyButton rightIcon={<CiMail />} size="xs" color="yellow">
         Click me
       </MyButton>
-      <MyButton rightIcon={<FaBeer />} size="sm" color="yellow">
+      <MyButton rightIcon={<CiMail />} size="sm" color="yellow">
         Click me
       </MyButton>
-      <MyButton rightIcon={<FaBeer />} size="md" color="yellow">
+      <MyButton rightIcon={<CiMail />} size="md" color="yellow">
         Click me
       </MyButton>
-      <MyButton rightIcon={<FaBeer />} size="lg" color="yellow">
+      <MyButton rightIcon={<CiMail />} size="lg" color="yellow">
         Click me
       </MyButton>
-
       <MyButton color="yellow" variant="solid">
         Click me
       </MyButton>
@@ -31,6 +32,19 @@ export default function Docs() {
         Click me
       </MyButton>
       <MyButton color="yellow" variant="link">
+        Click me
+      </MyButton>
+      customize:
+      <MyButton
+        rightIcon={<CiMail />}
+        className="text-lg w-40 h-20 flex justify-center items-center"
+        size="xs"
+        color="yellow"
+      >
+        Click me
+      </MyButton>
+      customize 2:
+      <MyButton rightIcon={<CiMail />} size="xs" height="120px" color="yellow">
         Click me
       </MyButton>
     </div>

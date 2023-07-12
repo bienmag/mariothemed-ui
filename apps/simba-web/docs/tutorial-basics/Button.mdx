@@ -5,7 +5,7 @@ sidebar_position: 1
 import { MyButton } from "tailwind-simba-ui";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Logo from "/img/mario.png";
+import { CiMail } from "react-icons/ci";
 
 ## Import
 
@@ -144,7 +144,7 @@ export const ButtonColors = ({ color }) => (
   </div>
 );
 
-Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
+Use the color prop to change the visual style of the Button. You can set the value to **yellow**, **red**, **blue**, or **green**.
 
 <ButtonColors></ButtonColors>
 
@@ -159,10 +159,53 @@ Use the variant prop to change the visual style of the Button. You can set the v
 
 ## Button with icon
 
+???? PNG IS NOT WORKING HERE!!! SVG IS WORKING BUT IT MISSING THE STYLES FIX!!!!!!!!!!
+
 export const ButtonWithIcon = ({ leftIcon, rightIcon }) => (
   <div className="flex h-24 items-center border-2	rounded-xl mb-4">
     <div className="pr-2 pl-2">
-      <MyButton color="yellow">Button</MyButton>
+      <MyButton color="yellow" leftIcon={<CiMail />}>
+        Button
+      </MyButton>
+    </div>
+    <div className="pr-2">
+      <MyButton color="red" rightIcon={<CiMail />}>
+        Button
+      </MyButton>
+    </div>
+  </div>
+);
+
+You can add an icon to your button. Use the **leftIcon** prop to place the image on the left of the button and **rightIcon** to place the image on the right of the button.
+Please note that the icon should be a react element, not a string!
+
+<ButtonWithIcon></ButtonWithIcon>
+
+```js
+<div>
+  <MyButton color="yellow" leftIcon={<Icon />}>
+    Button
+  </MyButton>
+  <MyButton color="red" rightIcon={<Icon />}>
+    Button
+  </MyButton>
+</div>
+```
+
+## Customize your button
+
+You can customize your button with className
+
+export const CustomButton = ({ leftIcon, rightIcon }) => (
+  <div className="flex h-24 items-center border-2	rounded-xl mb-4">
+    <div className="pr-2 pl-2">
+      <MyButton
+        className="w-40 h-20 flex justify-center items-center"
+        size="xs"
+        color="yellow"
+      >
+        Click me
+      </MyButton>{" "}
     </div>
     <div className="pr-2">
       <MyButton color="red">Button</MyButton>
@@ -172,10 +215,11 @@ export const ButtonWithIcon = ({ leftIcon, rightIcon }) => (
 
 Use the variant prop to change the visual style of the Button. You can set the value to **solid**, **ghost**, **outline**, or **link**.
 
-<ButtonWithIcon></ButtonWithIcon>
+<CustomButton></CustomButton>
 
 ```js
 <div>
+  CHANGE THIS!!!!!!!!!!!!!
   <MyButton color="yellow">Button</MyButton>
   <MyButton color="red">Button</MyButton>
 </div>

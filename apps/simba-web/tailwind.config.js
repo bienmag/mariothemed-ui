@@ -9,6 +9,9 @@ module.exports = {
       color: {
         primary: "#0D4066",
       },
+      fontFamily: {
+        mario: ["SuperMario", "sans-serif"],
+      },
     },
   },
 };

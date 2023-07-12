@@ -2,15 +2,18 @@ import React, { ReactElement } from "react";
 
 declare type ButtonSize = "xs" | "sm" | "md" | "lg";
 interface ButtonProps {
-  children: string | React.ReactElement | React.ReactElement[];
+  children: React.ReactNode;
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
   rightIcon?: ReactElement;
   leftIcon?: ReactElement;
   className?: string;
+  height?: string;
+  width?: string;
+  borderWidth?: string;
 }
-declare const MyButton: React.FunctionComponent<ButtonProps>;
+declare const MyButton: React.FC<ButtonProps>;
 
 interface CheckboxProps {
   size?: string;

@@ -5,16 +5,19 @@ import tw, { css } from "twin.macro";
 type ButtonSize = "xs" | "sm" | "md" | "lg";
 
 export interface ButtonProps {
-  children: string | React.ReactElement | React.ReactElement[];
+  children: React.ReactNode;
   color?: string;
   size?: ButtonSize;
   variant?: "outline" | "solid" | "ghost" | "link" | "logo";
   rightIcon?: ReactElement;
   leftIcon?: ReactElement;
   className?: string;
+  height?: string;
+  width?: string;
+  borderWidth?: string;
 }
 
-const MyButton: React.FunctionComponent<ButtonProps> = ({
+const MyButton: React.FC<ButtonProps> = ({
   children,
   color,
   size,
@@ -22,8 +25,27 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
   rightIcon,
   leftIcon,
   className,
+  height,
+  width,
+  borderWidth,
 }) => {
   const styleOptions = [];
+
+  const heightStyle = height
+    ? css`
+        height: ${height};
+      `
+    : null;
+  const widthStyle = width
+    ? css`
+        width: ${width};
+      `
+    : null;
+  const borderWidthStyle = borderWidth
+    ? css`
+        border-width: ${borderWidth};
+      `
+    : null;
 
   const sizeMap = {
     xs: tw`px-4 py-1 text-xs`,
@@ -32,7 +54,7 @@ const MyButton: React.FunctionComponent<ButtonProps> = ({
     lg: tw`px-8 py-4 text-lg`,
   };
 
-  styleOptions.push(sizeMap[size]);
+  styleOptions.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
 
   const colorMap = {
     yellow: {
