@@ -2801,7 +2801,7 @@ var Button = ({
   width,
   borderWidth,
 }) => {
-  const styleOptions = [];
+  const styleOptions2 = [];
   const heightStyle = height
     ? import_react.css`
         height: ${height};
@@ -2851,7 +2851,7 @@ var Button = ({
       lineHeight: "1.75rem",
     },
   };
-  styleOptions.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
+  styleOptions2.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
   const colorMap = {
     yellow: {
       solid: {
@@ -3111,7 +3111,7 @@ var Button = ({
     }
     return null;
   };
-  styleOptions.push(getVariantStyle(variant, color));
+  styleOptions2.push(getVariantStyle(variant, color));
   const baseStyle2 = {
     borderRadius: "0.375rem",
     borderWidth: "1px",
@@ -3136,7 +3136,7 @@ var Button = ({
   };
   const Button2 = import_styled.default.button`
     ${baseStyle2}
-    ${styleOptions}
+    ${styleOptions2}
   `;
   const IconWrapper = import_styled.default.span`
     ${{
@@ -3167,7 +3167,7 @@ var import_styled2 = __toESM(require("@emotion/styled"));
 var import_react4 = __toESM(require_react());
 var import_react5 = require("@emotion/react");
 var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
-  const styleOptions = [];
+  const styleOptions2 = [];
   const sizeMap = {
     xs: {
       height: "1rem",
@@ -3182,7 +3182,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
       width: "1.5rem",
     },
   };
-  styleOptions.push(sizeMap[size]);
+  styleOptions2.push(sizeMap[size]);
   const colorMap = {
     yellow: {
       ":checked": {
@@ -3209,7 +3209,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
       },
     },
   };
-  styleOptions.push(colorMap[color]);
+  styleOptions2.push(colorMap[color]);
   const baseStyle2 = {
     position: "relative",
     height: "1.5rem",
@@ -3242,11 +3242,11 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     color: "rgb(229 231 235 / var(--tw-text-opacity))",
   };
   if (disabled) {
-    styleOptions.push(disabledStyle);
+    styleOptions2.push(disabledStyle);
   }
   const Checkbox2 = import_styled2.default.input`
     ${baseStyle2}
-    ${styleOptions}
+    ${styleOptions2}
   `;
   return (0, import_react5.jsx)(Checkbox2, {
     type: "checkbox",
@@ -3282,16 +3282,17 @@ var baseStyle = {
     outlineOffset: "2px",
   },
 };
+var styleOptions = [];
 var Input = import_styled3.default.input`
   ${baseStyle}
-`;
-var MyInput = ({ variant, size, placeholder, onChange, value }) => {
-  const styleOptions = [];
+  ${styleOptions}
+  `;
+var MyInput = ({ variant, size, placeholder, onChange, value, color }) => {
   const sizeMap = {
     xs: {
       borderRadius: "0.375rem",
-      paddingLeft: "0.25rem",
-      paddingRight: "0.25rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
       paddingTop: "0px",
       paddingBottom: "0px",
       fontSize: "0.875rem",
@@ -3299,8 +3300,8 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
     },
     sm: {
       borderRadius: "0.5rem",
-      paddingLeft: "0.5rem",
-      paddingRight: "0.5rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
       paddingTop: "0.25rem",
       paddingBottom: "0.25rem",
       fontSize: "1rem",
@@ -3317,8 +3318,8 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
     },
     lg: {
       borderRadius: "0.5rem",
-      paddingLeft: "1rem",
-      paddingRight: "1rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
       paddingTop: "0.75rem",
       paddingBottom: "0.75rem",
       fontSize: "1.25rem",
@@ -3326,6 +3327,45 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
     },
   };
   styleOptions.push(sizeMap[size]);
+  const colorMap = {
+    yellow: {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+      ":focus": {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+      },
+    },
+    red: {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+      ":focus": {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+      },
+    },
+    blue: {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+      ":focus": {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+      },
+    },
+    green: {
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+      ":focus": {
+        borderWidth: "2px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+      },
+    },
+  };
+  styleOptions.push(colorMap[color]);
   const variantMap = {
     outline: {
       borderWidth: "1px",
@@ -3348,21 +3388,20 @@ var MyInput = ({ variant, size, placeholder, onChange, value }) => {
       borderTopWidth: "0px",
       "--tw-border-opacity": "1",
       borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-      paddingLeft: "0.25rem",
-      paddingRight: "0.25rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
     },
     unstyled: {
       borderRadius: "0px",
       borderWidth: "0px",
-      paddingLeft: "0.25rem",
-      paddingRight: "0.25rem",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
     },
   };
   styleOptions.push(variantMap[variant]);
   return (0, import_react7.jsx)(Input, {
     type: "text",
     placeholder,
-    css: styleOptions,
     onChange,
     value,
   });
@@ -3374,7 +3413,7 @@ var import_styled4 = __toESM(require("@emotion/styled"));
 var import_react8 = __toESM(require_react());
 var import_react9 = require("@emotion/react");
 var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
-  const styleOptions = [];
+  const styleOptions2 = [];
   const resizeMap = {
     none: {
       resize: "none",
@@ -3389,7 +3428,7 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
       resize: "vertical",
     },
   };
-  styleOptions.push(resizeMap[resize]);
+  styleOptions2.push(resizeMap[resize]);
   disabled: ({
     cursor: "not-allowed",
     "--tw-border-opacity": "1",
