@@ -2781,7 +2781,7 @@ var Button = ({
   width,
   borderWidth,
 }) => {
-  const styleOptions2 = [];
+  const styleOptions = [];
   const heightStyle = height
     ? _css`
         height: ${height};
@@ -2831,7 +2831,7 @@ var Button = ({
       lineHeight: "1.75rem",
     },
   };
-  styleOptions2.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
+  styleOptions.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
   const colorMap = {
     yellow: {
       solid: {
@@ -3091,7 +3091,7 @@ var Button = ({
     }
     return null;
   };
-  styleOptions2.push(getVariantStyle(variant, color));
+  styleOptions.push(getVariantStyle(variant, color));
   const baseStyle2 = {
     borderRadius: "0.375rem",
     borderWidth: "1px",
@@ -3116,7 +3116,7 @@ var Button = ({
   };
   const Button2 = styled.button`
     ${baseStyle2}
-    ${styleOptions2}
+    ${styleOptions}
   `;
   const IconWrapper = styled.span`
     ${{
@@ -3147,7 +3147,7 @@ var import_react4 = __toESM(require_react());
 import styled2 from "@emotion/styled";
 import { jsx as __cssprop2 } from "@emotion/react";
 var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
-  const styleOptions2 = [];
+  const styleOptions = [];
   const sizeMap = {
     xs: {
       height: "1rem",
@@ -3162,7 +3162,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
       width: "1.5rem",
     },
   };
-  styleOptions2.push(sizeMap[size]);
+  styleOptions.push(sizeMap[size]);
   const colorMap = {
     yellow: {
       ":checked": {
@@ -3189,7 +3189,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
       },
     },
   };
-  styleOptions2.push(colorMap[color]);
+  styleOptions.push(colorMap[color]);
   const baseStyle2 = {
     position: "relative",
     height: "1.5rem",
@@ -3222,11 +3222,11 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     color: "rgb(229 231 235 / var(--tw-text-opacity))",
   };
   if (disabled) {
-    styleOptions2.push(disabledStyle);
+    styleOptions.push(disabledStyle);
   }
   const Checkbox2 = styled2.input`
     ${baseStyle2}
-    ${styleOptions2}
+    ${styleOptions}
   `;
   return __cssprop2(Checkbox2, {
     type: "checkbox",
@@ -3244,7 +3244,6 @@ var baseStyle = {
   width: "100%",
   borderRadius: "0.5rem",
   borderWidth: "1px",
-  borderStyle: "solid",
   "--tw-border-opacity": "1",
   borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
   paddingLeft: "0.75rem",
@@ -3262,128 +3261,452 @@ var baseStyle = {
     outlineOffset: "2px",
   },
 };
-var styleOptions = [];
 var Input = styled3.input`
   ${baseStyle}
-  ${styleOptions}
+
+  ${({ size }) => {
+    const sizeMap = {
+      xs: {
+        borderRadius: "0.375rem",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0px",
+        paddingBottom: "0px",
+        fontSize: "0.875rem",
+        lineHeight: "1.25rem",
+      },
+      sm: {
+        borderRadius: "0.5rem",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0.25rem",
+        paddingBottom: "0.25rem",
+        fontSize: "1rem",
+        lineHeight: "1.5rem",
+      },
+      md: {
+        borderRadius: "0.5rem",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0.5rem",
+        paddingBottom: "0.5rem",
+        fontSize: "1rem",
+        lineHeight: "1.5rem",
+      },
+      lg: {
+        borderRadius: "0.5rem",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0.75rem",
+        paddingBottom: "0.75rem",
+        fontSize: "1.25rem",
+        lineHeight: "1.75rem",
+      },
+    };
+    return sizeMap[size];
+  }}
+  
+  ${({ color, variant }) => {
+    const colorMap = {
+      yellow: {
+        outline: {
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(252 207 0 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(252 207 0 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          },
+        },
+        filled: {
+          borderColor: "transparent",
+          "--tw-bg-opacity": "0.1",
+          backgroundColor: "rgb(215 178 7 / var(--tw-bg-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(252 207 0 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(252 207 0 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        flushed: {
+          borderRadius: "0px",
+          borderLeftWidth: "0px",
+          borderRightWidth: "0px",
+          borderTopWidth: "0px",
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(252 207 0 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(252 207 0 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderLeftWidth: "0px",
+            borderRightWidth: "0px",
+            borderTopWidth: "0px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        unstyled: {
+          borderRadius: "0px",
+          borderWidth: "0px",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(252 207 0 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(252 207 0 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderStyle: "none",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+      green: {
+        outline: {
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(68 175 53 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(68 175 53 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          },
+        },
+        filled: {
+          borderColor: "transparent",
+          "--tw-bg-opacity": "0.1",
+          backgroundColor: "rgb(40 140 26 / var(--tw-bg-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(68 175 53 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(68 175 53 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        flushed: {
+          borderRadius: "0px",
+          borderLeftWidth: "0px",
+          borderRightWidth: "0px",
+          borderTopWidth: "0px",
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(68 175 53 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(68 175 53 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderLeftWidth: "0px",
+            borderRightWidth: "0px",
+            borderTopWidth: "0px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        unstyled: {
+          borderRadius: "0px",
+          borderWidth: "0px",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(68 175 53 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(68 175 53 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderStyle: "none",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+      blue: {
+        outline: {
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(0 155 217 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(0 155 217 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          },
+        },
+        filled: {
+          borderColor: "transparent",
+          "--tw-bg-opacity": "0.1",
+          backgroundColor: "rgb(18 97 128 / var(--tw-bg-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(0 155 217 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(0 155 217 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        flushed: {
+          borderRadius: "0px",
+          borderLeftWidth: "0px",
+          borderRightWidth: "0px",
+          borderTopWidth: "0px",
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(0 155 217 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(0 155 217 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderLeftWidth: "0px",
+            borderRightWidth: "0px",
+            borderTopWidth: "0px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        unstyled: {
+          borderRadius: "0px",
+          borderWidth: "0px",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(0 155 217 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(0 155 217 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderStyle: "none",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+      red: {
+        outline: {
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(230 35 16 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(230 35 16 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          },
+        },
+        filled: {
+          borderColor: "transparent",
+          "--tw-bg-opacity": "0.1",
+          backgroundColor: "rgb(185 28 28 / var(--tw-bg-opacity))",
+          "--tw-text-opacity": "1",
+          color: "rgb(230 35 16 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(230 35 16 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        flushed: {
+          borderRadius: "0px",
+          borderLeftWidth: "0px",
+          borderRightWidth: "0px",
+          borderTopWidth: "0px",
+          "--tw-border-opacity": "0.6",
+          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(230 35 16 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(230 35 16 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderWidth: "2px",
+            borderLeftWidth: "0px",
+            borderRightWidth: "0px",
+            borderTopWidth: "0px",
+            borderStyle: "solid",
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+            backgroundColor: "transparent",
+          },
+        },
+        unstyled: {
+          borderRadius: "0px",
+          borderWidth: "0px",
+          backgroundColor: "transparent",
+          paddingLeft: "0.75rem",
+          paddingRight: "0.75rem",
+          "--tw-text-opacity": "1",
+          color: "rgb(230 35 16 / var(--tw-text-opacity))",
+          "::placeholder": {
+            "--tw-placeholder-opacity": "1",
+            color: "rgb(230 35 16 / var(--tw-placeholder-opacity))",
+          },
+          ":focus": {
+            borderStyle: "none",
+            backgroundColor: "transparent",
+          },
+        },
+      },
+    };
+    const variantMap = {
+      outline: {
+        width: "100%",
+        borderRadius: "0.5rem",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        paddingTop: "0.5rem",
+        paddingBottom: "0.5rem",
+        fontSize: "1rem",
+        lineHeight: "1.5rem",
+        "--tw-text-opacity": "1",
+        color: "rgb(0 0 0 / var(--tw-text-opacity))",
+        ":focus": {
+          "--tw-border-opacity": "1",
+          borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+        },
+      },
+      filled: {
+        borderStyle: "none",
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+        ":focus": {
+          borderStyle: "solid",
+          "--tw-border-opacity": "1",
+          borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+          backgroundColor: "transparent",
+        },
+      },
+      flushed: {
+        borderRadius: "0px",
+        borderLeftWidth: "0px",
+        borderRightWidth: "0px",
+        borderTopWidth: "0px",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+        backgroundColor: "transparent",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        ":focus": {
+          backgroundColor: "transparent",
+        },
+      },
+      unstyled: {
+        borderRadius: "0px",
+        borderWidth: "0px",
+        backgroundColor: "transparent",
+        paddingLeft: "0.75rem",
+        paddingRight: "0.75rem",
+        ":focus": {
+          backgroundColor: "transparent",
+        },
+      },
+    };
+    const getVariantStyle = (variant2, color2) => {
+      var _a, _b;
+      if (color2 && variant2) {
+        return (_a = colorMap[color2]) == null ? void 0 : _a[variant2];
+      }
+      if (color2) {
+        return (_b = colorMap[color2]) == null ? void 0 : _b["solid"];
+      }
+      if (variant2) {
+        return variantMap[variant2];
+      }
+      return null;
+    };
+    return getVariantStyle(variant, color);
+  }}
 `;
 var MyInput = ({ variant, size, placeholder, onChange, value, color }) => {
-  const sizeMap = {
-    xs: {
-      borderRadius: "0.375rem",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-      paddingTop: "0px",
-      paddingBottom: "0px",
-      fontSize: "0.875rem",
-      lineHeight: "1.25rem",
-    },
-    sm: {
-      borderRadius: "0.5rem",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-      paddingTop: "0.25rem",
-      paddingBottom: "0.25rem",
-      fontSize: "1rem",
-      lineHeight: "1.5rem",
-    },
-    md: {
-      borderRadius: "0.5rem",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-      paddingTop: "0.5rem",
-      paddingBottom: "0.5rem",
-      fontSize: "1rem",
-      lineHeight: "1.5rem",
-    },
-    lg: {
-      borderRadius: "0.5rem",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-      paddingTop: "0.75rem",
-      paddingBottom: "0.75rem",
-      fontSize: "1.25rem",
-      lineHeight: "1.75rem",
-    },
-  };
-  styleOptions.push(sizeMap[size]);
-  const colorMap = {
-    yellow: {
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-      ":focus": {
-        borderWidth: "2px",
-        "--tw-border-opacity": "1",
-        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-      },
-    },
-    red: {
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-      ":focus": {
-        borderWidth: "2px",
-        "--tw-border-opacity": "1",
-        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-      },
-    },
-    blue: {
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-      ":focus": {
-        borderWidth: "2px",
-        "--tw-border-opacity": "1",
-        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-      },
-    },
-    green: {
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-      ":focus": {
-        borderWidth: "2px",
-        "--tw-border-opacity": "1",
-        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-      },
-    },
-  };
-  styleOptions.push(colorMap[color]);
-  const variantMap = {
-    outline: {
-      borderWidth: "1px",
-      borderStyle: "solid",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-    },
-    filled: {
-      "--tw-bg-opacity": "1",
-      backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
-      ":focus": {
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
-      },
-    },
-    flushed: {
-      borderRadius: "0px",
-      borderLeftWidth: "0px",
-      borderRightWidth: "0px",
-      borderTopWidth: "0px",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-    },
-    unstyled: {
-      borderRadius: "0px",
-      borderWidth: "0px",
-      paddingLeft: "0.75rem",
-      paddingRight: "0.75rem",
-    },
-  };
-  styleOptions.push(variantMap[variant]);
   return __cssprop3(Input, {
     type: "text",
     placeholder,
     onChange,
     value,
+    color,
+    variant,
+    size,
   });
 };
 var Input_default = MyInput;
@@ -3393,7 +3716,7 @@ var import_react8 = __toESM(require_react());
 import styled4 from "@emotion/styled";
 import { jsx as __cssprop4 } from "@emotion/react";
 var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
-  const styleOptions2 = [];
+  const styleOptions = [];
   const resizeMap = {
     none: {
       resize: "none",
@@ -3408,7 +3731,7 @@ var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
       resize: "vertical",
     },
   };
-  styleOptions2.push(resizeMap[resize]);
+  styleOptions.push(resizeMap[resize]);
   disabled: ({
     cursor: "not-allowed",
     "--tw-border-opacity": "1",

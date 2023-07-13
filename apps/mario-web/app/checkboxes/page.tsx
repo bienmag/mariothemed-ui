@@ -8,12 +8,24 @@ function Page() {
   return (
     <div className="bg-white font-mario flex min-h-screen flex-col items-center justify-between p-24">
       <Checkbox color="yellow" size="lg"></Checkbox>
-      <Checkbox color="green" size="lg"></Checkbox>
-      <Checkbox color="red" size="lg"></Checkbox>
+      <Checkbox color="green" size="xs"></Checkbox>
+      <Checkbox color="red" size="md"></Checkbox>
       <Checkbox color="blue" defaultChecked disabled size="lg"></Checkbox>
       <p>value: {value}</p>
-      <MyInput placeholder="hello" color="blue"></MyInput>
-      <MyInput placeholder="hello" color="red"></MyInput>
+      <MyInput
+        placeholder="hello"
+        size="md"
+        color="red"
+        variant="outline"
+      ></MyInput>
+      <MyInput
+        placeholder="hello"
+        size="xs"
+        color="red"
+        variant="filled"
+      ></MyInput>
+      <MyInput placeholder="hello" color="red" variant="flushed"></MyInput>
+      <MyInput placeholder="hello" color="red" variant="unstyled"></MyInput>
     </div>
   );
 }

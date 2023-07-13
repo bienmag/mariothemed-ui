@@ -16683,12 +16683,12 @@ declare const Checkbox: React.FC<CheckboxProps>;
 
 interface InputProps {
   variant?: string;
-  size?: string;
   className?: string | string[];
   placeholder?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   color?: string;
+  size?: any;
 }
 declare const MyInput: React.FunctionComponent<InputProps>;
 
