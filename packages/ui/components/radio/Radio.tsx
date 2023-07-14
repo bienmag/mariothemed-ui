@@ -3,75 +3,63 @@ import React from "react";
 import tw from "twin.macro";
 
 export interface RadioProps {
-  variant?: "default" | "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
+  children?: React.ReactNode;
+  size?: string;
+  color?: string;
   className?: string;
-  isChecked?: boolean;
-  onChange?: (value: any) => void;
-  value?: string;
-  defaultisChecked?: boolean;
+  disabled?: boolean;
+  defaultChecked?: boolean;
 }
 
-const Radio = styled.input`
-  ${tw`hidden`}
-`;
-
-const Label = styled.label`
-  ${tw`flex items-center space-x-2 cursor-pointer`}
-`;
-
-const Indicator = styled.span<RadioProps>`
-  ${({ variant, isChecked }) => {
-    if (isChecked) {
-      if (variant === "primary") {
-        return tw`w-4 h-4 rounded-full bg-blue-500`;
-      }
-      if (variant === "secondary") {
-        return tw`w-4 h-4 rounded-full bg-red-500`;
-      }
-      return tw`w-4 h-4 rounded-full bg-gray-500`;
-    }
-    return tw`w-4 h-4 rounded-full border border-gray-500`;
-  }}
-`;
-
-const Text = styled.span<RadioProps>`
-  ${({ size }) => {
-    if (size === "sm") {
-      return tw`text-sm`;
-    }
-    if (size === "lg") {
-      return tw`text-lg`;
-    }
-    return tw`text-base`;
-  }}
-`;
-
-const MyRadio: React.FunctionComponent<RadioProps> = ({
-  variant = "default",
+const Radio: React.FC<RadioProps> = ({
+  children,
   size = "md",
+  color,
   className,
-  isChecked = false,
-  onChange,
-  value,
+  disabled,
+  defaultChecked,
 }) => {
-  const handleInputChange = () => {
-    if (onChange) {
-      onChange(value || "");
-    }
+  const styleOptions = [];
+
+  const sizeMap = {
+    sm: tw`w-5 h-5`,
+    md: tw`w-6 h-6`,
+    lg: tw`w-7 h-7`,
   };
 
+  styleOptions.push(sizeMap[size]);
+
+  const colorMap = {
+    yellow: tw`checked:border-myellow`,
+    red: tw`checked:border-mred`,
+    blue: tw`checked:border-mblue`,
+    green: tw`checked:border-mgreen`,
+  };
+
+  styleOptions.push(colorMap[color]);
+
+  const baseStyle = tw`appearance-none relative rounded-full border-2 checked:bg-mario checked:border-gray-500 checked:bg-contain checked:border-4 focus:outline-none`;
+
+  const disabledStyle = tw`bg-gray-200 text-gray-200 border-gray-200 cursor-not-allowed`;
+
+  if (disabled) {
+    styleOptions.push(disabledStyle);
+  }
+
+  const RadioInput = styled.input`
+    ${baseStyle}
+    ${styleOptions}
+  `;
+
   return (
-    <Label className={className}>
-      <Radio
+    <label className={className}>
+      <RadioInput
         type="radio"
-        // defaultisChecked={isChecked}
-        onChange={handleInputChange}
+        disabled={disabled}
+        defaultChecked={defaultChecked}
       />
-      <Indicator variant={variant} isChecked={isChecked} />
-      <Text size={size}>Option</Text>
-    </Label>
+    </label>
   );
 };
 
-export default MyRadio;
+export default Radio;

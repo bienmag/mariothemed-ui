@@ -3838,7 +3838,7 @@ var MyTextarea = import_styled4.default.textarea`
   ${baseStyle2}
   min-height: 4rem;
   max-width: 100%;
- 
+
   ${({ resize }) => resizeMap[resize]}
   ${({ color }) => colorMap[color]}
 
@@ -3873,118 +3873,104 @@ var Textarea_default = Textarea;
 var import_styled5 = __toESM(require("@emotion/styled"));
 var import_react10 = __toESM(require_react());
 var import_react11 = require("@emotion/react");
-var Radio = import_styled5.default.input`
-  ${{
-    display: "none",
-  }}
-`;
-var Label = import_styled5.default.label`
-  ${{
-    display: "flex",
-    cursor: "pointer",
-    alignItems: "center",
-    "> :not([hidden]) ~ :not([hidden])": {
-      "--tw-space-x-reverse": "0",
-      marginRight: "calc(0.5rem * var(--tw-space-x-reverse))",
-      marginLeft: "calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))",
+var Radio = ({
+  children,
+  size = "md",
+  color,
+  className,
+  disabled,
+  defaultChecked,
+}) => {
+  const styleOptions = [];
+  const sizeMap = {
+    sm: {
+      height: "1.25rem",
+      width: "1.25rem",
     },
-  }}
-`;
-var Indicator = import_styled5.default.span`
-  ${({ variant, isChecked }) => {
-    if (isChecked) {
-      if (variant === "primary") {
-        return {
-          height: "1rem",
-          width: "1rem",
-          borderRadius: "9999px",
-          "--tw-bg-opacity": "1",
-          backgroundColor: "rgb(59 130 246 / var(--tw-bg-opacity))",
-        };
-      }
-      if (variant === "secondary") {
-        return {
-          height: "1rem",
-          width: "1rem",
-          borderRadius: "9999px",
-          "--tw-bg-opacity": "1",
-          backgroundColor: "rgb(239 68 68 / var(--tw-bg-opacity))",
-        };
-      }
-      return {
-        height: "1rem",
-        width: "1rem",
-        borderRadius: "9999px",
-        "--tw-bg-opacity": "1",
-        backgroundColor: "rgb(107 114 128 / var(--tw-bg-opacity))",
-      };
-    }
-    return {
-      height: "1rem",
-      width: "1rem",
-      borderRadius: "9999px",
-      borderWidth: "1px",
+    md: {
+      height: "1.5rem",
+      width: "1.5rem",
+    },
+    lg: {
+      height: "1.75rem",
+      width: "1.75rem",
+    },
+  };
+  styleOptions.push(sizeMap[size]);
+  const colorMap2 = {
+    yellow: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+      },
+    },
+    red: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+      },
+    },
+    blue: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+      },
+    },
+    green: {
+      ":checked": {
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+      },
+    },
+  };
+  styleOptions.push(colorMap2[color]);
+  const baseStyle3 = {
+    position: "relative",
+    appearance: "none",
+    borderRadius: "9999px",
+    borderWidth: "2px",
+    ":checked": {
+      borderWidth: "4px",
       "--tw-border-opacity": "1",
       borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
-    };
-  }}
-`;
-var Text = import_styled5.default.span`
-  ${({ size }) => {
-    if (size === "sm") {
-      return {
-        fontSize: "0.875rem",
-        lineHeight: "1.25rem",
-      };
-    }
-    if (size === "lg") {
-      return {
-        fontSize: "1.125rem",
-        lineHeight: "1.75rem",
-      };
-    }
-    return {
-      fontSize: "1rem",
-      lineHeight: "1.5rem",
-    };
-  }}
-`;
-var MyRadio = ({
-  variant = "default",
-  size = "md",
-  className,
-  isChecked = false,
-  onChange,
-  value,
-}) => {
-  const handleInputChange = () => {
-    if (onChange) {
-      onChange(value || "");
-    }
+      backgroundImage:
+        "url('https://visualpharm.com/assets/350/Super%20Mario-595b40b85ba036ed117de511.svg')",
+      backgroundSize: "contain",
+    },
+    ":focus": {
+      outline: "2px solid transparent",
+      outlineOffset: "2px",
+    },
   };
+  const disabledStyle = {
+    cursor: "not-allowed",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(229 231 235 / var(--tw-text-opacity))",
+  };
+  if (disabled) {
+    styleOptions.push(disabledStyle);
+  }
+  const RadioInput = import_styled5.default.input`
+    ${baseStyle3}
+    ${styleOptions}
+  `;
   return (0, import_react11.jsx)(
-    Label,
+    "label",
     {
       className,
     },
-    (0, import_react11.jsx)(Radio, {
+    (0, import_react11.jsx)(RadioInput, {
       type: "radio",
-      onChange: handleInputChange,
-    }),
-    (0, import_react11.jsx)(Indicator, {
-      variant,
-      isChecked,
-    }),
-    (0, import_react11.jsx)(
-      Text,
-      {
-        size,
-      },
-      "Option"
-    )
+      disabled,
+      defaultChecked,
+    })
   );
 };
-var Radio_default = MyRadio;
+var Radio_default = Radio;
 // Annotate the CommonJS export names for ESM import in node:
 0 &&
   (module.exports = {
