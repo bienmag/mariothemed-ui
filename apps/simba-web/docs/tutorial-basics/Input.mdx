@@ -98,7 +98,7 @@ export const InputVariants = ({ variant }) => (
 
 ## **Changing the color of the input**
 
-Use the color prop to change the visual style of the Button. You can set the value to **yellow**, **red**, **blue**, or **green**.
+Use the color prop to change the visual style of the Input. You can set the value to **yellow**, **red**, **blue**, or **green**.
 
 export const InputColors = ({ color }) => (
   <div className="flex flex-col border-2 rounded-xl mb-4">
@@ -130,8 +130,8 @@ export const InputColors = ({ color }) => (
 
 ## **Controlled input**
 
-export const ControlledInput = function Controlled({ onChange, myText }) {
-  const [value, setValue] = useState();
+export const ControlledInput = function Controlled({ onChange }) {
+  const [value, setValue] = useState("");
   return (
     <div className="flex flex-col border-2 rounded-xl mb-4">
       <div className="m-2">
@@ -151,16 +151,18 @@ export const ControlledInput = function Controlled({ onChange, myText }) {
 
 ```js
 function Example() {
-  const [value, setValue] = React.useState('')
-  const handleChange = (event) => setValue(event.target.value)
+  const [value, setValue] = React.useState("");
+  const handleChange = (event) => setValue(event.target.value);
 
-  return(
-    <p>Value: {value}</p>
-    <Input
-    onChange={handleChange}
-    placeholder='Sample placeholder'
-    size='md'
-    />
-  )
+  return (
+    <>
+      <p>Value: {value}</p>
+      <Input
+        onChange={handleChange}
+        placeholder="Sample placeholder"
+        size="md"
+      />
+    </>
+  );
 }
 ```

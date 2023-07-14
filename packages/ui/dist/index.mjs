@@ -3250,6 +3250,7 @@ var baseStyle = {
   paddingRight: "0.75rem",
   paddingTop: "0.5rem",
   paddingBottom: "0.5rem",
+  fontFamily: "SuperMario, sans-serif",
   fontSize: "1rem",
   lineHeight: "1.5rem",
   "--tw-text-opacity": "1",
@@ -3725,6 +3726,7 @@ var baseStyle2 = {
   paddingRight: "0.75rem",
   paddingTop: "0.5rem",
   paddingBottom: "0.5rem",
+  fontFamily: "SuperMario, sans-serif",
   fontSize: "1rem",
   lineHeight: "1.5rem",
   "--tw-text-opacity": "1",
@@ -3747,7 +3749,6 @@ var resizeMap = {
     resize: "horizontal",
   },
   vertical: {
-    height: "4rem",
     resize: "vertical",
   },
 };
@@ -3816,7 +3817,8 @@ var colorMap = {
 var MyTextarea = styled4.textarea`
   ${baseStyle2}
   min-height: 4rem;
-
+  max-width: 100%;
+ 
   ${({ resize }) => resizeMap[resize]}
   ${({ color }) => colorMap[color]}
 
@@ -3968,7 +3970,7 @@ export {
   Checkbox_default as Checkbox,
   Input_default as Input,
   Radio_default as MyRadio,
-  Textarea_default as MyTextarea,
+  Textarea_default as Textarea,
 };
 /*! Bundled license information:
 

@@ -16712,4 +16712,4 @@ interface RadioProps {
 }
 declare const MyRadio: React.FunctionComponent<RadioProps>;
 
-export { Button, Checkbox, Input, MyRadio, Textarea as MyTextarea };
+export { Button, Checkbox, Input, MyRadio, Textarea };

@@ -2,25 +2,26 @@
 sidebar_position: 4
 ---
 
-import { MyTextarea } from "tailwind-simba-ui";
+import { Textarea } from "tailwind-simba-ui";
 import styles from "./pages.module.css";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { useState } from "react";
 
 The Textarea component allows you to easily create multi-line text inputs.
 
-## Import
+## **Import**
 
 ```js
-import { MyTextarea } from "tailwind-simba-ui";
+import { Textarea } from "tailwind-simba-ui";
 ```
 
-## Usage
+## **Usage**
 
 export const BasicUsage = () => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
-      <MyTextarea placeholder="Here is a sample placeholder" />
+      <Textarea placeholder="Here is a sample placeholder" />
     </div>
   </div>
 );
@@ -28,42 +29,110 @@ export const BasicUsage = () => (
 <BasicUsage></BasicUsage>
 
 ```js
-<MyTextarea placeholder="Here is a sample placeholder" />
+<Textarea placeholder="Here is a sample placeholder" />
 ```
 
-## Resize behavior
+## **Controlled Textarea**
+
+export const ControlledTextarea = function Controlled({ onChange }) {
+  const [value, setValue] = useState("");
+  return (
+    <div className="border-2 rounded-xl mb-4">
+      <div className="m-2">
+        <p className="m-2"> Value : {value}</p>
+        <Textarea
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Here is a sample placeholder"
+        />
+      </div>
+    </div>
+  );
+};
+
+<ControlledTextarea></ControlledTextarea>
+
+```js
+function Example() {
+  const [value, setValue] = React.useState("");
+  const handleChange = (event) => setValue(event.target.value);
+
+  return (
+    <>
+      <p>Value: {value}</p>
+      <Textarea
+        onChange={handleChange}
+        placeholder="Here is a sample placeholder"
+      />
+    </>
+  );
+}
+```
+
+## **Resize behavior**
+
+You can add resize prop to change the Textarea resize behavior. **Horizontal**, **both**, **vertical** or **none**.
 
 export const TextareaResize = ({ resize }) => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
       <Tabs>
-        <TabItem value="vertical" label="Vertical">
-          <MyTextarea resize="vertical" placeholder="Vertical" />
-        </TabItem>
         <TabItem value="horizontal" label="Horizontal">
-          <MyTextarea resize="horizontal" placeholder="Horizontal" />
+          <Textarea resize="horizontal" placeholder="Horizontal" />
         </TabItem>
         <TabItem value="both" label="Both">
-          <MyTextarea resize="both" placeholder="Both" />
+          <Textarea resize="both" placeholder="Both" />
+        </TabItem>
+        <TabItem value="vertical" label="Vertical">
+          <Textarea resize="vertical" placeholder="Vertical" />
         </TabItem>
         <TabItem value="none" label="None">
-          <MyTextarea resize="none" placeholder="None" />
+          <Textarea resize="none" placeholder="None" />
         </TabItem>
       </Tabs>
     </div>
   </div>
 );
 
-You can add resize prop to change the Textarea resize behavior. **Horizontal**, **both** or **none**.
-
 <TextareaResize></TextareaResize>
 
-## Disabled textarea
+## **Changing the color of the textarea**
+
+Use the color prop to change the visual style of the Textarea. You can set the value to **yellow**, **red**, **blue**, or **green**.
+
+export const TextareaColors = ({ color }) => (
+  <div className="flex flex-col border-2 rounded-xl mb-4">
+    <div className="m-2">
+      <Textarea color="yellow" placeholder="Yellow textarea" />
+    </div>
+    <div className="m-2">
+      <Textarea color="red" placeholder="Red textarea" />
+    </div>
+    <div className="m-2">
+      <Textarea color="blue" placeholder="Blue textarea" />
+    </div>
+    <div className="m-2">
+      <Textarea color="green" placeholder="Green textarea" />
+    </div>
+  </div>
+);
+
+<TextareaColors></TextareaColors>
+
+```js
+<div>
+  <Input variant="outline" placeholder="Outline" />
+  <Input variant="filled" placeholder="Filled" />
+  <Input variant="flushed" placeholder="Flushed" />
+  <Input variant="unstyled" placeholder="Unstyled" />
+</div>
+```
+
+## **Disabled textarea**
 
 export const Disabled = () => (
   <div className="border-2 rounded-xl mb-4">
     <div className="m-2">
-      <MyTextarea disabled placeholder="Here is a sample placeholder" />
+      <Textarea isDisabled placeholder="Here is a sample placeholder" />
     </div>
   </div>
 );
@@ -71,5 +140,5 @@ export const Disabled = () => (
 <Disabled></Disabled>
 
 ```js
-<MyTextarea disabled placeholder="Here is a sample placeholder" />
+<Textarea isDisabled placeholder="Here is a sample placeholder" />
 ```

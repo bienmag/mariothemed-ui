@@ -2780,7 +2780,7 @@ __export(ui_exports, {
   Checkbox: () => Checkbox_default,
   Input: () => Input_default,
   MyRadio: () => Radio_default,
-  MyTextarea: () => Textarea_default,
+  Textarea: () => Textarea_default,
 });
 module.exports = __toCommonJS(ui_exports);
 
@@ -3270,6 +3270,7 @@ var baseStyle = {
   paddingRight: "0.75rem",
   paddingTop: "0.5rem",
   paddingBottom: "0.5rem",
+  fontFamily: "SuperMario, sans-serif",
   fontSize: "1rem",
   lineHeight: "1.5rem",
   "--tw-text-opacity": "1",
@@ -3745,6 +3746,7 @@ var baseStyle2 = {
   paddingRight: "0.75rem",
   paddingTop: "0.5rem",
   paddingBottom: "0.5rem",
+  fontFamily: "SuperMario, sans-serif",
   fontSize: "1rem",
   lineHeight: "1.5rem",
   "--tw-text-opacity": "1",
@@ -3767,7 +3769,6 @@ var resizeMap = {
     resize: "horizontal",
   },
   vertical: {
-    height: "4rem",
     resize: "vertical",
   },
 };
@@ -3836,7 +3837,8 @@ var colorMap = {
 var MyTextarea = import_styled4.default.textarea`
   ${baseStyle2}
   min-height: 4rem;
-
+  max-width: 100%;
+ 
   ${({ resize }) => resizeMap[resize]}
   ${({ color }) => colorMap[color]}
 
@@ -3990,7 +3992,7 @@ var Radio_default = MyRadio;
     Checkbox,
     Input,
     MyRadio,
-    MyTextarea,
+    Textarea,
   });
 /*! Bundled license information:
 

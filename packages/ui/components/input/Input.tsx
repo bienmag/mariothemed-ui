@@ -12,7 +12,7 @@ export interface InputProps {
   size?;
 }
 
-const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
+const baseStyle = tw`font-mario px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
 
 const MyInput = styled.input<InputProps>`
   ${baseStyle}

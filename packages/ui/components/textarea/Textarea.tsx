@@ -10,13 +10,13 @@ export interface TextareaProps {
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
+const baseStyle = tw`font-mario px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
 
 const resizeMap = {
   none: tw`resize-none`,
   both: tw`resize`,
   horizontal: tw`resize-x`,
-  vertical: tw`resize-y h-16`,
+  vertical: tw`resize-y`,
 };
 
 const colorMap = {
@@ -29,6 +29,7 @@ const colorMap = {
 const MyTextarea = styled.textarea<TextareaProps>`
   ${baseStyle}
   min-height: 4rem;
+  max-width: 100%;
 
   ${({ resize }) => resizeMap[resize]}
   ${({ color }) => colorMap[color]}
