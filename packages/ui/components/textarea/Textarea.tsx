@@ -6,51 +6,55 @@ export interface TextareaProps {
   placeholder?: string;
   resize?: string;
   color?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const MyTextarea: React.FunctionComponent<TextareaProps> = ({
+const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
+
+const resizeMap = {
+  none: tw`resize-none`,
+  both: tw`resize`,
+  horizontal: tw`resize-x`,
+  vertical: tw`resize-y h-16`,
+};
+
+const colorMap = {
+  yellow: tw`border-myellow focus:border-2 focus:border-myellow placeholder-myellow placeholder-opacity-30 text-myellow`,
+  green: tw`border-mgreen focus:border-2 focus:border-mgreen placeholder-mgreen placeholder-opacity-30 text-mgreen`,
+  blue: tw`border-mblue focus:border-2 focus:border-mblue placeholder-mblue placeholder-opacity-30 text-mblue`,
+  red: tw`border-mred focus:border-2 focus:border-mred placeholder-mred placeholder-opacity-30 text-mred`,
+};
+
+const MyTextarea = styled.textarea<TextareaProps>`
+  ${baseStyle}
+  min-height: 4rem;
+
+  ${({ resize }) => resizeMap[resize]}
+  ${({ color }) => colorMap[color]}
+
+  ${({ isDisabled }) =>
+    isDisabled &&
+    tw`cursor-pointer bg-gray-300 pointer-events-none resize-none`}
+`;
+
+const Textarea: React.FunctionComponent<TextareaProps> = ({
   placeholder,
+  color,
   resize,
-  disabled,
+  isDisabled,
+  onChange,
   ...props
 }) => {
-  const styleOptions = [];
-
-  // check vertical resize - появляется скролл если эриа меньше размера букв!
-
-  const resizeMap = {
-    none: tw`resize-none`,
-    both: tw`resize`,
-    horizontal: tw`resize-x `,
-    vertical: tw`resize-y`,
-  };
-
-  styleOptions.push(resizeMap[resize]);
-
-  disabled: tw`bg-gray-200 text-gray-200 border-gray-200 cursor-not-allowed`;
-
-  // styleOptions.push(disabled); ???
-
-  //add controlled textarea
-
-  //invalid textarea
-
-  const baseStyle = tw`p-4 bg-gray-100 text-black w-full h-16
-  border-2 border-gray-300 rounded-lg focus:outline-none focus:border-red-900 max-w-full min-w-min`;
-
-  const Textarea = styled.textarea`
-    ${baseStyle}
-  `;
-
   return (
-    <Textarea
-    // {...props}
-    // placeholder={placeholder}
-    // disabled={disabled}
-    // css={styleOptions}
-    ></Textarea>
+    <MyTextarea
+      placeholder={placeholder}
+      resize={resize}
+      isDisabled={isDisabled}
+      onChange={onChange}
+      color={color}
+    />
   );
 };
 
-export default MyTextarea;
+export default Textarea;

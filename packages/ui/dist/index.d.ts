@@ -16690,15 +16690,16 @@ interface InputProps {
   color?: string;
   size?: any;
 }
-declare const MyInput: React.FunctionComponent<InputProps>;
+declare const Input: React.FunctionComponent<InputProps>;
 
 interface TextareaProps {
   placeholder?: string;
   resize?: string;
   color?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-declare const MyTextarea: React.FunctionComponent<TextareaProps>;
+declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 interface RadioProps {
   variant?: "default" | "primary" | "secondary";
@@ -16711,4 +16712,4 @@ interface RadioProps {
 }
 declare const MyRadio: React.FunctionComponent<RadioProps>;
 
-export { Button, Checkbox, MyInput, MyRadio, MyTextarea };
+export { Button, Checkbox, Input, MyRadio, Textarea as MyTextarea };

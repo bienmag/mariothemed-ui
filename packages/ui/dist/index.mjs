@@ -2832,7 +2832,7 @@ var Button = ({
     },
   };
   styleOptions.push(sizeMap[size], heightStyle, widthStyle, borderWidthStyle);
-  const colorMap = {
+  const colorMap2 = {
     yellow: {
       solid: {
         "--tw-bg-opacity": "1",
@@ -3033,7 +3033,7 @@ var Button = ({
       }}
       ${({ color: color2 }) => {
         var _a;
-        return color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.solid);
+        return color2 && ((_a = colorMap2[color2]) == null ? void 0 : _a.solid);
       }}
     `,
     outline: _css`
@@ -3053,7 +3053,7 @@ var Button = ({
       ${({ color: color2 }) => {
         var _a;
         return (
-          color2 && ((_a = colorMap[color2]) == null ? void 0 : _a.outline)
+          color2 && ((_a = colorMap2[color2]) == null ? void 0 : _a.outline)
         );
       }}
     `,
@@ -3081,10 +3081,10 @@ var Button = ({
   const getVariantStyle = (variant2, color2) => {
     var _a, _b;
     if (color2 && variant2) {
-      return (_a = colorMap[color2]) == null ? void 0 : _a[variant2];
+      return (_a = colorMap2[color2]) == null ? void 0 : _a[variant2];
     }
     if (color2) {
-      return (_b = colorMap[color2]) == null ? void 0 : _b["solid"];
+      return (_b = colorMap2[color2]) == null ? void 0 : _b["solid"];
     }
     if (variant2) {
       return variantMap[variant2];
@@ -3092,7 +3092,7 @@ var Button = ({
     return null;
   };
   styleOptions.push(getVariantStyle(variant, color));
-  const baseStyle2 = {
+  const baseStyle3 = {
     borderRadius: "0.375rem",
     borderWidth: "1px",
     borderStyle: "solid",
@@ -3115,7 +3115,7 @@ var Button = ({
     },
   };
   const Button2 = styled.button`
-    ${baseStyle2}
+    ${baseStyle3}
     ${styleOptions}
   `;
   const IconWrapper = styled.span`
@@ -3163,7 +3163,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     },
   };
   styleOptions.push(sizeMap[size]);
-  const colorMap = {
+  const colorMap2 = {
     yellow: {
       ":checked": {
         "--tw-border-opacity": "1",
@@ -3189,8 +3189,8 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
       },
     },
   };
-  styleOptions.push(colorMap[color]);
-  const baseStyle2 = {
+  styleOptions.push(colorMap2[color]);
+  const baseStyle3 = {
     position: "relative",
     height: "1.5rem",
     width: "1.5rem",
@@ -3225,7 +3225,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     styleOptions.push(disabledStyle);
   }
   const Checkbox2 = styled2.input`
-    ${baseStyle2}
+    ${baseStyle3}
     ${styleOptions}
   `;
   return __cssprop2(Checkbox2, {
@@ -3261,7 +3261,7 @@ var baseStyle = {
     outlineOffset: "2px",
   },
 };
-var Input = styled3.input`
+var MyInput = styled3.input`
   ${baseStyle}
 
   ${({ size }) => {
@@ -3307,7 +3307,7 @@ var Input = styled3.input`
   }}
   
   ${({ color, variant }) => {
-    const colorMap = {
+    const colorMap2 = {
       yellow: {
         outline: {
           "--tw-border-opacity": "0.6",
@@ -3685,10 +3685,10 @@ var Input = styled3.input`
     const getVariantStyle = (variant2, color2) => {
       var _a, _b;
       if (color2 && variant2) {
-        return (_a = colorMap[color2]) == null ? void 0 : _a[variant2];
+        return (_a = colorMap2[color2]) == null ? void 0 : _a[variant2];
       }
       if (color2) {
-        return (_b = colorMap[color2]) == null ? void 0 : _b["solid"];
+        return (_b = colorMap2[color2]) == null ? void 0 : _b["outline"];
       }
       if (variant2) {
         return variantMap[variant2];
@@ -3698,8 +3698,8 @@ var Input = styled3.input`
     return getVariantStyle(variant, color);
   }}
 `;
-var MyInput = ({ variant, size, placeholder, onChange, value, color }) => {
-  return __cssprop3(Input, {
+var Input = ({ variant, size, placeholder, onChange, value, color }) => {
+  return __cssprop3(MyInput, {
     type: "text",
     placeholder,
     onChange,
@@ -3709,65 +3709,143 @@ var MyInput = ({ variant, size, placeholder, onChange, value, color }) => {
     size,
   });
 };
-var Input_default = MyInput;
+var Input_default = Input;
 
 // components/textarea/Textarea.tsx
 var import_react8 = __toESM(require_react());
 import styled4 from "@emotion/styled";
 import { jsx as __cssprop4 } from "@emotion/react";
-var MyTextarea = ({ placeholder, resize, disabled, ...props }) => {
-  const styleOptions = [];
-  const resizeMap = {
-    none: {
-      resize: "none",
-    },
-    both: {
-      resize: "both",
-    },
-    horizontal: {
-      resize: "horizontal",
-    },
-    vertical: {
-      resize: "vertical",
-    },
-  };
-  styleOptions.push(resizeMap[resize]);
-  disabled: ({
-    cursor: "not-allowed",
+var baseStyle2 = {
+  width: "100%",
+  borderRadius: "0.5rem",
+  borderWidth: "1px",
+  "--tw-border-opacity": "1",
+  borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
+  paddingLeft: "0.75rem",
+  paddingRight: "0.75rem",
+  paddingTop: "0.5rem",
+  paddingBottom: "0.5rem",
+  fontSize: "1rem",
+  lineHeight: "1.5rem",
+  "--tw-text-opacity": "1",
+  color: "rgb(0 0 0 / var(--tw-text-opacity))",
+  ":focus": {
     "--tw-border-opacity": "1",
-    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-    "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
-    "--tw-text-opacity": "1",
-    color: "rgb(229 231 235 / var(--tw-text-opacity))",
-  });
-  const baseStyle2 = {
-    height: "4rem",
-    width: "100%",
-    minWidth: "min-content",
-    maxWidth: "100%",
-    borderRadius: "0.5rem",
-    borderWidth: "2px",
-    "--tw-border-opacity": "1",
-    borderColor: "rgb(209 213 219 / var(--tw-border-opacity))",
-    "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
-    padding: "1rem",
-    "--tw-text-opacity": "1",
-    color: "rgb(0 0 0 / var(--tw-text-opacity))",
-    ":focus": {
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(127 29 29 / var(--tw-border-opacity))",
-      outline: "2px solid transparent",
-      outlineOffset: "2px",
-    },
-  };
-  const Textarea = styled4.textarea`
-    ${baseStyle2}
-  `;
-  return __cssprop4(Textarea, null);
+    borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+    outline: "2px solid transparent",
+    outlineOffset: "2px",
+  },
 };
-var Textarea_default = MyTextarea;
+var resizeMap = {
+  none: {
+    resize: "none",
+  },
+  both: {
+    resize: "both",
+  },
+  horizontal: {
+    resize: "horizontal",
+  },
+  vertical: {
+    height: "4rem",
+    resize: "vertical",
+  },
+};
+var colorMap = {
+  yellow: {
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(252 207 0 / var(--tw-text-opacity))",
+    "::placeholder": {
+      "--tw-placeholder-opacity": "0.3",
+      color: "rgb(252 207 0 / var(--tw-placeholder-opacity))",
+    },
+    ":focus": {
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+    },
+  },
+  green: {
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(68 175 53 / var(--tw-text-opacity))",
+    "::placeholder": {
+      "--tw-placeholder-opacity": "0.3",
+      color: "rgb(68 175 53 / var(--tw-placeholder-opacity))",
+    },
+    ":focus": {
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+    },
+  },
+  blue: {
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(0 155 217 / var(--tw-text-opacity))",
+    "::placeholder": {
+      "--tw-placeholder-opacity": "0.3",
+      color: "rgb(0 155 217 / var(--tw-placeholder-opacity))",
+    },
+    ":focus": {
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+    },
+  },
+  red: {
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+    "--tw-text-opacity": "1",
+    color: "rgb(230 35 16 / var(--tw-text-opacity))",
+    "::placeholder": {
+      "--tw-placeholder-opacity": "0.3",
+      color: "rgb(230 35 16 / var(--tw-placeholder-opacity))",
+    },
+    ":focus": {
+      borderWidth: "2px",
+      "--tw-border-opacity": "1",
+      borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+    },
+  },
+};
+var MyTextarea = styled4.textarea`
+  ${baseStyle2}
+  min-height: 4rem;
+
+  ${({ resize }) => resizeMap[resize]}
+  ${({ color }) => colorMap[color]}
+
+  ${({ isDisabled }) =>
+    isDisabled && {
+      pointerEvents: "none",
+      cursor: "pointer",
+      resize: "none",
+      "--tw-bg-opacity": "1",
+      backgroundColor: "rgb(209 213 219 / var(--tw-bg-opacity))",
+    }}
+`;
+var Textarea = ({
+  placeholder,
+  color,
+  resize,
+  isDisabled,
+  onChange,
+  ...props
+}) => {
+  return __cssprop4(MyTextarea, {
+    placeholder,
+    resize,
+    isDisabled,
+    onChange,
+    color,
+  });
+};
+var Textarea_default = Textarea;
 
 // components/radio/Radio.tsx
 var import_react10 = __toESM(require_react());
@@ -3888,7 +3966,7 @@ var Radio_default = MyRadio;
 export {
   Button_default as Button,
   Checkbox_default as Checkbox,
-  Input_default as MyInput,
+  Input_default as Input,
   Radio_default as MyRadio,
   Textarea_default as MyTextarea,
 };

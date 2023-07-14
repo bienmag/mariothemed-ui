@@ -12,9 +12,9 @@ export interface InputProps {
   size?;
 }
 
-const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black   border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
+const baseStyle = tw`px-3 py-2 text-base rounded-lg text-black border border-gray-300 w-full focus:outline-none focus:border-gray-500`;
 
-const Input = styled.input<InputProps>`
+const MyInput = styled.input<InputProps>`
   ${baseStyle}
 
   ${({ size }) => {
@@ -66,7 +66,7 @@ const Input = styled.input<InputProps>`
         return colorMap[color]?.[variant];
       }
       if (color) {
-        return colorMap[color]?.["solid"];
+        return colorMap[color]?.["outline"];
       }
       if (variant) {
         return variantMap[variant];
@@ -78,7 +78,7 @@ const Input = styled.input<InputProps>`
   }}
 `;
 
-const MyInput: React.FunctionComponent<InputProps> = ({
+const Input: React.FunctionComponent<InputProps> = ({
   variant,
   size,
   placeholder,
@@ -87,7 +87,7 @@ const MyInput: React.FunctionComponent<InputProps> = ({
   color,
 }) => {
   return (
-    <Input
+    <MyInput
       type="text"
       placeholder={placeholder}
       onChange={onChange}
@@ -99,4 +99,4 @@ const MyInput: React.FunctionComponent<InputProps> = ({
   );
 };
 
-export default MyInput;
+export default Input;
