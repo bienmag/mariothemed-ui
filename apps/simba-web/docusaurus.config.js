@@ -10,7 +10,7 @@ const config = {
   tagline:
     "Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
   url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  baseUrl: "/mariothemed-ui/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/mario.png",
