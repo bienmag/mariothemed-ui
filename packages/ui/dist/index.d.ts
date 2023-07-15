@@ -16702,13 +16702,18 @@ interface TextareaProps {
 declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 interface RadioProps {
-  children?: React.ReactNode;
+  children?: string;
   size?: string;
   color?: string;
   className?: string;
   disabled?: boolean;
   defaultChecked?: boolean;
+  value?: string;
+  id?: string;
+  name?: string;
+  label?: string;
+  onChange?: () => void;
 }
 declare const Radio: React.FC<RadioProps>;
 
-export { Button, Checkbox, Input, Radio as MyRadio, Textarea };
+export { Button, Checkbox, Input, Radio, Textarea };

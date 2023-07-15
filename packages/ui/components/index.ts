@@ -6,5 +6,5 @@ import Input from "./input/Input";
 export { Input };
 import Textarea from "./textarea/Textarea";
 export { Textarea };
-import MyRadio from "./radio/Radio";
-export { MyRadio };
+import Radio from "./radio/Radio";
+export { Radio };
