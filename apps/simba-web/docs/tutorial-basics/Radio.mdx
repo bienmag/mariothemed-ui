@@ -14,19 +14,139 @@ Radios are used when only one choice may be selected in a series of options.
 import { Radio } from "tailwind-simba-ui";
 ```
 
-## Usage
+## **Usage**
 
-export const BasicUsage = function Bacis() {
-  const [value, setValue] = useState("");
+export const BasicUsage = function Bacis({ onChange, defaultChecked }) {
+  const [value, setValue] = useState("1");
   return (
     <div className="border-2 rounded-xl mb-4">
+      <p className="m-2"> Value : {value}</p>
       <div className="m-2 flex">
-        <Radio label="First" value="1"></Radio>
-        <Radio label="Second" value="2"></Radio>
-        <Radio label="Third" value="3"></Radio>
+        <Radio
+          name="basic"
+          onChange={() => setValue("1")}
+          label="First"
+        ></Radio>
+        <Radio
+          name="basic"
+          onChange={() => setValue("2")}
+          label="Second"
+        ></Radio>
+        <Radio
+          name="basic"
+          onChange={() => setValue("3")}
+          label="Third"
+        ></Radio>
       </div>
     </div>
   );
 };
 
 <BasicUsage></BasicUsage>
+
+```
+function RadioExample() {
+  const [value, setValue] = React.useState('1')
+  return (
+    <div>
+      <Radio onChange={() => setValue("1")} label='First'></Radio>
+      <Radio onChange={() => setValue("2")} label='Second'></Radio>
+      <Radio onChange={() => setValue("3")}label='Third'></Radio>
+    </div>
+  )
+}
+```
+
+## **Changing the color of the radio**
+
+Use the color prop to change the visual style of the Radio. You can set the value to **yellow**, **red**, **blue**, or **green**.
+
+export const RadioColors = ({ color }) => (
+  <div className="flex border-2 rounded-xl mb-4">
+    <Radio name="color" label="Yellow" color="yellow" />
+    <Radio name="color" label="Red" color="red" />
+    <Radio name="color" label="Blue" color="blue" />
+    <Radio name="color" label="Green" color="green" />
+  </div>
+);
+
+<RadioColors></RadioColors>
+
+```js
+<div>
+  <Radio label="Yellow" color="yellow" />
+  <Radio label="Red" color="red" />
+  <Radio label="Blue" color="blue" />
+  <Radio label="Green" color="green" />
+</div>
+```
+
+## **Radio sizes**
+
+The radio comes with 3 sizes. Use the prop size to change it to **sm**, **md** or **lg**.
+
+export const RadioSizes = ({ size }) => (
+  <div className="flex border-2 rounded-xl mb-4">
+    <Radio name="small" label="Small" color="yellow" size="sm" />
+    <Radio name="medium" label="Medium" color="yellow" size="md" />
+    <Radio name="large" label="Large" color="yellow" size="lg" />
+  </div>
+);
+
+<RadioSizes></RadioSizes>
+
+```js
+<div>
+  <Radio label="Small" color="yellow" size="sm" />
+  <Radio label="Medium" color="yellow" size="md" />
+  <Radio label="Large" color="yellow" size="lg" />
+</div>
+```
+
+## **Disabled radios**
+
+export const DisabledRadio = ({ disabled }) => (
+  <div className="flex border-2 rounded-xl mb-4">
+    <Radio name="disabled" label="Radio" color="yellow" size="sm" />
+    <Radio name="disabled" disabled label="Radio" color="yellow" size="md" />
+    <Radio name="disabled" label="Radio" color="yellow" size="lg" />
+  </div>
+);
+
+<DisabledRadio></DisabledRadio>
+
+```js
+<div>
+  <Radio color="yellow" size="sm" />
+  <Radio defaultChecked color="yellow" size="md" />
+  <Radio color="yellow" size="lg" />
+</div>
+```
+
+## **Default checked radio**
+
+Use the defaultChecked prop to set a radio checked by default.
+
+export const DefaultChecked = ({ defaultChecked }) => (
+  <div className="flex border-2 rounded-xl mb-4">
+    <Radio name="default" label="Radio" color="yellow" size="sm" />
+    <Radio
+      name="default"
+      defaultChecked
+      label="Radio"
+      color="yellow"
+      size="md"
+    />
+    <Radio name="default" label="Radio" color="yellow" size="lg" />
+  </div>
+);
+
+<DefaultChecked></DefaultChecked>
+
+```js
+<div>
+  <Radio color="yellow" size="sm" />
+  <Radio defaultChecked color="yellow" size="md" />
+  <Radio color="yellow" size="lg" />
+</div>
+```

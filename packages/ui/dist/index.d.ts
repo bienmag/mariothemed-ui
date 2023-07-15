@@ -16702,8 +16702,7 @@ interface TextareaProps {
 declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 interface RadioProps {
-  children?: string;
-  size?: string;
+  size?: any;
   color?: string;
   className?: string;
   disabled?: boolean;
@@ -16713,6 +16712,7 @@ interface RadioProps {
   name?: string;
   label?: string;
   onChange?: () => void;
+  checked?: boolean;
 }
 declare const Radio: React.FC<RadioProps>;
 

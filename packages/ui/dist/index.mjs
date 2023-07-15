@@ -3092,7 +3092,7 @@ var Button = ({
     return null;
   };
   styleOptions.push(getVariantStyle(variant, color));
-  const baseStyle3 = {
+  const baseStyle4 = {
     borderRadius: "0.375rem",
     borderWidth: "1px",
     borderStyle: "solid",
@@ -3115,7 +3115,7 @@ var Button = ({
     },
   };
   const Button2 = styled.button`
-    ${baseStyle3}
+    ${baseStyle4}
     ${styleOptions}
   `;
   const IconWrapper = styled.span`
@@ -3190,7 +3190,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     },
   };
   styleOptions.push(colorMap2[color]);
-  const baseStyle3 = {
+  const baseStyle4 = {
     position: "relative",
     height: "1.5rem",
     width: "1.5rem",
@@ -3225,7 +3225,7 @@ var Checkbox = ({ children, size, color, disabled, defaultChecked }) => {
     styleOptions.push(disabledStyle);
   }
   const Checkbox2 = styled2.input`
-    ${baseStyle3}
+    ${baseStyle4}
     ${styleOptions}
   `;
   return __cssprop2(Checkbox2, {
@@ -3853,8 +3853,199 @@ var Textarea_default = Textarea;
 var import_react10 = __toESM(require_react());
 import styled5 from "@emotion/styled";
 import { jsx as __cssprop5 } from "@emotion/react";
+var RadioContainer = styled5.label`
+  ${{
+    display: "flex",
+    cursor: "pointer",
+    alignItems: "center",
+    "> :not([hidden]) ~ :not([hidden])": {
+      "--tw-space-x-reverse": "0",
+      marginRight: "calc(0.25rem * var(--tw-space-x-reverse))",
+      marginLeft: "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))",
+    },
+    padding: "0.5rem",
+  }}
+`;
+var baseStyle3 = {
+  position: "relative",
+  appearance: "none",
+  borderRadius: "9999px",
+  borderWidth: "2px",
+  ":checked": {
+    borderWidth: "4px",
+    "--tw-border-opacity": "1",
+    borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
+    backgroundImage:
+      "url('https://visualpharm.com/assets/350/Super%20Mario-595b40b85ba036ed117de511.svg')",
+    backgroundSize: "contain",
+  },
+  ":focus": {
+    outline: "2px solid transparent",
+    outlineOffset: "2px",
+  },
+};
+var RadioInput = styled5.input`
+  ${baseStyle3}
+
+  ${({ size }) => {
+    const sizeMap = {
+      sm: {
+        height: "1.25rem",
+        width: "1.25rem",
+      },
+      md: {
+        height: "1.5rem",
+        width: "1.5rem",
+      },
+      lg: {
+        height: "1.75rem",
+        width: "1.75rem",
+      },
+    };
+    return sizeMap[size];
+  }}
+  ${({ color, disabled }) => {
+    const colorMap2 = {
+      yellow: {
+        solid: {
+          "--tw-border-opacity": "0.7",
+          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          },
+        },
+        disabled: {
+          cursor: "not-allowed",
+          "--tw-border-opacity": "0.3",
+          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          "--tw-bg-opacity": "0.3",
+          backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
+          },
+        },
+      },
+      red: {
+        solid: {
+          "--tw-border-opacity": "0.7",
+          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          },
+        },
+        disabled: {
+          cursor: "not-allowed",
+          "--tw-border-opacity": "0.3",
+          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          "--tw-bg-opacity": "0.3",
+          backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
+          },
+        },
+      },
+      blue: {
+        solid: {
+          "--tw-border-opacity": "0.7",
+          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          },
+        },
+        disabled: {
+          cursor: "not-allowed",
+          "--tw-border-opacity": "0.3",
+          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          "--tw-bg-opacity": "0.3",
+          backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
+          },
+        },
+      },
+      green: {
+        solid: {
+          "--tw-border-opacity": "0.7",
+          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          },
+        },
+        disabled: {
+          cursor: "not-allowed",
+          "--tw-border-opacity": "0.3",
+          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          "--tw-bg-opacity": "0.3",
+          backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
+          ":checked": {
+            "--tw-border-opacity": "1",
+            borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
+          },
+        },
+      },
+    };
+    const disabledStyle = {
+      disabled: {
+        cursor: "not-allowed",
+        "--tw-border-opacity": "1",
+        borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
+        "--tw-bg-opacity": "1",
+        backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
+        "--tw-text-opacity": "1",
+        color: "rgb(229 231 235 / var(--tw-text-opacity))",
+      },
+    };
+    const getVariant = (color2, disabled2) => {
+      if (color2 && disabled2) {
+        return colorMap2[color2].disabled;
+      }
+      if (color2) {
+        return colorMap2[color2].solid;
+      }
+      if (disabled2) {
+        return disabledStyle.disabled;
+      }
+      return null;
+    };
+    return getVariant(color, disabled);
+  }}
+`;
+var labelBaseStyle = {
+  display: "flex",
+  alignItems: "center",
+};
+var RadioLabel = styled5.span`
+  ${labelBaseStyle}
+  ${({ color }) => {
+    const labelColorMap = {
+      yellow: {
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+      },
+      red: {
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+      },
+      blue: {
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+      },
+      green: {
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+      },
+    };
+    return labelColorMap[color];
+  }}
+`;
 var Radio = ({
-  children,
   size = "md",
   color,
   disabled,
@@ -3865,193 +4056,8 @@ var Radio = ({
   className,
   label,
   onChange,
+  checked,
 }) => {
-  const styleOptions = [];
-  const sizeMap = {
-    sm: {
-      height: "1.25rem",
-      width: "1.25rem",
-    },
-    md: {
-      height: "1.5rem",
-      width: "1.5rem",
-    },
-    lg: {
-      height: "1.75rem",
-      width: "1.75rem",
-    },
-  };
-  styleOptions.push(sizeMap[size]);
-  const colorMap2 = {
-    yellow: {
-      solid: {
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-        },
-      },
-      disabled: {
-        cursor: "not-allowed",
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-        "--tw-bg-opacity": "0.3",
-        backgroundColor: "rgb(252 207 0 / var(--tw-bg-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(252 207 0 / var(--tw-border-opacity))",
-        },
-      },
-    },
-    red: {
-      solid: {
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-        },
-      },
-      disabled: {
-        cursor: "not-allowed",
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-        "--tw-bg-opacity": "0.3",
-        backgroundColor: "rgb(230 35 16 / var(--tw-bg-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(230 35 16 / var(--tw-border-opacity))",
-        },
-      },
-    },
-    blue: {
-      solid: {
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-        },
-      },
-      disabled: {
-        cursor: "not-allowed",
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-        "--tw-bg-opacity": "0.3",
-        backgroundColor: "rgb(0 155 217 / var(--tw-bg-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(0 155 217 / var(--tw-border-opacity))",
-        },
-      },
-    },
-    green: {
-      solid: {
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-        },
-      },
-      disabled: {
-        cursor: "not-allowed",
-        "--tw-border-opacity": "0.3",
-        borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-        "--tw-bg-opacity": "0.3",
-        backgroundColor: "rgb(68 175 53 / var(--tw-bg-opacity))",
-        ":checked": {
-          "--tw-border-opacity": "1",
-          borderColor: "rgb(68 175 53 / var(--tw-border-opacity))",
-        },
-      },
-    },
-  };
-  const baseStyle3 = {
-    position: "relative",
-    appearance: "none",
-    borderRadius: "9999px",
-    borderWidth: "2px",
-    ":checked": {
-      borderWidth: "4px",
-      "--tw-border-opacity": "1",
-      borderColor: "rgb(107 114 128 / var(--tw-border-opacity))",
-      backgroundImage:
-        "url('https://visualpharm.com/assets/350/Super%20Mario-595b40b85ba036ed117de511.svg')",
-      backgroundSize: "contain",
-    },
-    ":focus": {
-      outline: "2px solid transparent",
-      outlineOffset: "2px",
-    },
-  };
-  const disabledStyle = {
-    cursor: "not-allowed",
-    "--tw-border-opacity": "1",
-    borderColor: "rgb(229 231 235 / var(--tw-border-opacity))",
-    "--tw-bg-opacity": "1",
-    backgroundColor: "rgb(229 231 235 / var(--tw-bg-opacity))",
-    "--tw-text-opacity": "1",
-    color: "rgb(229 231 235 / var(--tw-text-opacity))",
-  };
-  const getVariant = (color2, disabled2) => {
-    if (color2 && disabled2) {
-      return colorMap2[color2].disabled;
-    }
-    if (color2) {
-      return colorMap2[color2].solid;
-    }
-    if (disabled2) {
-      return disabledStyle;
-    }
-  };
-  styleOptions.push(getVariant(color, disabled));
-  const RadioInput = styled5.input`
-    ${baseStyle3}
-    ${styleOptions}
-  `;
-  const labelBaseStyle = {
-    display: "flex",
-    alignItems: "center",
-  };
-  const labelStyleOptions = [];
-  const labelColorMap = {
-    yellow: {
-      "--tw-text-opacity": "1",
-      color: "rgb(252 207 0 / var(--tw-text-opacity))",
-    },
-    red: {
-      "--tw-text-opacity": "1",
-      color: "rgb(230 35 16 / var(--tw-text-opacity))",
-    },
-    blue: {
-      "--tw-text-opacity": "1",
-      color: "rgb(0 155 217 / var(--tw-text-opacity))",
-    },
-    green: {
-      "--tw-text-opacity": "1",
-      color: "rgb(68 175 53 / var(--tw-text-opacity))",
-    },
-  };
-  labelStyleOptions.push(labelColorMap[color]);
-  const RadioLabel = styled5.span`
-    ${labelBaseStyle}
-    ${labelStyleOptions}
-  `;
-  const RadioContainer = styled5.label`
-    ${{
-      display: "flex",
-      cursor: "pointer",
-      alignItems: "center",
-      "> :not([hidden]) ~ :not([hidden])": {
-        "--tw-space-x-reverse": "0",
-        marginRight: "calc(0.25rem * var(--tw-space-x-reverse))",
-        marginLeft: "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))",
-      },
-      padding: "0.5rem",
-    }}
-  `;
   return __cssprop5(
     RadioContainer,
     {
@@ -4059,11 +4065,14 @@ var Radio = ({
     },
     __cssprop5(RadioInput, {
       onChange,
-      name: name || "radio",
+      name,
       value,
       type: "radio",
       disabled,
       id,
+      color,
+      size,
+      checked,
       defaultChecked,
     }),
     label && __cssprop5(RadioLabel, null, label)
