@@ -4,24 +4,24 @@ sidebar_position: 1
 
 import Tabs from "@theme/Tabs";
 
-# Welcome to Simba UI!
+# Welcome to Mariothemed-UI!
 
 ## Installation
 
-To use **Tailwind Simba UI** in your project, run one of the following commands in your terminal:
+To use **Mariothemed-UI** in your project, run one of the following commands in your terminal:
 
 ```bash
-npm i tailwind-simba-ui
+npm i @bienmag/mariothemed-ui
 ```
 
 or
 
 ```bash
-yarn add tailwind-simba-ui
+yarn add @bienmag/mariothemed-ui
 ```
 
-Now you can use Tailwind Simba UI in your favorite framework with Tailwind installed.
+Now you can use Mariothemed-UI in your favorite framework with Tailwind installed.
 
 ## Contribute
 
-Whether you're a beginner or advanced Tailwind Simba UI user, joining our community is the best way to connect with like-minded people who build great products with the library.
+Whether you're a beginner or advanced Mariothemed-UI user, joining our community is the best way to connect with like-minded people who build great products with the library.

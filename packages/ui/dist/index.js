@@ -3874,17 +3874,17 @@ var import_styled5 = __toESM(require("@emotion/styled"));
 var import_react10 = __toESM(require_react());
 var import_react11 = require("@emotion/react");
 var RadioContainer = import_styled5.default.label`
-${{
-  display: "flex",
-  cursor: "pointer",
-  alignItems: "center",
-  "> :not([hidden]) ~ :not([hidden])": {
-    "--tw-space-x-reverse": "0",
-    marginRight: "calc(0.25rem * var(--tw-space-x-reverse))",
-    marginLeft: "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))",
-  },
-  padding: "0.5rem",
-}}
+  ${{
+    display: "flex",
+    cursor: "pointer",
+    alignItems: "center",
+    "> :not([hidden]) ~ :not([hidden])": {
+      "--tw-space-x-reverse": "0",
+      marginRight: "calc(0.25rem * var(--tw-space-x-reverse))",
+      marginLeft: "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))",
+    },
+    padding: "0.5rem",
+  }}
 `;
 var baseStyle3 = {
   position: "relative",
@@ -3905,25 +3905,25 @@ var baseStyle3 = {
   },
 };
 var RadioInput = import_styled5.default.input`
-${baseStyle3}
+  ${baseStyle3}
 
-${({ size }) => {
-  const sizeMap = {
-    sm: {
-      height: "1.25rem",
-      width: "1.25rem",
-    },
-    md: {
-      height: "1.5rem",
-      width: "1.5rem",
-    },
-    lg: {
-      height: "1.75rem",
-      width: "1.75rem",
-    },
-  };
-  return sizeMap[size];
-}}
+  ${({ size }) => {
+    const sizeMap = {
+      sm: {
+        height: "1.25rem",
+        width: "1.25rem",
+      },
+      md: {
+        height: "1.5rem",
+        width: "1.5rem",
+      },
+      lg: {
+        height: "1.75rem",
+        width: "1.75rem",
+      },
+    };
+    return sizeMap[size];
+  }}
   ${({ color, disabled }) => {
     const colorMap2 = {
       yellow: {
@@ -4036,36 +4036,34 @@ ${({ size }) => {
     };
     return getVariant(color, disabled);
   }}
-
 `;
 var labelBaseStyle = {
   display: "flex",
   alignItems: "center",
 };
 var RadioLabel = import_styled5.default.span`
-${labelBaseStyle}
-${({ color }) => {
-  const labelColorMap = {
-    yellow: {
-      "--tw-text-opacity": "1",
-      color: "rgb(252 207 0 / var(--tw-text-opacity))",
-    },
-    red: {
-      "--tw-text-opacity": "1",
-      color: "rgb(230 35 16 / var(--tw-text-opacity))",
-    },
-    blue: {
-      "--tw-text-opacity": "1",
-      color: "rgb(0 155 217 / var(--tw-text-opacity))",
-    },
-    green: {
-      "--tw-text-opacity": "1",
-      color: "rgb(68 175 53 / var(--tw-text-opacity))",
-    },
-  };
-  return labelColorMap[color];
-}}
-  
+  ${labelBaseStyle}
+  ${({ color }) => {
+    const labelColorMap = {
+      yellow: {
+        "--tw-text-opacity": "1",
+        color: "rgb(252 207 0 / var(--tw-text-opacity))",
+      },
+      red: {
+        "--tw-text-opacity": "1",
+        color: "rgb(230 35 16 / var(--tw-text-opacity))",
+      },
+      blue: {
+        "--tw-text-opacity": "1",
+        color: "rgb(0 155 217 / var(--tw-text-opacity))",
+      },
+      green: {
+        "--tw-text-opacity": "1",
+        color: "rgb(68 175 53 / var(--tw-text-opacity))",
+      },
+    };
+    return labelColorMap[color];
+  }}
 `;
 var Radio = ({
   size = "md",

@@ -6,19 +6,19 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Create accessible React apps with speed",
+  title: "Dive into the Mario World",
   tagline:
-    "Tailwind Simba UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
+    "Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/simba-logo.png",
+  favicon: "img/mario.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "bienmag", // Usually your GitHub org/user name.
-  projectName: "Tailwind-Simba-UI", // Usually your repo name.
+  projectName: "Mariothemed-UI", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -59,10 +59,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Tailwind Simba UI",
+        title: "Mariothemed-UI",
         logo: {
-          alt: "Tailwind Simba UI Logo",
-          src: "img/simba-logo.png",
+          alt: "Mariothemed-UI Logo",
+          src: "img/mario.png",
         },
         items: [
           {
@@ -122,7 +122,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Simba-UI, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} @bienmag/Mariothemed-UI, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

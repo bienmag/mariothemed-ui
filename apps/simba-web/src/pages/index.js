@@ -19,13 +19,13 @@ function HomepageHeader() {
             className="button button--secondary bg-gray-300 button--lg mt-5"
             to="/docs/intro"
           >
-            Get Started 🚀
+            Get Started 🍄
           </Link>
           <Link
             className="button button--secondary button--lg mt-5 ml-5"
             to="https://github.com/bienmag/simba-ui"
           >
-            GitHub ⭐️
+            GitHub 🪙
           </Link>
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Tailwind Simba UI - ${siteConfig.title}`}
+      title={`Mariothemed-UI - ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />

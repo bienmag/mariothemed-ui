@@ -15,7 +15,7 @@
   src: url("./fonts/SuperMario256.ttf") format("truetype");
 }
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #44af35;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
