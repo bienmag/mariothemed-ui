@@ -40,8 +40,8 @@ git clone https://github.com/bienmag/mariothemed-ui.git
 
    ### Apps & Packages
 
-- `apps/docs`: a sample documentation [Next.js]() app
-- `apps/web`: a sample web [Next.js]() app
-- `packages/ui`: a stub React component library shared by both `web` and `docs` applications
+- `apps/mariothemed-docs`: Mariothemed-UI docs created using Docusaurus
+- `apps/mariothemed-playground`: a sample web [Next.js]() app to test the UI
+- `packages/ui`: a stub React component library shared by both `mariothemed-docs` and `mariothemed-playground` applications
 - `packages/config`: shared `tailwindcss`, `eslint` configurations (includes `eslint-config-next`, `eslint-config-prettier`, `eslint-plugin-prettier` etc..)
 - `packages/tsconfig`: `tsconfig.json`s which can be used by extending them throughout the monorepo
