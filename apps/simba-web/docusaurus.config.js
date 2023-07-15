@@ -9,7 +9,7 @@ const config = {
   title: "Dive into the Mario World",
   tagline:
     "Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://bienmag.github.io/mariothemed-ui/",
   baseUrl: "/mariothemed-ui/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
