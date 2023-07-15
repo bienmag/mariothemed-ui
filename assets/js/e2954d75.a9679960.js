@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksimba_ui_website=self.webpackChunksimba_ui_website||[]).push([[488],{3318:e=>{e.exports=JSON.parse('{"label":"hello","permalink":"/mariothemed-ui/blog/tags/hello","allTagsPath":"/mariothemed-ui/blog/tags","count":2}')}}]);
