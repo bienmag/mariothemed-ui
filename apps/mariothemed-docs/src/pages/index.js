@@ -23,7 +23,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--secondary button--lg mt-5 ml-5"
-            to="https://github.com/bienmag/simba-ui"
+            to="https://github.com/bienmag/mariothemed-ui"
           >
             GitHub 🪙
           </Link>

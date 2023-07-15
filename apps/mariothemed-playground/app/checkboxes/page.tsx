@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Checkbox, Radio, Textarea } from "tailwind-simba-ui";
+import { Checkbox, Radio, Textarea } from "@bienmag/mariothemed-ui";
 
 function Page() {
   const [newvalue, setValue] = useState("2");

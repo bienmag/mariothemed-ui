@@ -1,5 +1,5 @@
 {
-  "name": "simba-ui-website",
+  "name": "@bienmag/mariothemed-docs",
   "version": "0.0.0",
   "private": true,
   "homepage": "https://bienmag.github.io/mariothemed-ui",
@@ -31,7 +31,6 @@
     "prism-react-renderer": "^1.3.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwind-simba-ui": "*",
     "xwind": "^0.8.0"
   },
   "devDependencies": {

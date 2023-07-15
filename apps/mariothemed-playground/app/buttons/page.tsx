@@ -1,8 +1,12 @@
+"use client";
+
 import { Button } from "@/lib/simba-ui";
 import { CiMail } from "react-icons/ci";
 
-import logo from "./mario.png";
+import { useState } from "react";
 export default function Docs() {
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
     <div className="font-mario flex min-h-screen flex-col items-center justify-between p-24">
       <p> WELCOME TO MARIO BUTTONS</p>
@@ -11,7 +15,7 @@ export default function Docs() {
         Click me
       </Button>
       <Button rightIcon={<CiMail />} size="xs" color="yellow">
-        Click me
+        ANIMATION
       </Button>
       <Button rightIcon={<CiMail />} size="sm" color="yellow">
         Click me

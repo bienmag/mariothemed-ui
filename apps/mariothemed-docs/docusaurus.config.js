@@ -6,11 +6,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Dive into the Mario World",
+  title: "It's-a me, Mario!",
   tagline:
-    "Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
-  url: "https://bienmag.github.io/mariothemed-ui/",
-  baseUrl: "/mariothemed-ui/",
+    "Dive into the Mario World! Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
+  url: "https://example.com/",
+  // url: "https://bienmag.github.io/mariothemed-ui/",
+  // baseUrl: "/mariothemed-ui/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/mario.png",
@@ -73,7 +75,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/bienmag/simba-ui",
+            href: "https://github.com/bienmag/mariothemed-ui",
             label: "GitHub",
             position: "right",
           },

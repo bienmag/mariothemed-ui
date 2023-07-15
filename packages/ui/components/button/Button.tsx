@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
-import React, {
-  ReactChild,
-  ReactChildren,
-  ReactElement,
-  ReactNode,
-} from "react";
+import React from "react";
 import tw, { css } from "twin.macro";
 
 type ButtonSize = "xs" | "sm" | "md" | "lg";
