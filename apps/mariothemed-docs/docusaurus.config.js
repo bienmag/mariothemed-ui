@@ -9,9 +9,7 @@ const config = {
   title: "It's-a me, Mario!",
   tagline:
     "Dive into the Mario World! Mariothemed-UI is a simple, modular and accessible component library that gives you the building blocks you need to build your Next JS applications.",
-  url: "https://example.com/",
-  // url: "https://bienmag.github.io/mariothemed-ui/",
-  // baseUrl: "/mariothemed-ui/",
+  url: "https://mariothemed-ui.vercel.app/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -19,8 +17,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "bienmag", // Usually your GitHub org/user name.
-  projectName: "Mariothemed-UI", // Usually your repo name.
+  // organizationName: "bienmag", // Usually your GitHub org/user name.
+  // projectName: "Mariothemed-UI", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
