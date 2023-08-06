@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_bienmag_mariothemed_docs=self.webpackChunk_bienmag_mariothemed_docs||[]).push([[275],{5745:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

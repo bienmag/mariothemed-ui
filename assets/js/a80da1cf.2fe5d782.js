@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_bienmag_mariothemed_docs=self.webpackChunk_bienmag_mariothemed_docs||[]).push([[205],{4863:a=>{a.exports=JSON.parse('{"label":"docusaurus","permalink":"/blog/tags/docusaurus","allTagsPath":"/blog/tags","count":4}')}}]);

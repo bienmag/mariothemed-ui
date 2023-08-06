@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksimba_ui_website=self.webpackChunksimba_ui_website||[]).push([[192],{3775:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/mariothemed-ui/blog/tags/docusaurus","allTagsPath":"/mariothemed-ui/blog/tags","count":4}')}}]);

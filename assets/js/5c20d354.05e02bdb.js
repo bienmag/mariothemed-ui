@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksimba_ui_website=self.webpackChunksimba_ui_website||[]).push([[871],{5264:e=>{e.exports=JSON.parse('{"permalink":"/mariothemed-ui/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
