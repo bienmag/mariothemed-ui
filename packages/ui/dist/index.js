@@ -3293,8 +3293,8 @@ var MyInput = import_styled3.default.input`
         paddingRight: "0.75rem",
         paddingTop: "0px",
         paddingBottom: "0px",
-        fontSize: "0.875rem",
-        lineHeight: "1.25rem",
+        fontSize: "0.75rem",
+        lineHeight: "1rem",
       },
       sm: {
         borderRadius: "0.5rem",

@@ -19,7 +19,7 @@ const MyInput = styled.input<InputProps>`
 
   ${({ size }) => {
     const sizeMap = {
-      xs: tw`px-3 py-0 text-sm rounded-md`,
+      xs: tw`px-3 py-0 text-xs rounded-md`,
       sm: tw`px-3 py-1 text-base rounded-lg`,
       md: tw`px-3 py-2 text-base rounded-lg`,
       lg: tw`px-3 py-3 text-xl rounded-lg`,
