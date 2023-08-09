@@ -57,13 +57,13 @@ function Example() {
   const handleChange = (event) => setValue(event.target.value);
 
   return (
-    <>
+    <div>
       <p>Value: {value}</p>
       <Textarea
         onChange={handleChange}
         placeholder="Here is a sample placeholder"
       />
-    </>
+    </div>
   );
 }
 ```
@@ -95,6 +95,15 @@ export const TextareaResize = ({ resize }) => (
 
 <TextareaResize></TextareaResize>
 
+```js
+<div>
+  <Textarea resize="horizontal" />
+  <Textarea resize="both" />
+  <Textarea resize="vertical" />
+  <Textarea resize="none" />
+</div>
+```
+
 ## **Changing the color of the textarea**
 
 Use the color prop to change the visual style of the Textarea. You can set the value to **yellow**, **red**, **blue**, or **green**.
@@ -120,10 +129,10 @@ export const TextareaColors = ({ color }) => (
 
 ```js
 <div>
-  <Input variant="outline" placeholder="Outline" />
-  <Input variant="filled" placeholder="Filled" />
-  <Input variant="flushed" placeholder="Flushed" />
-  <Input variant="unstyled" placeholder="Unstyled" />
+  <Textarea variant="outline" placeholder="Outline" />
+  <Textarea variant="filled" placeholder="Filled" />
+  <Textarea variant="flushed" placeholder="Flushed" />
+  <Textarea variant="unstyled" placeholder="Unstyled" />
 </div>
 ```
 
